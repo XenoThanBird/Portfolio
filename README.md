@@ -38,7 +38,7 @@ This repo is intended to:
 - Document reusable components of my AI workflow
 - Showcase NLU/NLP ops design thinking
 - Provide a conversation starter with other AI, data science, and conversational UX professionals
-- Serve as an anchor portfolio for my [LinkedIn](www.linkedin.com/in/matthan-bird-jd-1b280642) profile
+- Serve as an anchor portfolio for my LinkedIn profile
 
 ## 🚀 Getting Started
 
