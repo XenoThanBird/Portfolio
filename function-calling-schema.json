@@ -1,0 +1,127 @@
+{
+  "functions": [
+    {
+      "name": "check_bill_status",
+      "description": "Retrieve current or past billing details for a customer.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "account_number": {
+            "type": "string",
+            "description": "Unique identifier for the customer's account."
+          },
+          "bill_month": {
+            "type": "string",
+            "description": "Month for which the bill is requested (format: YYYY-MM)."
+          }
+        },
+        "required": ["account_number"]
+      }
+    },
+    {
+      "name": "make_payment",
+      "description": "Submit a payment for a specific account using a saved or new method.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "account_number": {
+            "type": "string",
+            "description": "Customer account number to apply the payment."
+          },
+          "amount": {
+            "type": "number",
+            "description": "Dollar amount of the payment."
+          },
+          "payment_method_id": {
+            "type": "string",
+            "description": "Reference ID for the saved payment method (optional if new)."
+          }
+        },
+        "required": ["account_number", "amount"]
+      }
+    },
+    {
+      "name": "report_outage",
+      "description": "Log a service outage reported by a customer.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "service_type": {
+            "type": "string",
+            "enum": ["internet", "cable", "phone"],
+            "description": "Type of service experiencing issues."
+          },
+          "zip_code": {
+            "type": "string",
+            "description": "Customer’s location zip code."
+          }
+        },
+        "required": ["service_type", "zip_code"]
+      }
+    },
+    {
+      "name": "troubleshoot_router",
+      "description": "Initiate remote diagnostics and offer router fixes.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "mac_address": {
+            "type": "string",
+            "description": "MAC address of the router or modem."
+          },
+          "issue_description": {
+            "type": "string",
+            "description": "Description of the issue reported by the customer."
+          }
+        },
+        "required": ["mac_address"]
+      }
+    },
+    {
+      "name": "update_account_info",
+      "description": "Update customer account information such as phone or email.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "account_number": {
+            "type": "string",
+            "description": "Customer account number."
+          },
+          "field_to_update": {
+            "type": "string",
+            "enum": ["phone", "email", "address"],
+            "description": "Field the customer wants to update."
+          },
+          "new_value": {
+            "type": "string",
+            "description": "The new value for the specified field."
+          }
+        },
+        "required": ["account_number", "field_to_update", "new_value"]
+      }
+    },
+    {
+      "name": "schedule_technician",
+      "description": "Book or reschedule a technician visit.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "account_number": {
+            "type": "string",
+            "description": "Customer account number."
+          },
+          "preferred_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Requested date for the appointment."
+          },
+          "issue_type": {
+            "type": "string",
+            "description": "Short label for the issue (e.g., 'No Internet')."
+          }
+        },
+        "required": ["account_number", "preferred_date"]
+      }
+    }
+  ]
+}
