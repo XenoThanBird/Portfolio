@@ -1,48 +1,58 @@
-# 🧠 Conversational AI Portfolio – Matthan Bird
+# Matthan Bird – AI Portfolio
 
-Welcome to my Conversational AI Portfolio. This GitHub repository serves as a personal archive and professional showcase of my work in designing, developing, and optimizing Natural Language Understanding (NLU) systems and Conversational User Interfaces (CUIs).
+Welcome to my AI Portfolio. I’m a Conversational AI Architect, NLP Engineer, CX Designer, and Certified AI Python Developer with a legal background and a vision for practical, agentic AI systems that integrate with everyday workflows. 
 
-## 📌 About Me
+This repository includes a curated showcase of my work across Conversational AI, LLM strategy, prompt engineering, and AI-powered automation.
 
-I'm Matthan Bird — an AI Business Analyst, Conversational Designer, and Data Strategist with a background in law, UX, and NLP engineering. I've led NLU training efforts, call flow migrations, and automation strategies for enterprise-grade IVR systems using platforms like **Kore.ai**, **Azure AI**, and **OpenAI Pro**.
+---
 
-## 📁 Repository Structure
+## Featured Projects
 
-This repository contains two primary folders:
+### 1. Conversational IVR & NLP Optimization
+*Redesigning legacy IVR systems using Kore.ai with integrated LLM routing, Few-Shot intent mapping, and AI-first NLU analytics.*
 
-### 🗂️ `legacy_ui_designs/`
-Outdated but valuable conversational IVR and CUI flowcharts, originally designed for high-volume enterprise telecom applications. These include:
+- IVR Modernization Plan  
+- Utterance clustering using cosine similarity  
+- Top-of-IVR LLM router design
 
-- IVR Dialog Maps (Legacy Format)
-- Persona-Based Voice UX Design Samples
-- Intent Routing and Re-Prompt Flow Drafts
-- Historical Use Case Documentation
+### 2. Prompt Engineering & GPT Fine-Tuning
+*Custom GPT-4o prompt sets for enterprise bots, billing routers, and zero-shot model training in Kore.ai.*
 
-> ⚠️ *Note: These designs may no longer reflect current branding, technical stacks, or LLM-integrated approaches — but remain illustrative of my journey through iterative CUI design.*
+- Multi-modal LLM routing prompts  
+- Prompt cheat sheets and templates  
+- GPT-based task routing for telecom
 
-### 🧪 `nlu_team_templates/`
-Reusable Python scripts and Jupyter Notebooks developed during my time leading NLU model refinement and automation tasks, including:
+### 3. AI Governance & Enterprise Strategy
+*Responsible AI documentation and implementation strategies tailored to enterprise environments.*
 
-- Cosine Similarity Clustering of User Utterances
-- Intent-Mapping Boilerplates
-- Few-Shot Intent Classifiers with Scikit-learn/Huggingface
-- Interactive Dashboards for NLP Task Monitoring
-- Entity Recognition Prep Scripts
+- AI governance templates (RACI, policy)  
+- LLM deployment best practices  
+- Strategy alignment with business goals
 
-> 🔍 These scripts emphasize practical workflows for NLP ops teams managing high-volume, multi-bot ecosystems without pretrained embeddings.
+### 4. NLP Tools & Dashboards
+*Python & Streamlit apps for sentence similarity scoring, semantic clustering, and LLM performance analytics.*
 
-## 🎯 Purpose
+- Streamlit cosine similarity tool  
+- LLM analytics dashboard  
+- Address training pipeline for IVRs
 
-This repo is intended to:
+### 5. Wealth Building through AI Automation
+*Personal experiments in building recession-resistant, passive-income systems powered by AI.*
 
-- Document reusable components of my AI workflow
-- Showcase NLU/NLP ops design thinking
-- Provide a conversation starter with other AI, data science, and conversational UX professionals
-- Serve as an anchor portfolio for my LinkedIn profile
+- 24-month financial freedom strategy  
+- Crypto trading bots  
+- AI-powered income dashboards
 
-## 🚀 Getting Started
+---
 
-Most Python and Jupyter templates are plug-and-play. Just make sure to install the dependencies listed in the individual notebooks. Here's a general setup:
+## Get in Touch
 
-```bash
-pip install pandas scikit-learn matplotlib seaborn openpyxl
+For collaboration, consulting, or just a great conversation about agentic AI systems, reach out:
+
+- **LinkedIn**: www.linkedin.com/in/matthan-bird-jd-mdb28173 
+- **Email**: bird.matthan@gmail.com
+- **Certs**: AI Python Developer, Cloud-Computing & Data Eng, Agile-Scrum, SQL Database Admin, HTML Web Designer, Prompt Engineering 
+
+---
+> “The future belongs to those who design it.”  
+> — Matthan Bird
