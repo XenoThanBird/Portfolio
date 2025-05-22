@@ -1,0 +1,37 @@
+{
+  "CableBalanceInquiry": {
+    "bot_name": "CableBillingBot",
+    "task_endpoint": "BalanceInquiry",
+    "threshold": 0.75
+  },
+  "MobilePaymentSubmission": {
+    "bot_name": "MobilePaymentBot",
+    "task_endpoint": "MakePayment",
+    "threshold": 0.80
+  },
+  "CableOutageReport": {
+    "bot_name": "CableRepairBot",
+    "task_endpoint": "ReportOutage",
+    "threshold": 0.70
+  },
+  "MobileDataUsageCheck": {
+    "bot_name": "MobileBillingBot",
+    "task_endpoint": "CheckData",
+    "threshold": 0.75
+  },
+  "RouterRebootRequest": {
+    "bot_name": "RouterBot",
+    "task_endpoint": "RemoteReset",
+    "threshold": 0.78
+  },
+  "AgentRequest": {
+    "bot_name": "CommonBot",
+    "task_endpoint": "AgentTransfer",
+    "threshold": 0.60
+  },
+  "Unknown": {
+    "bot_name": "CommonBot",
+    "task_endpoint": "AgentTransfer",
+    "threshold": 0.00
+  }
+}
