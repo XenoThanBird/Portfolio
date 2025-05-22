@@ -1,0 +1,10 @@
+utterance,intent_label,confidence_score
+What's my cable bill balance?,CableBalanceInquiry,0.92
+I need to pay my mobile bill,MobilePaymentSubmission,0.79
+Internet is out again in my area,CableOutageReport,0.65
+Can I speak with someone?,AgentRequest,0.86
+Restart my router,RouterRebootRequest,0.7
+How much mobile data have I used?,MobileDataUsageCheck,0.74
+Where is the closest store?,Unknown,0.42
+Transfer me to a representative,AgentRequest,0.6
+Fix my WiFi now!,RouterRebootRequest,0.85
