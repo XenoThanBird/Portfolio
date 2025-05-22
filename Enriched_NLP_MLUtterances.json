@@ -1,0 +1,3801 @@
+[
+    {
+        "sentence": "discuss something else",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "i need to talk to an agent",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "I wanna talk to a talk to a real person",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "I want to talk to a representative",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "i would like to speak to a customer service representative",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "Help with something else",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "Speak with an operator",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "I want to discuss that with someone please",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "I'd like to talk to a person",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "Operator's assistance about getting a better deal",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "Operator's assistance about getting a better cable bill deal",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "speak to a human",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "Need operator's assistance",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "talk to the scheduler",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "Speak with a manager",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "I would like to speak with someone",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "I would like to speak to a person",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "I need to speak to a rep please",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "Transfer me to an agent please",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "Representative please",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "agent",
+                "type": "PERSON",
+                "normalizedValue": "agent",
+                "nluTag": "AGENT",
+                "synonyms": [
+                    "representative",
+                    "person",
+                    "human",
+                    "operator",
+                    "manager",
+                    "rep",
+                    "scheduler"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Agent Transfer"
+    },
+    {
+        "sentence": "fallback task",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "fallback",
+                "type": "ACTION",
+                "normalizedValue": "fallback",
+                "nluTag": "FALLBACK",
+                "synonyms": [
+                    "task"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Fallback Task"
+    },
+    {
+        "sentence": "Fallback",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "fallback",
+                "type": "ACTION",
+                "normalizedValue": "fallback",
+                "nluTag": "FALLBACK",
+                "synonyms": [
+                    "task"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Fallback Task"
+    },
+    {
+        "sentence": "task is ending",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "ending",
+                "type": "ACTION",
+                "normalizedValue": "ending",
+                "nluTag": "END",
+                "synonyms": [
+                    "task"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Task End"
+    },
+    {
+        "sentence": "Please hold on",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Hang on a moment while I look for that",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Wait, I'll find it",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "I'm still looking for that",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "I'm looking for it",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Let me find it",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "I'm working on it",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Hold, please",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Give me a minute",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "It could take a little bit to find it",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "I need a moment to find that please",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Can you hold on for a second",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "I'm not sure where it is",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Thanks for waiting, I'll be with you shortly",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Hold up",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "I'll be with you shortly",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Gimme a minute",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "One moment",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Can you put me on hold",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "i need to check my calendar",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Just a sec",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Please be patient while I find that",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Place me on hold for a moment",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Wait",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "just a moment",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "Wait a second, I'll be right with you",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "wait",
+                "type": "ACTION",
+                "normalizedValue": "wait",
+                "nluTag": "WAIT",
+                "synonyms": [
+                    "hold",
+                    "moment",
+                    "minute",
+                    "second",
+                    "calendar"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Wait"
+    },
+    {
+        "sentence": "say that one more time",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "can you repeat i didn't hear what you saying",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "Repeat the date you said just now",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "say again please",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "can you repeat that",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "repeat of my recent problem",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "i couldn't hear you",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "Could you repeat that",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "What was that",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "Sorry I didn't understand",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "tell me the time again",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "can you repeat that again",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "I didn't quite catch that",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "say what now repeat that",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "Sorry could you repeat the last part",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "repeat",
+                "type": "ACTION",
+                "normalizedValue": "repeat",
+                "nluTag": "REPEAT",
+                "synonyms": [
+                    "again",
+                    "hear",
+                    "understand",
+                    "time",
+                    "date"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Repeat"
+    },
+    {
+        "sentence": "New customer",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "Adding new services",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "Add a business account",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "Questions about adding service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "Start new service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "Add business class service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "Add service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "Add a new account",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "New service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "Additional services",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "service",
+                "type": "SERVICE",
+                "normalizedValue": "service",
+                "nluTag": "SERVICE",
+                "synonyms": [
+                    "account",
+                    "business",
+                    "new",
+                    "additional",
+                    "customer"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Service"
+    },
+    {
+        "sentence": "vdn",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "vdn",
+                "type": "CODE",
+                "normalizedValue": "vdn",
+                "nluTag": "VDN",
+                "synonyms": []
+            }
+        ],
+        "language": "en",
+        "taskName": "CMN_VDN_Task"
+    },
+    {
+        "sentence": "I broke my cellphone",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "order the new watch",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "new sim card",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "connect to mobile hotspot",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "change my cellphone number",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "port out pin",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "lost my phone",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "using my mobile hotspot",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "unlock my cell phone",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "mobile rates for international roaming",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "phone",
+                "type": "DEVICE",
+                "normalizedValue": "phone",
+                "nluTag": "PHONE",
+                "synonyms": [
+                    "mobile",
+                    "cellphone",
+                    "sim",
+                    "hotspot",
+                    "pin",
+                    "number",
+                    "roaming",
+                    "watch"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Mobile"
+    },
+    {
+        "sentence": "moving to a new location",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "transfer my services",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "relocate service address",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "we are moving",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "I am moving",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "transferring service to new address",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "move my service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "I need to transfer my service to a new address",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "change service address",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "new service address",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "move",
+                "type": "ACTION",
+                "normalizedValue": "move",
+                "nluTag": "MOVE",
+                "synonyms": [
+                    "moving",
+                    "transfer",
+                    "relocate",
+                    "address",
+                    "location"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Moving"
+    },
+    {
+        "sentence": "there were changes made to my account",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "give a phone contact",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "home locked",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "i am running late",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "what is the installation for",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "home locker",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "I need to update my appointment details",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "I'm not calling about the appointment",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "technician going to contact me",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "give the technician the gate code",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "This is not related to the appointment",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "i have not heard from anyone",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "tell the technician to wait",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "no one showed up",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "i am not at home",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "want to know how many rooms are installed today",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "need to contact the technician",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "update contact number",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "You have the wrong address",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "I need to give some more information",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technician",
+                "type": "PERSON",
+                "normalizedValue": "technician",
+                "nluTag": "TECHNICIAN",
+                "synonyms": [
+                    "appointment",
+                    "contact",
+                    "update",
+                    "information",
+                    "gate code",
+                    "rooms",
+                    "installation"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Transfer"
+    },
+    {
+        "sentence": "i need a new appointment scheduled",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "appointment",
+                "type": "EVENT",
+                "normalizedValue": "appointment",
+                "nluTag": "APPOINTMENT",
+                "synonyms": [
+                    "schedule",
+                    "book",
+                    "cancellation",
+                    "details",
+                    "time"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Appt Unsupported Intents"
+    },
+    {
+        "sentence": "I want to give additional details to the technician",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "appointment",
+                "type": "EVENT",
+                "normalizedValue": "appointment",
+                "nluTag": "APPOINTMENT",
+                "synonyms": [
+                    "schedule",
+                    "book",
+                    "cancellation",
+                    "details",
+                    "time"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Appt Unsupported Intents"
+    },
+    {
+        "sentence": "schedule a time for technician",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "appointment",
+                "type": "EVENT",
+                "normalizedValue": "appointment",
+                "nluTag": "APPOINTMENT",
+                "synonyms": [
+                    "schedule",
+                    "book",
+                    "cancellation",
+                    "details",
+                    "time"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Appt Unsupported Intents"
+    },
+    {
+        "sentence": "can you book an appointment",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "appointment",
+                "type": "EVENT",
+                "normalizedValue": "appointment",
+                "nluTag": "APPOINTMENT",
+                "synonyms": [
+                    "schedule",
+                    "book",
+                    "cancellation",
+                    "details",
+                    "time"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Appt Unsupported Intents"
+    },
+    {
+        "sentence": "I'd like to book a new appointment",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "appointment",
+                "type": "EVENT",
+                "normalizedValue": "appointment",
+                "nluTag": "APPOINTMENT",
+                "synonyms": [
+                    "schedule",
+                    "book",
+                    "cancellation",
+                    "details",
+                    "time"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Appt Unsupported Intents"
+    },
+    {
+        "sentence": "can you help me schedule an appointment",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "appointment",
+                "type": "EVENT",
+                "normalizedValue": "appointment",
+                "nluTag": "APPOINTMENT",
+                "synonyms": [
+                    "schedule",
+                    "book",
+                    "cancellation",
+                    "details",
+                    "time"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Appt Unsupported Intents"
+    },
+    {
+        "sentence": "How do i go about booking an appointment",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "appointment",
+                "type": "EVENT",
+                "normalizedValue": "appointment",
+                "nluTag": "APPOINTMENT",
+                "synonyms": [
+                    "schedule",
+                    "book",
+                    "cancellation",
+                    "details",
+                    "time"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Appt Unsupported Intents"
+    },
+    {
+        "sentence": "I need to confirm a cancellation",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "appointment",
+                "type": "EVENT",
+                "normalizedValue": "appointment",
+                "nluTag": "APPOINTMENT",
+                "synonyms": [
+                    "schedule",
+                    "book",
+                    "cancellation",
+                    "details",
+                    "time"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Appt Unsupported Intents"
+    },
+    {
+        "sentence": "i want to upgrade",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "sales",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "Need to set up services at a new address",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "Need to speak to a sales agent",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "What is Xumo",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "I want the new package",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "Add new subscriptions services",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "upgrade my services",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "Add new service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "Can I speak to a sales representative",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "I want a new service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "sales",
+                "type": "ACTION",
+                "normalizedValue": "sales",
+                "nluTag": "SALES",
+                "synonyms": [
+                    "upgrade",
+                    "package",
+                    "subscription",
+                    "new",
+                    "agent",
+                    "representative",
+                    "Xumo"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Sales"
+    },
+    {
+        "sentence": "Remove the service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "I want to cancel service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Downgrade my services",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Close my account",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Need to cancel service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Remove service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Remove the account",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Remove services",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Downgrade my service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Need to cancel account",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Cancel service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "I want to cancel account",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "Close the account",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "cancel",
+                "type": "ACTION",
+                "normalizedValue": "cancel",
+                "nluTag": "CANCEL",
+                "synonyms": [
+                    "remove",
+                    "close",
+                    "downgrade",
+                    "account",
+                    "service"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Remove Service"
+    },
+    {
+        "sentence": "My home phone is not working",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Telephone not working",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Landline is not working",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Phone repair",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "No phone service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "No dialtone on phone",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Home phone No dialtone",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "My landline is not working",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Phoneline not working",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "My phone is not working",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "No dial tone",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "outage at my home",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "I have no service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Technical Service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "I want a technician to come out",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "send technician",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "I need technician",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Technician come",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Tech Help",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Need tech",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Reactivate my service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "Restore my service",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    },
+    {
+        "sentence": "When will service be restored",
+        "type": "DialogIntent",
+        "entities": [
+            {
+                "name": "technical",
+                "type": "SERVICE",
+                "normalizedValue": "technical",
+                "nluTag": "TECH_SUPPORT",
+                "synonyms": [
+                    "repair",
+                    "outage",
+                    "service",
+                    "technician",
+                    "not working",
+                    "phone",
+                    "landline",
+                    "dialtone",
+                    "restore",
+                    "reactivate"
+                ]
+            }
+        ],
+        "language": "en",
+        "taskName": "Technical Support"
+    }
+]
