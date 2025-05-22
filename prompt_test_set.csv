@@ -1,0 +1,13 @@
+utterance,function,parameters
+I need to check my May bill.,check_bill_status,{'bill_month': '2025-05'}
+Can you tell me how much I owed last month?,check_bill_status,{'bill_month': '2025-04'}
+I’d like to pay $120 on my account.,make_payment,{'amount': 120.0}
+Please charge $90 to my Visa card.,make_payment,"{'amount': 90.0, 'payment_method_id': '[visa_card_id_from_context]'}"
+My internet is out again in 90210.,report_outage,"{'service_type': 'internet', 'zip_code': '90210'}"
+No cable service in my area (77001).,report_outage,"{'service_type': 'cable', 'zip_code': '77001'}"
+My router keeps disconnecting. Can you check it?,troubleshoot_router,{'issue_description': 'router keeps disconnecting'}
+I can’t get my modem to work again.,troubleshoot_router,{'issue_description': 'modem not working'}
+I need to change the phone number on my account.,update_account_info,{'field_to_update': 'phone'}
+Please update my email to matt@example.com.,update_account_info,"{'field_to_update': 'email', 'new_value': 'matt@example.com'}"
+I want to book a technician for Friday.,schedule_technician,{'preferred_date': '2025-05-23'}
+Can I get someone to come check my internet on June 3rd?,schedule_technician,"{'preferred_date': '2025-06-03', 'issue_type': 'internet issues'}"
