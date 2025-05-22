@@ -59,3 +59,29 @@ You are a virtual assistant that helps customers with billing inquiries by calli
     "payment_method_id": "[visa_card_id_from_context]"
   }
 }
+
+## Function: `schedule_technician`
+
+**User:** I want to book a technician for Friday.
+**Output:**
+```json
+{
+  "function": "schedule_technician",
+  "parameters": {
+    "account_number": "[from_context]",
+    "preferred_date": "2025-05-23",
+    "issue_type": "not specified"
+  }
+}
+
+**User:** Can I get someone to come check my internet on June 3rd?
+**Output:**
+```json
+{
+  "function": "schedule_technician",
+  "parameters": {
+    "account_number": "[from_context]",
+    "preferred_date": "2025-06-03",
+    "issue_type": "internet issues"
+  }
+}
