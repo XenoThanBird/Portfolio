@@ -1,0 +1,52 @@
+# Threat Intelligence Honeypot — Configuration
+# Simulated service listeners for logging and analyzing connection attempts.
+
+# Listener configuration (non-standard ports to avoid conflicts)
+listeners:
+  ssh:
+    enabled: true
+    port: 2222
+    protocol: tcp
+    banner: "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.1"
+
+  http:
+    enabled: true
+    port: 8080
+    protocol: tcp
+    banner: "HTTP/1.1 200 OK\r\nServer: Apache/2.4.52\r\n\r\n"
+
+  telnet:
+    enabled: true
+    port: 2323
+    protocol: tcp
+    banner: "Ubuntu 22.04 LTS\nlogin: "
+
+# Session logging
+logging:
+  # Log directory
+  log_dir: honeypot_logs
+  # Log format (jsonl = one JSON object per line)
+  format: jsonl
+  # Maximum payload bytes to capture per session
+  max_payload_bytes: 4096
+  # Rotate logs after this many entries
+  max_entries_per_file: 10000
+
+# Threat analysis settings
+analysis:
+  # Time window for analysis (hours)
+  window_hours: 24
+  # Top N attackers to display
+  top_n: 10
+  # Minimum connections to flag an IP
+  min_connections_to_flag: 3
+
+# Dashboard settings
+dashboard:
+  title: "Honeypot Threat Intelligence"
+  refresh_interval_seconds: 30
+  # Chart colors
+  colors:
+    primary: "#FF6B6B"
+    secondary: "#4ECDC4"
+    accent: "#45B7D1"

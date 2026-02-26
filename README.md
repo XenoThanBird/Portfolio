@@ -123,15 +123,16 @@ This repository showcases selected projects across AI/ML engineering, prompt des
 - [`example.py`](09_digital_twin/example.py) – Five runnable examples demonstrating the full stack
 - [`architecture.md`](09_digital_twin/architecture.md) – Detailed architecture documentation
 
-### 10. AI Sentinel — Cybersecurity
+### 10. AI Sentinel — Cybersecurity Suite
 
-*Automated File Integrity Monitor for critical infrastructure defense — real-time detection of unauthorized system changes.*
+*Defensive cybersecurity tools for critical infrastructure — file integrity monitoring, network auditing, threat intelligence, encryption, and TLS compliance.*
 
 - [`10_ai_sentinel_cybersecurity/README.md`](10_ai_sentinel_cybersecurity/README.md) – Module overview
-- [`sentinel.py`](10_ai_sentinel_cybersecurity/sentinel.py) – Core FIM engine with SHA-256 hashing and watch modes
-- [`alert_handler.py`](10_ai_sentinel_cybersecurity/alert_handler.py) – Multi-channel alert routing with severity classification
-- [`baseline_manager.py`](10_ai_sentinel_cybersecurity/baseline_manager.py) – Baseline versioning, comparison, and reporting
-- [`example.py`](10_ai_sentinel_cybersecurity/example.py) – Self-contained demo with simulated file changes
+- **The Sentinel Script** — File integrity monitor with SHA-256 hashing, baseline comparison, and real-time watch modes
+- **Network Inventory & Audit** — Device discovery, port scanning, OS fingerprinting, and topology visualization
+- **Threat Intelligence Honeypot** — Async service listeners with JSONL logging, threat analysis, and Streamlit dashboard
+- **Envelope Encryption File Vault** — AES-256-GCM envelope encryption with key rotation and HMAC integrity
+- **TLS Handshake Analyzer** — Certificate inspection, cipher validation, and compliance reporting
 
 ---
 
