@@ -1,0 +1,43 @@
+# Envelope Encryption File Vault — Configuration
+# AES-256 envelope encryption with key rotation and HMAC integrity.
+
+# Vault settings
+vault:
+  # Directory for encrypted files (relative to working directory)
+  vault_dir: vault_data
+  # File extension for encrypted output
+  encrypted_extension: .vault
+
+# Key management
+keys:
+  # Key storage path (relative to working directory)
+  key_dir: vault_keys
+  # Key derivation iterations (PBKDF2)
+  kdf_iterations: 480000
+  # Maximum number of master key versions to retain
+  max_versions: 5
+  # Salt length in bytes
+  salt_length: 16
+
+# Encryption settings
+encryption:
+  # Algorithm: AES-256-GCM (authenticated encryption)
+  algorithm: AES-256-GCM
+  # IV/nonce length in bytes
+  iv_length: 12
+  # Data key length in bytes (32 = 256-bit)
+  data_key_length: 32
+
+# Integrity verification
+integrity:
+  # HMAC algorithm
+  algorithm: SHA-256
+  # Include HMAC in vault files
+  enabled: true
+
+# Logging
+logging:
+  # Audit log for vault operations
+  audit_log: vault_audit.jsonl
+  # Log level
+  level: INFO

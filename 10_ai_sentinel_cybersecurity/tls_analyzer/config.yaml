@@ -1,0 +1,54 @@
+# TLS Handshake Analyzer — Configuration
+# Analyze certificate chains, cipher suites, and protocol versions.
+
+# Target hosts to audit
+targets:
+  - host: google.com
+    port: 443
+  - host: github.com
+    port: 443
+  - host: expired.badssl.com
+    port: 443
+
+# Connection settings
+connection:
+  timeout_seconds: 10
+  # Minimum TLS version to attempt (the system will use the best available)
+  # Options: TLSv1.2, TLSv1.3
+  min_version: "TLSv1.2"
+
+# Compliance rules
+compliance:
+  # Deprecated protocols — flag if server supports these
+  deprecated_protocols:
+    - "TLSv1"
+    - "TLSv1.1"
+    - "SSLv3"
+
+  # Weak cipher suites — flag if negotiated
+  weak_ciphers:
+    - "RC4"
+    - "DES"
+    - "3DES"
+    - "NULL"
+    - "EXPORT"
+    - "MD5"
+
+  # Minimum key sizes (bits)
+  min_key_sizes:
+    RSA: 2048
+    EC: 256
+    DSA: 2048
+
+  # Certificate expiry warning threshold (days)
+  cert_expiry_warning_days: 30
+
+  # Require Subject Alternative Names (SANs)
+  require_sans: true
+
+# Report settings
+report:
+  # Output format: markdown, json, or both
+  format: both
+  # Output directory (relative to this config)
+  output_dir: reports

@@ -61,3 +61,14 @@ data/
 
 # FIM baselines
 baselines/
+
+# Vault data
+vault_data/
+vault_keys/
+*.vault
+
+# Honeypot logs
+honeypot_logs/
+
+# Report output
+reports/

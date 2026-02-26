@@ -1,0 +1,221 @@
+"""
+Network Inventory & Audit — Report Generator
+
+Markdown/JSON report: device inventory, open ports, and risk flags.
+"""
+
+import json
+import os
+from dataclasses import asdict
+from datetime import datetime, timezone
+from typing import Optional
+
+from scanner import DeviceInfo, PortResult
+
+
+# Risk flags for specific open ports
+RISK_FLAGS = {
+    21: {"service": "FTP", "level": "critical", "reason": "Unencrypted file transfer"},
+    23: {"service": "Telnet", "level": "critical", "reason": "Unencrypted remote access"},
+    25: {"service": "SMTP", "level": "warning", "reason": "Mail relay — check auth"},
+    445: {"service": "SMB", "level": "critical", "reason": "Common attack vector (EternalBlue)"},
+    3306: {"service": "MySQL", "level": "warning", "reason": "Database exposed — check ACLs"},
+    3389: {"service": "RDP", "level": "warning", "reason": "Remote desktop — ensure NLA enabled"},
+    5432: {"service": "PostgreSQL", "level": "warning", "reason": "Database exposed — check ACLs"},
+}
+
+
+def assess_risk(device: DeviceInfo) -> tuple:
+    """
+    Assess risk level of a device based on open ports.
+
+    Returns (risk_level, list_of_risk_flags).
+    """
+    flags = []
+    max_level = "low"
+
+    for port_result in device.open_ports:
+        if port_result.port in RISK_FLAGS:
+            flag = RISK_FLAGS[port_result.port].copy()
+            flag["port"] = port_result.port
+            flags.append(flag)
+
+            if flag["level"] == "critical":
+                max_level = "critical"
+            elif flag["level"] == "warning" and max_level != "critical":
+                max_level = "warning"
+
+    # High number of open ports is itself a risk
+    if len(device.open_ports) > 10:
+        flags.append({
+            "port": 0,
+            "service": "Multiple",
+            "level": "warning",
+            "reason": f"{len(device.open_ports)} open ports — large attack surface",
+        })
+        if max_level == "low":
+            max_level = "warning"
+
+    return max_level, flags
+
+
+def generate_markdown_report(devices: list) -> str:
+    """Generate a comprehensive Markdown network inventory report."""
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+    lines = [
+        "# Network Inventory Report",
+        "",
+        f"**Generated:** {now}",
+        f"**Devices Discovered:** {len(devices)}",
+        f"**Total Open Ports:** {sum(len(d.open_ports) for d in devices)}",
+        "",
+    ]
+
+    # Summary table
+    lines.extend([
+        "## Device Summary",
+        "",
+        "| IP Address | Hostname | Type | OS Guess | Open Ports | Risk |",
+        "| ---------- | -------- | ---- | -------- | ---------- | ---- |",
+    ])
+
+    for device in devices:
+        risk_level, _ = assess_risk(device)
+        hostname = device.hostname or "—"
+        os_guess = device.os_guess or "Unknown"
+        lines.append(
+            f"| {device.ip} | {hostname} | {device.device_type} | "
+            f"{os_guess} | {len(device.open_ports)} | {risk_level.upper()} |"
+        )
+
+    lines.append("")
+
+    # Detailed per-device sections
+    lines.append("## Detailed Inventory")
+    lines.append("")
+
+    for device in devices:
+        risk_level, risk_flags = assess_risk(device)
+
+        lines.extend([
+            f"### {device.ip}",
+            "",
+            f"- **Hostname:** {device.hostname or 'N/A'}",
+            f"- **MAC:** {device.mac or 'N/A'}",
+            f"- **Vendor:** {device.vendor or 'Unknown'}",
+            f"- **OS Guess:** {device.os_guess or 'Unknown'}",
+            f"- **Device Type:** {device.device_type}",
+            f"- **Risk Level:** {risk_level.upper()}",
+            "",
+        ])
+
+        # Open ports table
+        if device.open_ports:
+            lines.extend([
+                "**Open Ports:**",
+                "",
+                "| Port | Protocol | Service | Version |",
+                "| ---- | -------- | ------- | ------- |",
+            ])
+            for p in device.open_ports:
+                lines.append(
+                    f"| {p.port} | {p.protocol} | {p.service} | "
+                    f"{p.version or '—'} |"
+                )
+            lines.append("")
+
+        # Risk flags
+        if risk_flags:
+            lines.append("**Risk Flags:**")
+            lines.append("")
+            for flag in risk_flags:
+                level_marker = (
+                    "CRITICAL" if flag["level"] == "critical" else "WARNING"
+                )
+                port_str = (
+                    f"Port {flag['port']}" if flag["port"] else "General"
+                )
+                lines.append(
+                    f"- [{level_marker}] {port_str} "
+                    f"({flag['service']}): {flag['reason']}"
+                )
+            lines.append("")
+
+        lines.append("---")
+        lines.append("")
+
+    # Footer
+    lines.extend([
+        "",
+        "*Report generated by Network Inventory & Audit — "
+        "AI Sentinel Cybersecurity Suite*",
+        "",
+        "> **Disclaimer:** Only scan networks you own or have explicit "
+        "authorization to scan. Unauthorized network scanning may violate "
+        "applicable laws and regulations.",
+    ])
+
+    return "\n".join(lines)
+
+
+def generate_json_report(devices: list) -> dict:
+    """Generate a JSON network inventory report."""
+    now = datetime.now(timezone.utc).isoformat()
+
+    report = {
+        "report_type": "network_inventory",
+        "generated_at": now,
+        "total_devices": len(devices),
+        "total_open_ports": sum(len(d.open_ports) for d in devices),
+        "devices": [],
+    }
+
+    for device in devices:
+        risk_level, risk_flags = assess_risk(device)
+        device_entry = {
+            "ip": device.ip,
+            "hostname": device.hostname,
+            "mac": device.mac,
+            "vendor": device.vendor,
+            "os_guess": device.os_guess,
+            "device_type": device.device_type,
+            "risk_level": risk_level,
+            "open_ports": [asdict(p) for p in device.open_ports],
+            "risk_flags": risk_flags,
+            "scan_time": device.scan_time,
+        }
+        report["devices"].append(device_entry)
+
+    return report
+
+
+def save_reports(
+    devices: list,
+    output_dir: str = "reports",
+    formats: str = "both",
+) -> list:
+    """Save reports to files. Returns list of saved file paths."""
+    os.makedirs(output_dir, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    saved = []
+
+    if formats in ("markdown", "both"):
+        md_content = generate_markdown_report(devices)
+        md_path = os.path.join(
+            output_dir, f"network_report_{timestamp}.md"
+        )
+        with open(md_path, "w", encoding="utf-8") as f:
+            f.write(md_content)
+        saved.append(md_path)
+
+    if formats in ("json", "both"):
+        json_content = generate_json_report(devices)
+        json_path = os.path.join(
+            output_dir, f"network_report_{timestamp}.json"
+        )
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(json_content, f, indent=2, default=str)
+        saved.append(json_path)
+
+    return saved

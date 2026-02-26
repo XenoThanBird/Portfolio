@@ -1,0 +1,71 @@
+# Network Inventory & Audit — Configuration
+# Discover devices and identify exposed ports on authorized networks.
+
+# IMPORTANT: Only scan networks you own or have explicit permission to scan.
+# Unauthorized scanning may violate laws and regulations.
+
+# Target configuration
+target:
+  # Default: localhost only (safe for demos)
+  subnet: "127.0.0.1"
+  # For real network scans, use CIDR notation: "192.168.1.0/24"
+
+# Port scanning
+ports:
+  # Common service ports to scan
+  range: "22,23,25,53,80,110,143,443,445,993,995,3306,3389,5432,8080,8443"
+  # Scan timeout per port (seconds)
+  timeout: 2
+  # Maximum concurrent scans
+  max_concurrent: 50
+
+# Device fingerprinting
+fingerprint:
+  # Enable MAC vendor lookup
+  mac_lookup: true
+  # Enable OS fingerprinting via TTL/window size
+  os_fingerprint: true
+
+# Risk assessment
+risk_flags:
+  # Ports that indicate elevated risk when open
+  critical:
+    - port: 23
+      service: "Telnet"
+      reason: "Unencrypted remote access"
+    - port: 21
+      service: "FTP"
+      reason: "Unencrypted file transfer"
+    - port: 445
+      service: "SMB"
+      reason: "Common attack vector (EternalBlue)"
+
+  warning:
+    - port: 3389
+      service: "RDP"
+      reason: "Remote desktop — ensure NLA enabled"
+    - port: 3306
+      service: "MySQL"
+      reason: "Database exposed — check access controls"
+    - port: 5432
+      service: "PostgreSQL"
+      reason: "Database exposed — check access controls"
+
+# Visualization settings
+visualization:
+  # Figure size (width, height in inches)
+  figsize: [14, 10]
+  # Node colors by type
+  colors:
+    gateway: "#FF6B6B"
+    server: "#4ECDC4"
+    workstation: "#45B7D1"
+    iot: "#96CEB4"
+    unknown: "#DFE6E9"
+  # Output file
+  output_file: network_topology.png
+
+# Report settings
+report:
+  format: both  # markdown, json, or both
+  output_dir: reports
