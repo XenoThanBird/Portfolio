@@ -1,0 +1,74 @@
+# The Sentinel Script — File Integrity Monitor Configuration
+# -----------------------------------------------------------
+
+# --- Watch Paths ---
+watch:
+  paths:
+    - "/etc"
+    - "/var/www"
+    - "/opt/app"
+  exclude_patterns:
+    - "*.pyc"
+    - "__pycache__/**"
+    - "*.log"
+    - "*.tmp"
+    - ".git/**"
+    - "node_modules/**"
+  follow_symlinks: false
+  max_file_size_mb: 100
+
+# --- Scanning ---
+scanning:
+  mode: "polling"                 # polling | watchdog
+  interval_seconds: 30
+  hash_algorithm: "sha256"        # sha256 | sha512 | md5
+  track_permissions: true
+
+# --- Baseline ---
+baseline:
+  storage_path: "baselines"
+  auto_backup: true
+  max_versions: 10
+
+# --- Severity Rules ---
+# Map file patterns to severity levels. Unlisted patterns default to LOW.
+severity_rules:
+  critical:
+    - "*.pem"
+    - "*.key"
+    - "*.crt"
+    - "*.conf"
+    - "*.cfg"
+    - "*.service"
+    - "/etc/passwd"
+    - "/etc/shadow"
+    - "/etc/sudoers"
+  high:
+    - "*.py"
+    - "*.sh"
+    - "*.bash"
+    - "*.exe"
+    - "*.dll"
+    - "*.so"
+  medium:
+    - "*.json"
+    - "*.yaml"
+    - "*.yml"
+    - "*.xml"
+    - "*.csv"
+    - "*.sql"
+
+# --- Alerts ---
+alerts:
+  min_level: "LOW"
+  cooldown_seconds: 30
+  output_dir: "logs/alerts"
+  log_format: "jsonl"
+  webhook_url: null
+  webhook_timeout: 10
+
+# --- Logging ---
+logging:
+  level: "INFO"
+  output_dir: "logs"
+  console_format: "%(asctime)s [%(levelname)s] %(name)s - %(message)s"

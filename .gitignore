@@ -58,3 +58,6 @@ captures/
 # Encrypted data
 *.encrypted
 data/
+
+# FIM baselines
+baselines/
