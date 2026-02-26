@@ -51,3 +51,10 @@ vector_store/
 
 # Mission captures
 captures/
+
+# Graph persistence
+*.pkl
+
+# Encrypted data
+*.encrypted
+data/

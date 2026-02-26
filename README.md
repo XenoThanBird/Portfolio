@@ -16,9 +16,10 @@ This repository showcases selected projects across AI/ML engineering, prompt des
   - [3. AI Governance & Enterprise Strategy](#3-ai-governance--enterprise-strategy)
   - [4. NLP Tools & Dashboards](#4-nlp-tools--dashboards)
   - [5. Wealth Building through AI Automation](#5-wealth-building-through-ai-automation)
-  - [6. Computer Vision & Anomaly Detection](#6-computer-vision--anomaly-detection) *(coming soon)*
-  - [7. Robotics & Autonomous Systems](#7-robotics--autonomous-systems) *(coming soon)*
-  - [8. Agentic AI & Enterprise Tooling](#8-agentic-ai--enterprise-tooling) *(coming soon)*
+  - [6. Computer Vision & Anomaly Detection](#6-computer-vision--anomaly-detection)
+  - [7. Robotics & Autonomous Systems](#7-robotics--autonomous-systems)
+  - [8. Agentic AI & Enterprise Tooling](#8-agentic-ai--enterprise-tooling)
+  - [9. Digital Twin Architecture](#9-digital-twin-architecture)
 - [Technical Skills](#technical-skills)
 - [Certifications](#certifications)
 - [Getting Started](#getting-started)
@@ -107,6 +108,19 @@ This repository showcases selected projects across AI/ML engineering, prompt des
 - [`rag_agent/`](08_agentic_ai/rag_agent/) – LangGraph RAG agent with FAISS, tool integration, and structured output
 - [`mcp_server/`](08_agentic_ai/mcp_server/) – MCP server template with tool registration and async client
 - [`multi_agent/`](08_agentic_ai/multi_agent/) – Multi-agent orchestrator with audit logging and API key management
+
+### 9. Digital Twin Architecture
+
+*Privacy-first multi-database digital twin framework with encrypted vector search, knowledge graph analysis, and metadata lineage tracking.*
+
+- [`09_digital_twin/README.md`](09_digital_twin/README.md) – Module overview
+- [`storage/vector_db.py`](09_digital_twin/storage/vector_db.py) – ChromaDB wrapper with encryption-aware add/query
+- [`storage/knowledge_graph.py`](09_digital_twin/storage/knowledge_graph.py) – NetworkX graph with centrality analysis and community detection
+- [`storage/metadata_db.py`](09_digital_twin/storage/metadata_db.py) – SQLAlchemy ORM for data lineage and sync tracking
+- [`storage/encryptor.py`](09_digital_twin/storage/encryptor.py) – Fernet (AES-256) encryption with sensitivity classifier
+- [`config.py`](09_digital_twin/config.py) – Pydantic BaseSettings configuration management
+- [`example.py`](09_digital_twin/example.py) – Five runnable examples demonstrating the full stack
+- [`architecture.md`](09_digital_twin/architecture.md) – Detailed architecture documentation
 
 ---
 
