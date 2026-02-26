@@ -1,0 +1,81 @@
+# AI Solution Lifecycle Platform - Scoring & Configuration
+# These weights and thresholds drive the value assessment engine
+
+value_weights:
+  financial_impact: 0.30
+  operational_excellence: 0.20
+  strategic_value: 0.15
+  risk_mitigation: 0.15
+  customer_impact: 0.10
+  innovation_index: 0.10
+
+readiness_weights:
+  data_maturity: 0.35
+  organizational_readiness: 0.35
+  technical_capability: 0.30
+
+risk_matrix:
+  probability:
+    Very Low: 0.1
+    Low: 0.3
+    Medium: 0.5
+    High: 0.7
+    Very High: 0.9
+  impact:
+    Minimal: 1
+    Low: 2
+    Medium: 3
+    High: 4
+    Critical: 5
+
+action_matrix:
+  "90-100":
+    classification: Transformational
+    action: Full deployment
+    investment: "$50M+"
+  "75-89":
+    classification: Strategic
+    action: Phased rollout
+    investment: "$20-50M"
+  "60-74":
+    classification: Tactical
+    action: Pilot program
+    investment: "$5-20M"
+  "45-59":
+    classification: Experimental
+    action: Limited POC
+    investment: "$1-5M"
+  "0-44":
+    classification: Monitor
+    action: Research only
+    investment: "<$1M"
+
+data_maturity_levels:
+  1:
+    name: Fragmented
+    ai_readiness: 0.20
+  2:
+    name: Connected
+    ai_readiness: 0.40
+  3:
+    name: Unified
+    ai_readiness: 0.60
+  4:
+    name: Intelligent
+    ai_readiness: 0.80
+  5:
+    name: Autonomous
+    ai_readiness: 0.95
+
+sla_defaults:
+  document_review_hours: 48
+  milestone_overdue_days: 3
+  risk_review_frequency_days: 7
+  alert_cooldown_minutes: 60
+
+document_types:
+  - brd
+  - trd
+  - functional
+  - design_schematic
+  - user_schematic

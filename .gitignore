@@ -72,3 +72,10 @@ honeypot_logs/
 
 # Report output
 reports/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Frontend build output
+dist/
