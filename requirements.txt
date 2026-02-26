@@ -45,3 +45,6 @@ pydantic-settings>=2.0.0
 watchdog>=3.0.0
 python-nmap>=1.6.0
 scapy>=2.5.0
+
+# ASR Lab (11)
+pydub
