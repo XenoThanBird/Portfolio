@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+sentence-transformers
+transformers
+streamlit
+matplotlib
+seaborn
+plotly
+fastapi
+python-dotenv
+postal
