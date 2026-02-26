@@ -22,6 +22,7 @@ This repository showcases selected projects across AI/ML engineering, prompt des
   - [9. Digital Twin Architecture](#9-digital-twin-architecture)
   - [10. AI Sentinel — Cybersecurity](#10-ai-sentinel--cybersecurity)
   - [11. ASR Lab — Speech Recognition Optimization](#11-asr-lab--speech-recognition-optimization)
+  - [12. AI Solution Lifecycle Platform](#12-ai-solution-lifecycle-platform)
 - [Technical Skills](#technical-skills)
 - [Certifications](#certifications)
 - [Getting Started](#getting-started)
@@ -146,6 +147,20 @@ This repository showcases selected projects across AI/ML engineering, prompt des
 - [`cosine_config_comparison.py`](11_asr_lab/cosine_config_comparison.py) – Cosine similarity comparison of config vectors
 - [`simulated_audio_tester.py`](11_asr_lab/simulated_audio_tester.py) – Synthetic noise + utterance signal generator
 - [`convert_yaml_json.py`](11_asr_lab/convert_yaml_json.py) – YAML/JSON config converter
+
+### 12. AI Solution Lifecycle Platform
+
+*Full-stack platform for evaluating, planning, and managing AI solution deployments — from value assessment through production monitoring. FastAPI + Vue 3 + PostgreSQL.*
+
+- [`12_ai_solution_lifecycle/README.md`](12_ai_solution_lifecycle/README.md) – Module overview
+- **AI Document Generation** — Auto-generate BRDs, TRDs, functional specs from natural language via pluggable LLM providers (OpenAI, Anthropic, Mock)
+- **Prompt Library & Playground** — Versioned prompt templates with variable extraction, execution metrics, and interactive testing
+- **Milestone Tracking** — Kanban-style project milestones with dependency graph
+- **RACI Matrix Builder** — Interactive Responsible/Accountable/Consulted/Informed matrix per deliverable
+- **SLA Monitoring & Alerts** — Define, measure, and track SLA compliance with rule-based alerting and cooldown deduplication
+- **Risk Register** — 5×5 probability × impact heat map with classification, mitigation tracking, and change request workflow
+- **AI Model Catalog** — Registry with LLM-powered use case recommendation engine
+- **Value Assessment Engine** — 6-dimension weighted scoring, readiness multiplier, ROI/NPV calculator, and implementation roadmap generation
 
 ---
 
