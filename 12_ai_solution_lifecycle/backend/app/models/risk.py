@@ -38,8 +38,8 @@ class Risk(UUIDMixin, TimestampMixin, Base):
     title = Column(String(200), nullable=False)
     description = Column(Text)
     category = Column(String(30))  # technical, business, regulatory, operational
-    probability = Column(String(10), nullable=False)  # Very Low, Low, Medium, High, Very High
-    impact = Column(String(10), nullable=False)  # Minimal, Low, Medium, High, Critical
+    probability = Column(String(20), nullable=False)  # Very Low, Low, Medium, High, Very High
+    impact = Column(String(20), nullable=False)  # Minimal, Low, Medium, High, Critical
     risk_score = Column(Float)  # Auto-calculated
     classification = Column(String(20))  # Critical, High, Medium, Low, Minimal
     mitigation_plan = Column(Text)

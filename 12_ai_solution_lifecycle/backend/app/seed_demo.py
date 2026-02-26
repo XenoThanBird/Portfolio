@@ -186,14 +186,14 @@ def seed():
         p1_rule1_id = uid()
         p1_alerts = [
             AlertRule(
-                id=p1_rule1_id, project_id=p1_id, alert_type="sla_breach", severity="critical",
+                id=p1_rule1_id, project_id=p1_id, name="API Response Time SLA", alert_type="sla_breach", severity="critical",
                 condition_config={"metric_type": "response_time", "threshold": 500},
-                is_active=True, notify_emails=["sarah.chen@demo.com"], cooldown_minutes=30,
+                notify_emails=["sarah.chen@demo.com"], cooldown_minutes=30,
             ),
             AlertRule(
-                id=uid(), project_id=p1_id, alert_type="milestone_delay", severity="warning",
+                id=uid(), project_id=p1_id, name="Milestone Overdue Check", alert_type="milestone_delay", severity="warning",
                 condition_config={"days_overdue": 3},
-                is_active=True, notify_emails=["sarah.chen@demo.com", "priya.patel@demo.com"], cooldown_minutes=60,
+                notify_emails=["sarah.chen@demo.com", "priya.patel@demo.com"], cooldown_minutes=60,
             ),
         ]
         db.add_all(p1_alerts)
@@ -354,14 +354,14 @@ def seed():
         p2_rule1_id = uid()
         p2_alerts = [
             AlertRule(
-                id=p2_rule1_id, project_id=p2_id, alert_type="risk_escalation", severity="critical",
+                id=p2_rule1_id, project_id=p2_id, name="Risk Score Escalation", alert_type="risk_escalation", severity="critical",
                 condition_config={"risk_score_threshold": 30},
-                is_active=True, notify_emails=["alex.wong@demo.com"], cooldown_minutes=60,
+                notify_emails=["alex.wong@demo.com"], cooldown_minutes=60,
             ),
             AlertRule(
-                id=uid(), project_id=p2_id, alert_type="sla_breach", severity="warning",
+                id=uid(), project_id=p2_id, name="Throughput SLA Breach", alert_type="sla_breach", severity="warning",
                 condition_config={"metric_type": "throughput", "threshold": 40000},
-                is_active=True, notify_emails=["fatima.alhassan@demo.com"], cooldown_minutes=30,
+                notify_emails=["fatima.alhassan@demo.com"], cooldown_minutes=30,
             ),
         ]
         db.add_all(p2_alerts)
@@ -496,9 +496,9 @@ def seed():
 
         # Alert Rules
         db.add(AlertRule(
-            id=uid(), project_id=p3_id, alert_type="doc_review_deadline", severity="warning",
+            id=uid(), project_id=p3_id, name="Document Review Deadline", alert_type="doc_review_deadline", severity="warning",
             condition_config={"days_until_due": 7, "doc_status": "draft"},
-            is_active=True, notify_emails=["maria.garcia@demo.com"], cooldown_minutes=120,
+            notify_emails=["maria.garcia@demo.com"], cooldown_minutes=120,
         ))
 
         # Risks
@@ -573,35 +573,35 @@ def seed():
                 template="Generate a comprehensive Business Requirements Document for the following project:\n\nProject: {{project_name}}\nIndustry: {{industry}}\nKey Objectives: {{objectives}}\nBudget Range: {{budget}}\nTimeline: {{timeline}}",
                 variables=["project_name", "industry", "objectives", "budget", "timeline"],
                 category="document_generation", tags=["brd", "requirements", "business"],
-                version=1, is_active=True, usage_count=24, avg_latency_ms=3200, success_rate=0.96,
+                version=1, usage_count=24, avg_latency_ms=3200, success_rate=0.96,
             ),
             PromptTemplate(
                 id=uid(), project_id=None, name="TRD Generator",
                 template="Generate a Technical Requirements Document for:\n\nProject: {{project_name}}\nArchitecture Style: {{architecture}}\nTech Stack: {{tech_stack}}\nScale Requirements: {{scale}}\nSecurity Requirements: {{security}}",
                 variables=["project_name", "architecture", "tech_stack", "scale", "security"],
                 category="document_generation", tags=["trd", "technical", "architecture"],
-                version=1, is_active=True, usage_count=18, avg_latency_ms=4100, success_rate=0.94,
+                version=1, usage_count=18, avg_latency_ms=4100, success_rate=0.94,
             ),
             PromptTemplate(
                 id=uid(), project_id=None, name="Risk Assessment Prompt",
                 template="Analyze the following project context and identify the top {{num_risks}} risks:\n\nProject: {{project_name}}\nDomain: {{domain}}\nCurrent Phase: {{phase}}\nKnown Constraints: {{constraints}}",
                 variables=["num_risks", "project_name", "domain", "phase", "constraints"],
                 category="analysis", tags=["risk", "assessment", "analysis"],
-                version=2, is_active=True, usage_count=12, avg_latency_ms=2800, success_rate=0.92,
+                version=2, usage_count=12, avg_latency_ms=2800, success_rate=0.92,
             ),
             PromptTemplate(
                 id=uid(), project_id=None, name="Executive Summary Writer",
                 template="Write a concise executive summary (max {{max_words}} words) for the following content:\n\n{{content}}\n\nAudience: {{audience}}\nTone: {{tone}}",
                 variables=["max_words", "content", "audience", "tone"],
                 category="writing", tags=["summary", "executive", "communication"],
-                version=1, is_active=True, usage_count=35, avg_latency_ms=1900, success_rate=0.98,
+                version=1, usage_count=35, avg_latency_ms=1900, success_rate=0.98,
             ),
             PromptTemplate(
                 id=uid(), project_id=p1_id, name="Customer Intent Classifier Prompt",
                 template="Classify the following customer message into one of these categories: {{categories}}\n\nCustomer Message: {{message}}\n\nReturn JSON with 'category', 'confidence', and 'suggested_response'.",
                 variables=["categories", "message"],
                 category="classification", tags=["intent", "customer-service", "nlp"],
-                version=3, is_active=True, usage_count=156, avg_latency_ms=850, success_rate=0.91,
+                version=3, usage_count=156, avg_latency_ms=850, success_rate=0.91,
             ),
         ]
         db.add_all(prompts)
@@ -613,19 +613,19 @@ def seed():
                 id=uid(), prompt_id=prompts[0].id, model="gpt-4o",
                 inputs={"project_name": "Acme Customer AI", "industry": "SaaS", "objectives": "Reduce AHT 40%", "budget": "$2-3M", "timeline": "6 months"},
                 output="# Business Requirements Document\n\n## Executive Summary\n...",
-                latency_ms=3150, tokens=2800, cost=0.014, user_rating=5,
+                latency_ms=3150, input_tokens=800, output_tokens=2000,cost=0.014, user_rating=5,
             ),
             PromptRun(
                 id=uid(), prompt_id=prompts[4].id, model="gpt-4o",
                 inputs={"categories": "billing, technical, account, general", "message": "My payment didn't go through and I was charged twice"},
                 output='{"category": "billing", "confidence": 0.95, "suggested_response": "I apologize for the billing issue..."}',
-                latency_ms=780, tokens=450, cost=0.002, user_rating=4,
+                latency_ms=780, input_tokens=150, output_tokens=300,cost=0.002, user_rating=4,
             ),
             PromptRun(
                 id=uid(), prompt_id=prompts[2].id, model="claude-3.5-sonnet",
                 inputs={"num_risks": "5", "project_name": "GreenTech PdM", "domain": "Energy/IoT", "phase": "Development", "constraints": "Remote sites, limited connectivity"},
                 output="## Top 5 Risks\n\n1. Sensor data reliability in extreme weather...",
-                latency_ms=2650, tokens=1800, cost=0.005, user_rating=5,
+                latency_ms=2650, input_tokens=600, output_tokens=1200,cost=0.005, user_rating=5,
             ),
         ])
 
