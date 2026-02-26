@@ -10,3 +10,26 @@ plotly
 fastapi
 python-dotenv
 postal
+
+# Computer Vision & Anomaly Detection (06)
+ultralytics
+opencv-python
+pillow
+pyyaml
+
+# Robotics (07)
+bosdyn-client
+bosdyn-mission
+jinja2
+
+# Agentic AI (08)
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.20
+langchain-openai>=0.0.5
+langgraph>=0.0.26
+faiss-cpu>=1.7.4
+pydantic>=2.0.0
+requests
+httpx>=0.25.0
+mcp>=1.0.0

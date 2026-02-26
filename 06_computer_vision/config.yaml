@@ -1,0 +1,61 @@
+# Vision Monitoring & Anomaly Detection Configuration
+# ---------------------------------------------------
+# Generic template — no proprietary data or facility-specific settings.
+
+# --- Vision Monitoring Pipeline ---
+detection:
+  model: "yolov8n.pt"             # YOLOv8 model (nano/small/medium/large)
+  confidence_threshold: 0.5
+  target_classes:                  # Empty = detect all classes
+    - "person"
+    - "car"
+    - "truck"
+  frame_skip: 5                   # Process every Nth frame
+
+scene_description:
+  enabled: false                  # Set true to enable BLIP-2 (requires GPU)
+  model: "Salesforce/blip2-opt-2.7b"
+  on_detection: true              # Describe scene only when objects detected
+
+# --- Anomaly Detection Pipeline ---
+anomaly_detection:
+  strategy: "zscore"              # threshold | zscore | isolation_forest
+  zscore_threshold: 2.5
+  static_thresholds:
+    temperature:
+      min: -20.0
+      max: 80.0
+    vibration:
+      min: 0.0
+      max: 15.0
+    pressure:
+      min: 90.0
+      max: 120.0
+  isolation_forest:
+    contamination: 0.03
+    n_estimators: 100
+    random_state: 42
+  window_size: 60                 # Rolling window for z-score (samples)
+
+# --- Data Storage ---
+storage:
+  database: "sensor_data.db"      # SQLite database path
+  retention_days: 90
+
+# --- Alert Pipeline ---
+alerts:
+  min_level: "WARNING"            # INFO | WARNING | CRITICAL
+  cooldown_seconds: 60
+  output_dir: "logs/alerts"
+
+# --- Metrics Export ---
+metrics:
+  enabled: true
+  format: "prometheus"            # prometheus | json
+  port: 9090
+  endpoint: "/metrics"
+
+# --- Logging ---
+logging:
+  level: "INFO"
+  output_dir: "logs"

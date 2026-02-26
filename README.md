@@ -82,19 +82,31 @@ This repository showcases selected projects across AI/ML engineering, prompt des
 
 *Multi-modal computer vision, time-series anomaly detection, and GPU-accelerated monitoring systems for critical infrastructure.*
 
-> Coming soon — examples from EV charging monitoring, battery anomaly detection (BADS), and facility safety models.
+- [`06_computer_vision/README.md`](06_computer_vision/README.md) – Module overview
+- [`vision_monitor.py`](06_computer_vision/vision_monitor.py) – YOLOv8 + BLIP-2 monitoring pipeline
+- [`alert_pipeline.py`](06_computer_vision/alert_pipeline.py) – Multi-level alert system with cooldowns
+- [`anomaly_detector.py`](06_computer_vision/anomaly_detector.py) – Time-series anomaly detection (threshold, z-score, isolation forest)
+- [`data_generator.py`](06_computer_vision/data_generator.py) – Synthetic sensor data generator
+- [`metrics_exporter.py`](06_computer_vision/metrics_exporter.py) – Prometheus-format exporter for Grafana
 
 ### 7. Robotics & Autonomous Systems
 
-*AI/ML integration for autonomous inspection robots in industrial environments.*
+*AI/ML integration for autonomous inspection robots in industrial environments using the public Boston Dynamics Spot SDK.*
 
-> Coming soon — work involving Boston Dynamics Spot, custom ML models for equipment inspection, and mission automation.
+- [`07_robotics/README.md`](07_robotics/README.md) – Module overview
+- [`mission_orchestrator.py`](07_robotics/mission_orchestrator.py) – Mission scheduling and execution loop
+- [`spot_client.py`](07_robotics/spot_client.py) – Lightweight Spot SDK wrapper
+- [`report_generator.py`](07_robotics/report_generator.py) – Post-mission Markdown + JSON reports
+- [`inspection_config.yaml`](07_robotics/inspection_config.yaml) – Configurable checkpoint definitions
 
 ### 8. Agentic AI & Enterprise Tooling
 
-*End-to-end agentic architectures for enterprise IT service management and AI portfolio governance.*
+*End-to-end agentic architectures for RAG, MCP servers, and multi-agent orchestration.*
 
-> Coming soon — AI value calculators, asset portfolio management assistants, and multi-layer agentic AI architecture designs.
+- [`08_agentic_ai/README.md`](08_agentic_ai/README.md) – Module overview
+- [`rag_agent/`](08_agentic_ai/rag_agent/) – LangGraph RAG agent with FAISS, tool integration, and structured output
+- [`mcp_server/`](08_agentic_ai/mcp_server/) – MCP server template with tool registration and async client
+- [`multi_agent/`](08_agentic_ai/multi_agent/) – Multi-agent orchestrator with audit logging and API key management
 
 ---
 

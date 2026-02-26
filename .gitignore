@@ -34,3 +34,20 @@ Thumbs.db
 # Office temp files
 ~$*.xlsx
 ~$*.pptx
+
+# SQLite databases
+*.db
+
+# Model weights
+*.pt
+*.bin
+*.onnx
+
+# Log output
+logs/
+
+# Vector store persistence
+vector_store/
+
+# Mission captures
+captures/
