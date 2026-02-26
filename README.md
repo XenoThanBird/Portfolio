@@ -21,6 +21,7 @@ This repository showcases selected projects across AI/ML engineering, prompt des
   - [8. Agentic AI & Enterprise Tooling](#8-agentic-ai--enterprise-tooling)
   - [9. Digital Twin Architecture](#9-digital-twin-architecture)
   - [10. AI Sentinel — Cybersecurity](#10-ai-sentinel--cybersecurity)
+  - [11. ASR Lab — Speech Recognition Optimization](#11-asr-lab--speech-recognition-optimization)
 - [Technical Skills](#technical-skills)
 - [Certifications](#certifications)
 - [Getting Started](#getting-started)
@@ -133,6 +134,18 @@ This repository showcases selected projects across AI/ML engineering, prompt des
 - **Threat Intelligence Honeypot** — Async service listeners with JSONL logging, threat analysis, and Streamlit dashboard
 - **Envelope Encryption File Vault** — AES-256-GCM envelope encryption with key rotation and HMAC integrity
 - **TLS Handshake Analyzer** — Certificate inspection, cipher validation, and compliance reporting
+
+### 11. ASR Lab — Speech Recognition Optimization
+
+*Automated testing and tuning of ASR configurations for IVR systems — solving Azure Speech hypersensitivity to background noise with batch testing, sensitivity optimization, and config comparison across Deepgram, Azure Speech, and Speechmatics engines.*
+
+- [`11_asr_lab/README.md`](11_asr_lab/README.md) – Module overview
+- [`batch_asr_tester.py`](11_asr_lab/batch_asr_tester.py) – Batch test ASR configs against background noise scenarios
+- [`sensitivity_optimizer.py`](11_asr_lab/sensitivity_optimizer.py) – Automatic sensitivity threshold calculation via RMS analysis
+- [`asr_config_tester_app.py`](11_asr_lab/asr_config_tester_app.py) – Streamlit drag-and-drop testing dashboard
+- [`cosine_config_comparison.py`](11_asr_lab/cosine_config_comparison.py) – Cosine similarity comparison of config vectors
+- [`simulated_audio_tester.py`](11_asr_lab/simulated_audio_tester.py) – Synthetic noise + utterance signal generator
+- [`convert_yaml_json.py`](11_asr_lab/convert_yaml_json.py) – YAML/JSON config converter
 
 ---
 
