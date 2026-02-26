@@ -1,0 +1,37 @@
+# RAG Agent Configuration
+# -----------------------
+# YAML defaults — override any value with environment variables (see config.py).
+
+embedding:
+  provider: "openai"
+  model_name: "text-embedding-3-large"
+  dimensions: 1536
+  batch_size: 100
+
+llm:
+  provider: "openai"                # openai | anthropic
+  model_name: "gpt-4o-mini"
+  temperature: 0.1
+
+vector_store:
+  provider: "faiss"
+  index_type: "flat"
+  dimension: 1536
+  similarity_metric: "cosine"       # cosine | l2
+  storage_path: "./vector_store"
+
+retrieval:
+  top_k: 5
+  similarity_threshold: 0.7
+  max_context_length: 4000
+  strategy: "vector"                # vector | hybrid
+
+tools:
+  wikipedia_enabled: true
+  arxiv_enabled: true
+  max_results_per_tool: 3
+
+observability:
+  log_level: "INFO"
+  log_dir: "logs"
+  enable_tracing: false

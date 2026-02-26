@@ -1,0 +1,57 @@
+# Inspection Mission Configuration
+# ---------------------------------
+# Generic template for autonomous robot inspection missions.
+# No proprietary facility names, coordinates, or employer-specific data.
+
+mission:
+  name: "Facility Perimeter Inspection"
+  description: "Automated patrol of configurable inspection checkpoints"
+  health_check_interval_sec: 30
+
+  checkpoints:
+    - id: "cp_01"
+      name: "Entry Gate"
+      actions:
+        - capture_image
+        - check_status
+      pass_criteria:
+        battery_min: 20
+
+    - id: "cp_02"
+      name: "Equipment Room A"
+      actions:
+        - capture_image
+        - check_status
+      pass_criteria:
+        battery_min: 15
+
+    - id: "cp_03"
+      name: "Corridor B — Fire Exit"
+      actions:
+        - capture_image
+      pass_criteria: {}
+
+    - id: "cp_04"
+      name: "Loading Dock"
+      actions:
+        - capture_image
+        - check_status
+      pass_criteria:
+        battery_min: 10
+
+    - id: "cp_05"
+      name: "Return to Dock"
+      actions:
+        - check_status
+      pass_criteria:
+        battery_min: 5
+
+# --- Output ---
+output:
+  mission_dir: "logs/missions"
+
+# --- Scheduling (future) ---
+schedule:
+  enabled: false
+  cron: "0 6 * * *"          # Daily at 6:00 AM
+  timezone: "America/New_York"
