@@ -20,6 +20,7 @@ This repository showcases selected projects across AI/ML engineering, prompt des
   - [7. Robotics & Autonomous Systems](#7-robotics--autonomous-systems)
   - [8. Agentic AI & Enterprise Tooling](#8-agentic-ai--enterprise-tooling)
   - [9. Digital Twin Architecture](#9-digital-twin-architecture)
+  - [10. AI Sentinel — Cybersecurity](#10-ai-sentinel--cybersecurity)
 - [Technical Skills](#technical-skills)
 - [Certifications](#certifications)
 - [Getting Started](#getting-started)
@@ -121,6 +122,16 @@ This repository showcases selected projects across AI/ML engineering, prompt des
 - [`config.py`](09_digital_twin/config.py) – Pydantic BaseSettings configuration management
 - [`example.py`](09_digital_twin/example.py) – Five runnable examples demonstrating the full stack
 - [`architecture.md`](09_digital_twin/architecture.md) – Detailed architecture documentation
+
+### 10. AI Sentinel — Cybersecurity
+
+*Automated File Integrity Monitor for critical infrastructure defense — real-time detection of unauthorized system changes.*
+
+- [`10_ai_sentinel_cybersecurity/README.md`](10_ai_sentinel_cybersecurity/README.md) – Module overview
+- [`sentinel.py`](10_ai_sentinel_cybersecurity/sentinel.py) – Core FIM engine with SHA-256 hashing and watch modes
+- [`alert_handler.py`](10_ai_sentinel_cybersecurity/alert_handler.py) – Multi-channel alert routing with severity classification
+- [`baseline_manager.py`](10_ai_sentinel_cybersecurity/baseline_manager.py) – Baseline versioning, comparison, and reporting
+- [`example.py`](10_ai_sentinel_cybersecurity/example.py) – Self-contained demo with simulated file changes
 
 ---
 
