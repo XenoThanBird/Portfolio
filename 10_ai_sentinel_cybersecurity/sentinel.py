@@ -37,6 +37,9 @@ try:
     WATCHDOG_AVAILABLE = True
 except ImportError:
     WATCHDOG_AVAILABLE = False
+    # Provide a stub so the class definition doesn't fail at import time
+    class FileSystemEventHandler:  # type: ignore
+        pass
 
 logger = logging.getLogger("sentinel")
 
