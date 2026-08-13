@@ -89,3 +89,7 @@ tasks/
 .mypy_cache/
 .pytest_cache/
 packages/*/out/
+
+# Synthetic fixed-seed catalog is deliberate, committed data
+!packages/value-registry/data/
+!packages/value-registry/data/**

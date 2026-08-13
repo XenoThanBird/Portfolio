@@ -1,0 +1,4485 @@
+catalog: synthetic-model-inventory
+disclaimer: All entries are fictional and generated with a fixed seed. No real vendors,
+  models, or organizations are described.
+seed: 42
+models:
+- id: MDL-0001
+  name: Aster-Rank-Small
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: proposed
+  review_cadence_days: 365
+  provenance:
+    vendor: Opaline Cognition
+    origin_risk_flag: true
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.9
+      evidence: documented
+      confidence: 0.8
+    data_privacy:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.63
+    operational:
+      value: 1.9
+      evidence: estimated
+      confidence: 0.63
+    geopolitical_origin:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.61
+    vendor_concentration:
+      value: 4.7
+      evidence: documented
+      confidence: 0.76
+- id: MDL-0002
+  name: Ember-Voice-Base
+  tier: 2
+  value_stream: workforce_enablement
+  approval_state: proposed
+  review_cadence_days: 60
+  provenance:
+    vendor: Quartzline Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 1.7
+      evidence: modeled
+      confidence: 0.55
+    data_privacy:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.71
+    operational:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.57
+    geopolitical_origin:
+      value: 4.1
+      evidence: modeled
+      confidence: 0.4
+    vendor_concentration:
+      value: 1.3
+      evidence: documented
+      confidence: 0.94
+- id: MDL-0003
+  name: Drift-Translate-Large
+  tier: 3
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Nightfall Labs
+    origin_risk_flag: true
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.9
+      evidence: documented
+      confidence: 0.88
+    data_privacy:
+      value: 1.4
+      evidence: modeled
+      confidence: 0.31
+    operational:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.63
+    geopolitical_origin:
+      value: 1.0
+      evidence: modeled
+      confidence: 0.56
+    vendor_concentration:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.66
+- id: MDL-0004
+  name: Garnet-Extract-Large
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: rejected
+  review_cadence_days: 90
+  provenance:
+    vendor: Quartzline Intelligence
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.4
+      evidence: modeled
+      confidence: 0.49
+    data_privacy:
+      value: 3.1
+      evidence: documented
+      confidence: 0.93
+    operational:
+      value: 4.5
+      evidence: documented
+      confidence: 0.82
+    geopolitical_origin:
+      value: 4.8
+      evidence: modeled
+      confidence: 0.56
+    vendor_concentration:
+      value: 4.1
+      evidence: documented
+      confidence: 0.86
+- id: MDL-0005
+  name: Isle-Extract-Base
+  tier: 2
+  value_stream: supply_chain
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Fernwood Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.8
+      evidence: documented
+      confidence: 0.82
+    data_privacy:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.57
+    operational:
+      value: 1.9
+      evidence: documented
+      confidence: 0.8
+    geopolitical_origin:
+      value: 3.7
+      evidence: modeled
+      confidence: 0.37
+    vendor_concentration:
+      value: 2.9
+      evidence: documented
+      confidence: 0.78
+- id: MDL-0006
+  name: Drift-Classify-Nano
+  tier: 2
+  value_stream: engineering
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Larkspur Logic
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.4
+      evidence: modeled
+      confidence: 0.4
+    data_privacy:
+      value: 2.1
+      evidence: documented
+      confidence: 0.79
+    operational:
+      value: 3.2
+      evidence: documented
+      confidence: 0.96
+    geopolitical_origin:
+      value: 4.7
+      evidence: documented
+      confidence: 0.98
+    vendor_concentration:
+      value: 2.6
+      evidence: modeled
+      confidence: 0.36
+- id: MDL-0007
+  name: Garnet-Chat-Large
+  tier: 1
+  value_stream: safety_compliance
+  approval_state: conditional
+  review_cadence_days: 90
+  provenance:
+    vendor: Bluewater Dynamics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.2
+      evidence: estimated
+      confidence: 0.56
+    data_privacy:
+      value: 2.9
+      evidence: estimated
+      confidence: 0.59
+    operational:
+      value: 4.4
+      evidence: modeled
+      confidence: 0.45
+    geopolitical_origin:
+      value: 4.8
+      evidence: documented
+      confidence: 0.77
+    vendor_concentration:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.51
+- id: MDL-0008
+  name: Flint-Rank-Small
+  tier: 2
+  value_stream: engineering
+  approval_state: in_review
+  review_cadence_days: 180
+  provenance:
+    vendor: Nightfall Networks
+    origin_risk_flag: true
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 5.0
+      evidence: documented
+      confidence: 0.92
+    data_privacy:
+      value: 4.7
+      evidence: modeled
+      confidence: 0.38
+    operational:
+      value: 4.3
+      evidence: modeled
+      confidence: 0.35
+    geopolitical_origin:
+      value: 1.0
+      evidence: estimated
+      confidence: 0.8
+    vendor_concentration:
+      value: 1.5
+      evidence: modeled
+      confidence: 0.58
+- id: MDL-0009
+  name: Lumen-Vision-Small
+  tier: 1
+  value_stream: supply_chain
+  approval_state: in_review
+  review_cadence_days: 90
+  provenance:
+    vendor: Quartzline Cognition
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.77
+    data_privacy:
+      value: 4.9
+      evidence: modeled
+      confidence: 0.34
+    operational:
+      value: 1.4
+      evidence: documented
+      confidence: 0.85
+    geopolitical_origin:
+      value: 2.5
+      evidence: modeled
+      confidence: 0.31
+    vendor_concentration:
+      value: 4.7
+      evidence: estimated
+      confidence: 0.51
+- id: MDL-0010
+  name: Drift-Forecast-Nano
+  tier: 2
+  value_stream: supply_chain
+  approval_state: rejected
+  review_cadence_days: 180
+  provenance:
+    vendor: Bluewater Labs
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 1.1
+      evidence: modeled
+      confidence: 0.56
+    data_privacy:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.78
+    operational:
+      value: 4.5
+      evidence: modeled
+      confidence: 0.33
+    geopolitical_origin:
+      value: 2.2
+      evidence: modeled
+      confidence: 0.44
+    vendor_concentration:
+      value: 2.3
+      evidence: modeled
+      confidence: 0.36
+- id: MDL-0011
+  name: Flint-Vision-Large
+  tier: 2
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Quartzline Intelligence
+    origin_risk_flag: true
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.51
+    data_privacy:
+      value: 4.6
+      evidence: modeled
+      confidence: 0.33
+    operational:
+      value: 4.2
+      evidence: documented
+      confidence: 0.76
+    geopolitical_origin:
+      value: 2.7
+      evidence: estimated
+      confidence: 0.72
+    vendor_concentration:
+      value: 1.5
+      evidence: modeled
+      confidence: 0.5
+- id: MDL-0012
+  name: Ember-Summarize-Base
+  tier: 2
+  value_stream: engineering
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Ironvale Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.3
+      evidence: estimated
+      confidence: 0.67
+    data_privacy:
+      value: 2.3
+      evidence: documented
+      confidence: 0.8
+    operational:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.65
+    geopolitical_origin:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.59
+    vendor_concentration:
+      value: 4.2
+      evidence: documented
+      confidence: 0.97
+- id: MDL-0013
+  name: Aster-Forecast-Large
+  tier: 2
+  value_stream: safety_compliance
+  approval_state: proposed
+  review_cadence_days: 180
+  provenance:
+    vendor: Fernwood Analytics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.0
+      evidence: estimated
+      confidence: 0.57
+    data_privacy:
+      value: 1.7
+      evidence: estimated
+      confidence: 0.53
+    operational:
+      value: 4.4
+      evidence: modeled
+      confidence: 0.37
+    geopolitical_origin:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.7
+    vendor_concentration:
+      value: 3.0
+      evidence: modeled
+      confidence: 0.52
+- id: MDL-0014
+  name: Cinder-Translate-Large
+  tier: 1
+  value_stream: field_operations
+  approval_state: conditional
+  review_cadence_days: 90
+  provenance:
+    vendor: Marrowbay Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.3
+      evidence: documented
+      confidence: 0.85
+    data_privacy:
+      value: 1.6
+      evidence: modeled
+      confidence: 0.41
+    operational:
+      value: 1.2
+      evidence: documented
+      confidence: 0.85
+    geopolitical_origin:
+      value: 1.1
+      evidence: modeled
+      confidence: 0.58
+    vendor_concentration:
+      value: 2.2
+      evidence: modeled
+      confidence: 0.58
+- id: MDL-0015
+  name: Isle-Vision-Ultra
+  tier: 3
+  value_stream: finance
+  approval_state: in_review
+  review_cadence_days: 180
+  provenance:
+    vendor: Kestrel Logic
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.5
+      evidence: estimated
+      confidence: 0.55
+    data_privacy:
+      value: 1.1
+      evidence: estimated
+      confidence: 0.62
+    operational:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.64
+    geopolitical_origin:
+      value: 4.0
+      evidence: documented
+      confidence: 0.83
+    vendor_concentration:
+      value: 3.2
+      evidence: modeled
+      confidence: 0.31
+- id: MDL-0016
+  name: Krait-Classify-Nano
+  tier: 3
+  value_stream: field_operations
+  approval_state: in_review
+  review_cadence_days: 30
+  provenance:
+    vendor: Juniper Foundry
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 4.1
+      evidence: estimated
+      confidence: 0.57
+    data_privacy:
+      value: 4.3
+      evidence: documented
+      confidence: 0.89
+    operational:
+      value: 3.7
+      evidence: modeled
+      confidence: 0.39
+    geopolitical_origin:
+      value: 3.8
+      evidence: modeled
+      confidence: 0.32
+    vendor_concentration:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.73
+- id: MDL-0017
+  name: Mesa-Chat-Base
+  tier: 2
+  value_stream: workforce_enablement
+  approval_state: in_review
+  review_cadence_days: 365
+  provenance:
+    vendor: Quartzline Systems
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 4.3
+      evidence: modeled
+      confidence: 0.49
+    data_privacy:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.72
+    operational:
+      value: 3.9
+      evidence: modeled
+      confidence: 0.43
+    geopolitical_origin:
+      value: 4.5
+      evidence: documented
+      confidence: 0.95
+    vendor_concentration:
+      value: 1.1
+      evidence: documented
+      confidence: 0.86
+- id: MDL-0018
+  name: Harbor-Forecast-Base
+  tier: 3
+  value_stream: engineering
+  approval_state: in_review
+  review_cadence_days: 365
+  provenance:
+    vendor: Juniper Dynamics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.57
+    data_privacy:
+      value: 1.1
+      evidence: documented
+      confidence: 0.86
+    operational:
+      value: 2.5
+      evidence: documented
+      confidence: 0.84
+    geopolitical_origin:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.8
+    vendor_concentration:
+      value: 2.3
+      evidence: estimated
+      confidence: 0.57
+- id: MDL-0019
+  name: Mesa-Extract-Small
+  tier: 1
+  value_stream: finance
+  approval_state: in_review
+  review_cadence_days: 365
+  provenance:
+    vendor: Pinegate Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.2
+      evidence: modeled
+      confidence: 0.41
+    data_privacy:
+      value: 2.2
+      evidence: estimated
+      confidence: 0.51
+    operational:
+      value: 1.0
+      evidence: modeled
+      confidence: 0.33
+    geopolitical_origin:
+      value: 2.0
+      evidence: documented
+      confidence: 0.86
+    vendor_concentration:
+      value: 3.3
+      evidence: modeled
+      confidence: 0.45
+- id: MDL-0020
+  name: Cinder-Extract-Ultra
+  tier: 4
+  value_stream: customer_operations
+  approval_state: retired
+  review_cadence_days: 30
+  provenance:
+    vendor: Opaline Analytics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.8
+      evidence: modeled
+      confidence: 0.44
+    data_privacy:
+      value: 3.4
+      evidence: modeled
+      confidence: 0.49
+    operational:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.56
+    geopolitical_origin:
+      value: 2.8
+      evidence: documented
+      confidence: 0.79
+    vendor_concentration:
+      value: 3.8
+      evidence: estimated
+      confidence: 0.57
+- id: MDL-0021
+  name: Krait-Forecast-Base
+  tier: 3
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Larkspur Cognition
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.2
+      evidence: documented
+      confidence: 0.81
+    data_privacy:
+      value: 2.9
+      evidence: estimated
+      confidence: 0.78
+    operational:
+      value: 2.8
+      evidence: documented
+      confidence: 0.84
+    geopolitical_origin:
+      value: 1.1
+      evidence: estimated
+      confidence: 0.72
+    vendor_concentration:
+      value: 1.1
+      evidence: documented
+      confidence: 0.91
+- id: MDL-0022
+  name: Juno-Chat-Small
+  tier: 2
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Opaline Intelligence
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.3
+      evidence: modeled
+      confidence: 0.42
+    data_privacy:
+      value: 3.7
+      evidence: documented
+      confidence: 0.79
+    operational:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.51
+    geopolitical_origin:
+      value: 1.0
+      evidence: documented
+      confidence: 0.93
+    vendor_concentration:
+      value: 3.5
+      evidence: modeled
+      confidence: 0.46
+- id: MDL-0023
+  name: Mesa-Chat-Small
+  tier: 1
+  value_stream: field_operations
+  approval_state: rejected
+  review_cadence_days: 180
+  provenance:
+    vendor: Larkspur Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.2
+      evidence: modeled
+      confidence: 0.35
+    data_privacy:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.8
+    operational:
+      value: 3.0
+      evidence: documented
+      confidence: 0.94
+    geopolitical_origin:
+      value: 3.2
+      evidence: documented
+      confidence: 0.94
+    vendor_concentration:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.65
+- id: MDL-0024
+  name: Flint-Vision-Base
+  tier: 3
+  value_stream: engineering
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Ironvale Logic
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.6
+    data_privacy:
+      value: 2.5
+      evidence: modeled
+      confidence: 0.37
+    operational:
+      value: 4.7
+      evidence: modeled
+      confidence: 0.44
+    geopolitical_origin:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.74
+    vendor_concentration:
+      value: 1.4
+      evidence: modeled
+      confidence: 0.4
+- id: MDL-0025
+  name: Isle-Translate-Nano
+  tier: 3
+  value_stream: finance
+  approval_state: conditional
+  review_cadence_days: 60
+  provenance:
+    vendor: Larkspur Cognition
+    origin_risk_flag: true
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 4.4
+      evidence: estimated
+      confidence: 0.69
+    data_privacy:
+      value: 4.0
+      evidence: modeled
+      confidence: 0.52
+    operational:
+      value: 4.7
+      evidence: modeled
+      confidence: 0.49
+    geopolitical_origin:
+      value: 3.5
+      evidence: modeled
+      confidence: 0.33
+    vendor_concentration:
+      value: 1.2
+      evidence: modeled
+      confidence: 0.57
+- id: MDL-0026
+  name: Flint-Reason-Large
+  tier: 1
+  value_stream: supply_chain
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Bluewater Intelligence
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.77
+    data_privacy:
+      value: 4.6
+      evidence: documented
+      confidence: 0.81
+    operational:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.63
+    geopolitical_origin:
+      value: 1.8
+      evidence: estimated
+      confidence: 0.58
+    vendor_concentration:
+      value: 3.3
+      evidence: estimated
+      confidence: 0.57
+- id: MDL-0027
+  name: Aster-Summarize-Base
+  tier: 1
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Pinegate Intelligence
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.8
+      evidence: estimated
+      confidence: 0.74
+    data_privacy:
+      value: 1.5
+      evidence: documented
+      confidence: 0.92
+    operational:
+      value: 1.1
+      evidence: documented
+      confidence: 0.89
+    geopolitical_origin:
+      value: 2.7
+      evidence: estimated
+      confidence: 0.77
+    vendor_concentration:
+      value: 3.0
+      evidence: documented
+      confidence: 0.93
+- id: MDL-0028
+  name: Ember-Translate-Base
+  tier: 3
+  value_stream: engineering
+  approval_state: conditional
+  review_cadence_days: 180
+  provenance:
+    vendor: Ironvale Dynamics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 4.2
+      evidence: modeled
+      confidence: 0.59
+    data_privacy:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.5
+    operational:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.68
+    geopolitical_origin:
+      value: 3.2
+      evidence: documented
+      confidence: 0.8
+    vendor_concentration:
+      value: 4.6
+      evidence: modeled
+      confidence: 0.55
+- id: MDL-0029
+  name: Basalt-Extract-Nano
+  tier: 4
+  value_stream: engineering
+  approval_state: retired
+  review_cadence_days: 30
+  provenance:
+    vendor: Ironvale Logic
+    origin_risk_flag: true
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.78
+    data_privacy:
+      value: 4.3
+      evidence: estimated
+      confidence: 0.77
+    operational:
+      value: 1.9
+      evidence: estimated
+      confidence: 0.58
+    geopolitical_origin:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.61
+    vendor_concentration:
+      value: 4.9
+      evidence: modeled
+      confidence: 0.38
+- id: MDL-0030
+  name: Krait-Forecast-Ultra
+  tier: 4
+  value_stream: customer_operations
+  approval_state: conditional
+  review_cadence_days: 60
+  provenance:
+    vendor: Larkspur Cognition
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 4.5
+      evidence: documented
+      confidence: 0.93
+    data_privacy:
+      value: 4.4
+      evidence: documented
+      confidence: 0.78
+    operational:
+      value: 3.6
+      evidence: documented
+      confidence: 0.78
+    geopolitical_origin:
+      value: 2.3
+      evidence: documented
+      confidence: 0.75
+    vendor_concentration:
+      value: 4.0
+      evidence: documented
+      confidence: 0.76
+- id: MDL-0031
+  name: Mesa-Reason-Ultra
+  tier: 2
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Larkspur Minds
+    origin_risk_flag: true
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.9
+      evidence: estimated
+      confidence: 0.79
+    data_privacy:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.65
+    operational:
+      value: 3.5
+      evidence: documented
+      confidence: 0.89
+    geopolitical_origin:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.8
+    vendor_concentration:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.71
+- id: MDL-0032
+  name: Garnet-Translate-Small
+  tier: 2
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Marrowbay Foundry
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.55
+    data_privacy:
+      value: 4.2
+      evidence: modeled
+      confidence: 0.52
+    operational:
+      value: 1.5
+      evidence: estimated
+      confidence: 0.67
+    geopolitical_origin:
+      value: 3.9
+      evidence: estimated
+      confidence: 0.73
+    vendor_concentration:
+      value: 1.9
+      evidence: modeled
+      confidence: 0.47
+- id: MDL-0033
+  name: Drift-Classify-Base
+  tier: 3
+  value_stream: engineering
+  approval_state: proposed
+  review_cadence_days: 90
+  provenance:
+    vendor: Opaline Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.1
+      evidence: modeled
+      confidence: 0.49
+    data_privacy:
+      value: 3.8
+      evidence: modeled
+      confidence: 0.35
+    operational:
+      value: 3.3
+      evidence: documented
+      confidence: 0.83
+    geopolitical_origin:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.69
+    vendor_concentration:
+      value: 3.9
+      evidence: documented
+      confidence: 0.85
+- id: MDL-0034
+  name: Basalt-Chat-Small
+  tier: 1
+  value_stream: supply_chain
+  approval_state: proposed
+  review_cadence_days: 30
+  provenance:
+    vendor: Nightfall Systems
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.56
+    data_privacy:
+      value: 2.2
+      evidence: documented
+      confidence: 0.91
+    operational:
+      value: 4.8
+      evidence: documented
+      confidence: 0.98
+    geopolitical_origin:
+      value: 3.0
+      evidence: estimated
+      confidence: 0.59
+    vendor_concentration:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.66
+- id: MDL-0035
+  name: Basalt-Summarize-Nano
+  tier: 2
+  value_stream: finance
+  approval_state: rejected
+  review_cadence_days: 90
+  provenance:
+    vendor: Opaline Labs
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.7
+      evidence: estimated
+      confidence: 0.62
+    data_privacy:
+      value: 2.7
+      evidence: modeled
+      confidence: 0.41
+    operational:
+      value: 4.5
+      evidence: documented
+      confidence: 0.85
+    geopolitical_origin:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.73
+    vendor_concentration:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.73
+- id: MDL-0036
+  name: Drift-Classify-Small
+  tier: 1
+  value_stream: field_operations
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Opaline Dynamics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.67
+    data_privacy:
+      value: 2.3
+      evidence: estimated
+      confidence: 0.6
+    operational:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.69
+    geopolitical_origin:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.64
+    vendor_concentration:
+      value: 3.4
+      evidence: documented
+      confidence: 0.9
+- id: MDL-0037
+  name: Juno-Vision-Nano
+  tier: 2
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Kestrel Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 4.9
+      evidence: modeled
+      confidence: 0.55
+    data_privacy:
+      value: 5.0
+      evidence: documented
+      confidence: 0.9
+    operational:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.61
+    geopolitical_origin:
+      value: 2.3
+      evidence: estimated
+      confidence: 0.52
+    vendor_concentration:
+      value: 4.4
+      evidence: documented
+      confidence: 0.88
+- id: MDL-0038
+  name: Flint-Classify-Ultra
+  tier: 2
+  value_stream: engineering
+  approval_state: in_review
+  review_cadence_days: 180
+  provenance:
+    vendor: Nightfall Dynamics
+    origin_risk_flag: true
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.7
+      evidence: documented
+      confidence: 0.84
+    data_privacy:
+      value: 3.6
+      evidence: modeled
+      confidence: 0.46
+    operational:
+      value: 1.9
+      evidence: estimated
+      confidence: 0.61
+    geopolitical_origin:
+      value: 1.3
+      evidence: modeled
+      confidence: 0.34
+    vendor_concentration:
+      value: 4.5
+      evidence: modeled
+      confidence: 0.55
+- id: MDL-0039
+  name: Mesa-Voice-Small
+  tier: 2
+  value_stream: field_operations
+  approval_state: proposed
+  review_cadence_days: 365
+  provenance:
+    vendor: Bluewater Labs
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.4
+      evidence: documented
+      confidence: 0.83
+    data_privacy:
+      value: 4.9
+      evidence: estimated
+      confidence: 0.57
+    operational:
+      value: 3.3
+      evidence: modeled
+      confidence: 0.5
+    geopolitical_origin:
+      value: 2.7
+      evidence: estimated
+      confidence: 0.73
+    vendor_concentration:
+      value: 1.2
+      evidence: documented
+      confidence: 0.8
+- id: MDL-0040
+  name: Isle-Classify-Ultra
+  tier: 3
+  value_stream: engineering
+  approval_state: proposed
+  review_cadence_days: 60
+  provenance:
+    vendor: Larkspur Labs
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 4.5
+      evidence: modeled
+      confidence: 0.55
+    data_privacy:
+      value: 2.5
+      evidence: modeled
+      confidence: 0.41
+    operational:
+      value: 3.9
+      evidence: documented
+      confidence: 0.8
+    geopolitical_origin:
+      value: 2.9
+      evidence: estimated
+      confidence: 0.51
+    vendor_concentration:
+      value: 4.6
+      evidence: modeled
+      confidence: 0.48
+- id: MDL-0041
+  name: Drift-Extract-Ultra
+  tier: 4
+  value_stream: supply_chain
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Bluewater Intelligence
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 1.4
+      evidence: documented
+      confidence: 0.85
+    data_privacy:
+      value: 2.0
+      evidence: modeled
+      confidence: 0.45
+    operational:
+      value: 2.7
+      evidence: documented
+      confidence: 0.85
+    geopolitical_origin:
+      value: 3.1
+      evidence: estimated
+      confidence: 0.79
+    vendor_concentration:
+      value: 2.9
+      evidence: estimated
+      confidence: 0.67
+- id: MDL-0042
+  name: Flint-Rank-Nano
+  tier: 2
+  value_stream: customer_operations
+  approval_state: in_review
+  review_cadence_days: 30
+  provenance:
+    vendor: Opaline Logic
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 4.3
+      evidence: documented
+      confidence: 0.83
+    data_privacy:
+      value: 1.5
+      evidence: estimated
+      confidence: 0.64
+    operational:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.51
+    geopolitical_origin:
+      value: 4.3
+      evidence: modeled
+      confidence: 0.42
+    vendor_concentration:
+      value: 4.4
+      evidence: estimated
+      confidence: 0.69
+- id: MDL-0043
+  name: Ember-Classify-Base
+  tier: 2
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Bluewater Labs
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.9
+      evidence: estimated
+      confidence: 0.66
+    data_privacy:
+      value: 2.3
+      evidence: documented
+      confidence: 0.89
+    operational:
+      value: 2.7
+      evidence: documented
+      confidence: 0.9
+    geopolitical_origin:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.51
+    vendor_concentration:
+      value: 1.3
+      evidence: modeled
+      confidence: 0.58
+- id: MDL-0044
+  name: Flint-Vision-Small
+  tier: 4
+  value_stream: field_operations
+  approval_state: conditional
+  review_cadence_days: 180
+  provenance:
+    vendor: Opaline Logic
+    origin_risk_flag: true
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.7
+      evidence: estimated
+      confidence: 0.67
+    data_privacy:
+      value: 3.1
+      evidence: modeled
+      confidence: 0.47
+    operational:
+      value: 3.9
+      evidence: estimated
+      confidence: 0.57
+    geopolitical_origin:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.67
+    vendor_concentration:
+      value: 3.0
+      evidence: estimated
+      confidence: 0.59
+- id: MDL-0045
+  name: Nimbus-Classify-Large
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Quartzline Dynamics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.2
+      evidence: estimated
+      confidence: 0.66
+    data_privacy:
+      value: 2.4
+      evidence: documented
+      confidence: 0.91
+    operational:
+      value: 3.0
+      evidence: documented
+      confidence: 0.98
+    geopolitical_origin:
+      value: 1.5
+      evidence: estimated
+      confidence: 0.64
+    vendor_concentration:
+      value: 2.9
+      evidence: modeled
+      confidence: 0.52
+- id: MDL-0046
+  name: Nimbus-Voice-Nano
+  tier: 1
+  value_stream: engineering
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Kestrel Logic
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 4.9
+      evidence: modeled
+      confidence: 0.35
+    data_privacy:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.52
+    operational:
+      value: 4.8
+      evidence: documented
+      confidence: 0.82
+    geopolitical_origin:
+      value: 3.2
+      evidence: modeled
+      confidence: 0.49
+    vendor_concentration:
+      value: 1.7
+      evidence: documented
+      confidence: 0.82
+- id: MDL-0047
+  name: Cinder-Voice-Ultra
+  tier: 2
+  value_stream: supply_chain
+  approval_state: proposed
+  review_cadence_days: 30
+  provenance:
+    vendor: Nightfall Dynamics
+    origin_risk_flag: true
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.1
+      evidence: documented
+      confidence: 0.8
+    data_privacy:
+      value: 2.0
+      evidence: modeled
+      confidence: 0.39
+    operational:
+      value: 1.6
+      evidence: modeled
+      confidence: 0.51
+    geopolitical_origin:
+      value: 4.4
+      evidence: estimated
+      confidence: 0.6
+    vendor_concentration:
+      value: 4.0
+      evidence: documented
+      confidence: 0.98
+- id: MDL-0048
+  name: Basalt-Reason-Small
+  tier: 2
+  value_stream: engineering
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Marrowbay Networks
+    origin_risk_flag: true
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 4.3
+      evidence: modeled
+      confidence: 0.57
+    data_privacy:
+      value: 5.0
+      evidence: modeled
+      confidence: 0.35
+    operational:
+      value: 2.6
+      evidence: estimated
+      confidence: 0.65
+    geopolitical_origin:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.68
+    vendor_concentration:
+      value: 1.0
+      evidence: estimated
+      confidence: 0.7
+- id: MDL-0049
+  name: Cinder-Rank-Base
+  tier: 3
+  value_stream: engineering
+  approval_state: proposed
+  review_cadence_days: 30
+  provenance:
+    vendor: Quartzline Logic
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.3
+      evidence: documented
+      confidence: 0.84
+    data_privacy:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.54
+    operational:
+      value: 3.4
+      evidence: modeled
+      confidence: 0.34
+    geopolitical_origin:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.51
+    vendor_concentration:
+      value: 4.7
+      evidence: estimated
+      confidence: 0.77
+- id: MDL-0050
+  name: Garnet-Voice-Base
+  tier: 2
+  value_stream: supply_chain
+  approval_state: conditional
+  review_cadence_days: 365
+  provenance:
+    vendor: Juniper Dynamics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.3
+      evidence: modeled
+      confidence: 0.59
+    data_privacy:
+      value: 2.9
+      evidence: modeled
+      confidence: 0.31
+    operational:
+      value: 3.9
+      evidence: modeled
+      confidence: 0.47
+    geopolitical_origin:
+      value: 4.4
+      evidence: estimated
+      confidence: 0.69
+    vendor_concentration:
+      value: 1.4
+      evidence: documented
+      confidence: 0.91
+- id: MDL-0051
+  name: Flint-Summarize-Small
+  tier: 2
+  value_stream: field_operations
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Bluewater Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 5.0
+      evidence: estimated
+      confidence: 0.66
+    data_privacy:
+      value: 3.1
+      evidence: estimated
+      confidence: 0.79
+    operational:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.76
+    geopolitical_origin:
+      value: 2.2
+      evidence: documented
+      confidence: 0.86
+    vendor_concentration:
+      value: 3.8
+      evidence: modeled
+      confidence: 0.51
+- id: MDL-0052
+  name: Harbor-Reason-Ultra
+  tier: 4
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Larkspur Labs
+    origin_risk_flag: true
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.6
+      evidence: modeled
+      confidence: 0.53
+    data_privacy:
+      value: 3.6
+      evidence: documented
+      confidence: 0.97
+    operational:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.75
+    geopolitical_origin:
+      value: 1.2
+      evidence: documented
+      confidence: 0.78
+    vendor_concentration:
+      value: 2.3
+      evidence: modeled
+      confidence: 0.33
+- id: MDL-0053
+  name: Krait-Extract-Nano
+  tier: 4
+  value_stream: field_operations
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Larkspur Cognition
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.3
+      evidence: documented
+      confidence: 0.9
+    data_privacy:
+      value: 1.7
+      evidence: estimated
+      confidence: 0.78
+    operational:
+      value: 2.6
+      evidence: modeled
+      confidence: 0.6
+    geopolitical_origin:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.79
+    vendor_concentration:
+      value: 2.1
+      evidence: documented
+      confidence: 0.88
+- id: MDL-0054
+  name: Isle-Translate-Small
+  tier: 3
+  value_stream: finance
+  approval_state: in_review
+  review_cadence_days: 30
+  provenance:
+    vendor: Opaline Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.3
+      evidence: documented
+      confidence: 0.79
+    data_privacy:
+      value: 4.3
+      evidence: estimated
+      confidence: 0.76
+    operational:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.7
+    geopolitical_origin:
+      value: 4.0
+      evidence: documented
+      confidence: 0.81
+    vendor_concentration:
+      value: 3.6
+      evidence: modeled
+      confidence: 0.3
+- id: MDL-0055
+  name: Aster-Classify-Large
+  tier: 2
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Pinegate Foundry
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.79
+    data_privacy:
+      value: 4.0
+      evidence: modeled
+      confidence: 0.57
+    operational:
+      value: 3.4
+      evidence: modeled
+      confidence: 0.5
+    geopolitical_origin:
+      value: 4.7
+      evidence: modeled
+      confidence: 0.41
+    vendor_concentration:
+      value: 3.1
+      evidence: documented
+      confidence: 0.94
+- id: MDL-0056
+  name: Nimbus-Vision-Large
+  tier: 1
+  value_stream: field_operations
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Fernwood Labs
+    origin_risk_flag: true
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.64
+    data_privacy:
+      value: 4.0
+      evidence: modeled
+      confidence: 0.54
+    operational:
+      value: 5.0
+      evidence: estimated
+      confidence: 0.6
+    geopolitical_origin:
+      value: 2.6
+      evidence: modeled
+      confidence: 0.31
+    vendor_concentration:
+      value: 2.7
+      evidence: estimated
+      confidence: 0.79
+- id: MDL-0057
+  name: Nimbus-Summarize-Large
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: conditional
+  review_cadence_days: 60
+  provenance:
+    vendor: Kestrel Minds
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 4.3
+      evidence: modeled
+      confidence: 0.59
+    data_privacy:
+      value: 2.7
+      evidence: estimated
+      confidence: 0.64
+    operational:
+      value: 1.8
+      evidence: estimated
+      confidence: 0.64
+    geopolitical_origin:
+      value: 3.5
+      evidence: modeled
+      confidence: 0.5
+    vendor_concentration:
+      value: 3.4
+      evidence: modeled
+      confidence: 0.32
+- id: MDL-0058
+  name: Krait-Chat-Small
+  tier: 3
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Larkspur Systems
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.3
+      evidence: documented
+      confidence: 0.98
+    data_privacy:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.75
+    operational:
+      value: 3.2
+      evidence: modeled
+      confidence: 0.38
+    geopolitical_origin:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.55
+    vendor_concentration:
+      value: 3.1
+      evidence: documented
+      confidence: 0.83
+- id: MDL-0059
+  name: Garnet-Extract-Base
+  tier: 2
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Pinegate Logic
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.7
+      evidence: documented
+      confidence: 0.86
+    data_privacy:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.58
+    operational:
+      value: 1.2
+      evidence: estimated
+      confidence: 0.66
+    geopolitical_origin:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.51
+    vendor_concentration:
+      value: 4.6
+      evidence: estimated
+      confidence: 0.57
+- id: MDL-0060
+  name: Drift-Forecast-Nano
+  tier: 3
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Ironvale Analytics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.1
+      evidence: modeled
+      confidence: 0.41
+    data_privacy:
+      value: 1.4
+      evidence: estimated
+      confidence: 0.65
+    operational:
+      value: 2.5
+      evidence: modeled
+      confidence: 0.57
+    geopolitical_origin:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.57
+    vendor_concentration:
+      value: 2.3
+      evidence: modeled
+      confidence: 0.35
+- id: MDL-0061
+  name: Nimbus-Forecast-Large
+  tier: 2
+  value_stream: workforce_enablement
+  approval_state: in_review
+  review_cadence_days: 180
+  provenance:
+    vendor: Kestrel Systems
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.61
+    data_privacy:
+      value: 3.1
+      evidence: documented
+      confidence: 0.95
+    operational:
+      value: 1.0
+      evidence: modeled
+      confidence: 0.31
+    geopolitical_origin:
+      value: 1.9
+      evidence: documented
+      confidence: 0.9
+    vendor_concentration:
+      value: 4.7
+      evidence: estimated
+      confidence: 0.69
+- id: MDL-0062
+  name: Aster-Chat-Ultra
+  tier: 2
+  value_stream: customer_operations
+  approval_state: proposed
+  review_cadence_days: 90
+  provenance:
+    vendor: Opaline Minds
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.4
+      evidence: modeled
+      confidence: 0.57
+    data_privacy:
+      value: 4.3
+      evidence: documented
+      confidence: 0.78
+    operational:
+      value: 3.3
+      evidence: documented
+      confidence: 0.84
+    geopolitical_origin:
+      value: 3.6
+      evidence: modeled
+      confidence: 0.55
+    vendor_concentration:
+      value: 3.2
+      evidence: modeled
+      confidence: 0.41
+- id: MDL-0063
+  name: Lumen-Extract-Nano
+  tier: 2
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Bluewater Analytics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.8
+      evidence: modeled
+      confidence: 0.57
+    data_privacy:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.78
+    operational:
+      value: 1.1
+      evidence: estimated
+      confidence: 0.55
+    geopolitical_origin:
+      value: 4.7
+      evidence: documented
+      confidence: 0.78
+    vendor_concentration:
+      value: 3.7
+      evidence: documented
+      confidence: 0.88
+- id: MDL-0064
+  name: Garnet-Extract-Nano
+  tier: 2
+  value_stream: engineering
+  approval_state: proposed
+  review_cadence_days: 180
+  provenance:
+    vendor: Marrowbay Labs
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.1
+      evidence: estimated
+      confidence: 0.62
+    data_privacy:
+      value: 4.8
+      evidence: documented
+      confidence: 0.98
+    operational:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.7
+    geopolitical_origin:
+      value: 3.8
+      evidence: modeled
+      confidence: 0.35
+    vendor_concentration:
+      value: 1.0
+      evidence: estimated
+      confidence: 0.6
+- id: MDL-0065
+  name: Flint-Rank-Nano
+  tier: 1
+  value_stream: field_operations
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Ironvale Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 4.5
+      evidence: documented
+      confidence: 0.88
+    data_privacy:
+      value: 3.2
+      evidence: documented
+      confidence: 0.85
+    operational:
+      value: 1.7
+      evidence: modeled
+      confidence: 0.51
+    geopolitical_origin:
+      value: 2.1
+      evidence: documented
+      confidence: 0.81
+    vendor_concentration:
+      value: 3.9
+      evidence: documented
+      confidence: 0.93
+- id: MDL-0066
+  name: Juno-Forecast-Large
+  tier: 1
+  value_stream: engineering
+  approval_state: proposed
+  review_cadence_days: 180
+  provenance:
+    vendor: Larkspur Systems
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.75
+    data_privacy:
+      value: 1.7
+      evidence: documented
+      confidence: 0.89
+    operational:
+      value: 4.9
+      evidence: estimated
+      confidence: 0.72
+    geopolitical_origin:
+      value: 2.5
+      evidence: modeled
+      confidence: 0.54
+    vendor_concentration:
+      value: 4.1
+      evidence: modeled
+      confidence: 0.35
+- id: MDL-0067
+  name: Lumen-Forecast-Large
+  tier: 3
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Bluewater Minds
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.3
+      evidence: documented
+      confidence: 0.9
+    data_privacy:
+      value: 4.7
+      evidence: modeled
+      confidence: 0.45
+    operational:
+      value: 4.6
+      evidence: estimated
+      confidence: 0.74
+    geopolitical_origin:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.53
+    vendor_concentration:
+      value: 3.7
+      evidence: estimated
+      confidence: 0.51
+- id: MDL-0068
+  name: Mesa-Summarize-Nano
+  tier: 1
+  value_stream: engineering
+  approval_state: in_review
+  review_cadence_days: 365
+  provenance:
+    vendor: Kestrel Labs
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.0
+      evidence: estimated
+      confidence: 0.73
+    data_privacy:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.53
+    operational:
+      value: 2.8
+      evidence: documented
+      confidence: 0.97
+    geopolitical_origin:
+      value: 3.8
+      evidence: documented
+      confidence: 0.86
+    vendor_concentration:
+      value: 4.4
+      evidence: documented
+      confidence: 0.82
+- id: MDL-0069
+  name: Krait-Extract-Small
+  tier: 2
+  value_stream: supply_chain
+  approval_state: proposed
+  review_cadence_days: 365
+  provenance:
+    vendor: Opaline Cognition
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.9
+      evidence: estimated
+      confidence: 0.7
+    data_privacy:
+      value: 1.9
+      evidence: modeled
+      confidence: 0.3
+    operational:
+      value: 4.2
+      evidence: documented
+      confidence: 0.91
+    geopolitical_origin:
+      value: 3.7
+      evidence: estimated
+      confidence: 0.56
+    vendor_concentration:
+      value: 2.6
+      evidence: estimated
+      confidence: 0.59
+- id: MDL-0070
+  name: Flint-Translate-Ultra
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Quartzline Labs
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.8
+      evidence: documented
+      confidence: 0.78
+    data_privacy:
+      value: 1.7
+      evidence: estimated
+      confidence: 0.54
+    operational:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.69
+    geopolitical_origin:
+      value: 1.2
+      evidence: estimated
+      confidence: 0.59
+    vendor_concentration:
+      value: 4.9
+      evidence: estimated
+      confidence: 0.54
+- id: MDL-0071
+  name: Garnet-Translate-Large
+  tier: 3
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Marrowbay Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 2.8
+      evidence: documented
+      confidence: 0.81
+    data_privacy:
+      value: 1.5
+      evidence: estimated
+      confidence: 0.66
+    operational:
+      value: 1.2
+      evidence: estimated
+      confidence: 0.61
+    geopolitical_origin:
+      value: 4.3
+      evidence: estimated
+      confidence: 0.8
+    vendor_concentration:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.8
+- id: MDL-0072
+  name: Nimbus-Classify-Small
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Quartzline Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.2
+      evidence: documented
+      confidence: 0.78
+    data_privacy:
+      value: 3.8
+      evidence: estimated
+      confidence: 0.66
+    operational:
+      value: 3.7
+      evidence: documented
+      confidence: 0.81
+    geopolitical_origin:
+      value: 5.0
+      evidence: documented
+      confidence: 0.97
+    vendor_concentration:
+      value: 3.8
+      evidence: modeled
+      confidence: 0.37
+- id: MDL-0073
+  name: Harbor-Extract-Ultra
+  tier: 2
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Halcyon Logic
+    origin_risk_flag: true
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.71
+    data_privacy:
+      value: 1.4
+      evidence: estimated
+      confidence: 0.76
+    operational:
+      value: 4.2
+      evidence: modeled
+      confidence: 0.56
+    geopolitical_origin:
+      value: 2.3
+      evidence: estimated
+      confidence: 0.75
+    vendor_concentration:
+      value: 4.2
+      evidence: documented
+      confidence: 0.88
+- id: MDL-0074
+  name: Aster-Classify-Large
+  tier: 1
+  value_stream: safety_compliance
+  approval_state: proposed
+  review_cadence_days: 180
+  provenance:
+    vendor: Opaline Analytics
+    origin_risk_flag: true
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 4.5
+      evidence: modeled
+      confidence: 0.39
+    data_privacy:
+      value: 3.7
+      evidence: modeled
+      confidence: 0.32
+    operational:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.69
+    geopolitical_origin:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.53
+    vendor_concentration:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.63
+- id: MDL-0075
+  name: Lumen-Extract-Large
+  tier: 1
+  value_stream: finance
+  approval_state: proposed
+  review_cadence_days: 30
+  provenance:
+    vendor: Quartzline Logic
+    origin_risk_flag: true
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 5.0
+      evidence: documented
+      confidence: 0.93
+    data_privacy:
+      value: 2.8
+      evidence: documented
+      confidence: 0.87
+    operational:
+      value: 3.7
+      evidence: estimated
+      confidence: 0.55
+    geopolitical_origin:
+      value: 3.4
+      evidence: modeled
+      confidence: 0.53
+    vendor_concentration:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.59
+- id: MDL-0076
+  name: Isle-Voice-Ultra
+  tier: 3
+  value_stream: engineering
+  approval_state: conditional
+  review_cadence_days: 30
+  provenance:
+    vendor: Quartzline Foundry
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.6
+      evidence: documented
+      confidence: 0.89
+    data_privacy:
+      value: 2.0
+      evidence: modeled
+      confidence: 0.42
+    operational:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.77
+    geopolitical_origin:
+      value: 3.2
+      evidence: documented
+      confidence: 0.84
+    vendor_concentration:
+      value: 3.3
+      evidence: documented
+      confidence: 0.86
+- id: MDL-0077
+  name: Drift-Chat-Nano
+  tier: 4
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Bluewater Intelligence
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.2
+      evidence: documented
+      confidence: 0.87
+    data_privacy:
+      value: 2.6
+      evidence: estimated
+      confidence: 0.74
+    operational:
+      value: 3.8
+      evidence: estimated
+      confidence: 0.7
+    geopolitical_origin:
+      value: 2.7
+      evidence: estimated
+      confidence: 0.52
+    vendor_concentration:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.59
+- id: MDL-0078
+  name: Lumen-Extract-Nano
+  tier: 1
+  value_stream: engineering
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Quartzline Analytics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.7
+      evidence: estimated
+      confidence: 0.77
+    data_privacy:
+      value: 3.0
+      evidence: estimated
+      confidence: 0.79
+    operational:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.76
+    geopolitical_origin:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.7
+    vendor_concentration:
+      value: 2.5
+      evidence: documented
+      confidence: 0.95
+- id: MDL-0079
+  name: Nimbus-Chat-Ultra
+  tier: 3
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Fernwood Dynamics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.7
+      evidence: documented
+      confidence: 0.94
+    data_privacy:
+      value: 2.6
+      evidence: documented
+      confidence: 0.8
+    operational:
+      value: 1.3
+      evidence: modeled
+      confidence: 0.39
+    geopolitical_origin:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.59
+    vendor_concentration:
+      value: 4.1
+      evidence: documented
+      confidence: 0.83
+- id: MDL-0080
+  name: Mesa-Forecast-Small
+  tier: 1
+  value_stream: finance
+  approval_state: proposed
+  review_cadence_days: 365
+  provenance:
+    vendor: Pinegate Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.9
+      evidence: modeled
+      confidence: 0.55
+    data_privacy:
+      value: 1.2
+      evidence: documented
+      confidence: 0.87
+    operational:
+      value: 4.6
+      evidence: modeled
+      confidence: 0.58
+    geopolitical_origin:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.61
+    vendor_concentration:
+      value: 3.3
+      evidence: documented
+      confidence: 0.78
+- id: MDL-0081
+  name: Drift-Rank-Base
+  tier: 3
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Kestrel Dynamics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 1.4
+      evidence: modeled
+      confidence: 0.33
+    data_privacy:
+      value: 4.1
+      evidence: estimated
+      confidence: 0.54
+    operational:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.76
+    geopolitical_origin:
+      value: 4.4
+      evidence: documented
+      confidence: 0.91
+    vendor_concentration:
+      value: 1.2
+      evidence: documented
+      confidence: 0.91
+- id: MDL-0082
+  name: Nimbus-Extract-Nano
+  tier: 4
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Ironvale Intelligence
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 1.8
+      evidence: documented
+      confidence: 0.76
+    data_privacy:
+      value: 3.3
+      evidence: estimated
+      confidence: 0.78
+    operational:
+      value: 3.6
+      evidence: modeled
+      confidence: 0.36
+    geopolitical_origin:
+      value: 1.5
+      evidence: modeled
+      confidence: 0.54
+    vendor_concentration:
+      value: 3.9
+      evidence: modeled
+      confidence: 0.43
+- id: MDL-0083
+  name: Garnet-Summarize-Small
+  tier: 2
+  value_stream: field_operations
+  approval_state: in_review
+  review_cadence_days: 180
+  provenance:
+    vendor: Larkspur Analytics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.9
+      evidence: estimated
+      confidence: 0.65
+    data_privacy:
+      value: 4.2
+      evidence: documented
+      confidence: 0.84
+    operational:
+      value: 2.5
+      evidence: documented
+      confidence: 0.98
+    geopolitical_origin:
+      value: 3.3
+      evidence: estimated
+      confidence: 0.73
+    vendor_concentration:
+      value: 1.1
+      evidence: documented
+      confidence: 0.81
+- id: MDL-0084
+  name: Mesa-Translate-Ultra
+  tier: 2
+  value_stream: supply_chain
+  approval_state: retired
+  review_cadence_days: 60
+  provenance:
+    vendor: Ironvale Analytics
+    origin_risk_flag: true
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.72
+    data_privacy:
+      value: 5.0
+      evidence: estimated
+      confidence: 0.62
+    operational:
+      value: 2.4
+      evidence: documented
+      confidence: 0.8
+    geopolitical_origin:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.61
+    vendor_concentration:
+      value: 3.2
+      evidence: modeled
+      confidence: 0.59
+- id: MDL-0085
+  name: Aster-Classify-Nano
+  tier: 1
+  value_stream: field_operations
+  approval_state: proposed
+  review_cadence_days: 180
+  provenance:
+    vendor: Fernwood Minds
+    origin_risk_flag: true
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 4.5
+      evidence: modeled
+      confidence: 0.54
+    data_privacy:
+      value: 1.4
+      evidence: documented
+      confidence: 0.78
+    operational:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.52
+    geopolitical_origin:
+      value: 3.9
+      evidence: estimated
+      confidence: 0.6
+    vendor_concentration:
+      value: 3.8
+      evidence: estimated
+      confidence: 0.65
+- id: MDL-0086
+  name: Mesa-Reason-Small
+  tier: 2
+  value_stream: safety_compliance
+  approval_state: proposed
+  review_cadence_days: 90
+  provenance:
+    vendor: Marrowbay Systems
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 5.0
+      evidence: estimated
+      confidence: 0.78
+    data_privacy:
+      value: 4.9
+      evidence: modeled
+      confidence: 0.58
+    operational:
+      value: 4.0
+      evidence: documented
+      confidence: 0.88
+    geopolitical_origin:
+      value: 1.4
+      evidence: documented
+      confidence: 0.98
+    vendor_concentration:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.77
+- id: MDL-0087
+  name: Flint-Rank-Nano
+  tier: 3
+  value_stream: customer_operations
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Halcyon Cognition
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 4.2
+      evidence: modeled
+      confidence: 0.55
+    data_privacy:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.57
+    operational:
+      value: 2.4
+      evidence: documented
+      confidence: 0.75
+    geopolitical_origin:
+      value: 4.9
+      evidence: modeled
+      confidence: 0.58
+    vendor_concentration:
+      value: 2.7
+      evidence: estimated
+      confidence: 0.77
+- id: MDL-0088
+  name: Juno-Summarize-Small
+  tier: 1
+  value_stream: engineering
+  approval_state: in_review
+  review_cadence_days: 60
+  provenance:
+    vendor: Opaline Dynamics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.6
+      evidence: estimated
+      confidence: 0.59
+    data_privacy:
+      value: 1.4
+      evidence: estimated
+      confidence: 0.52
+    operational:
+      value: 1.8
+      evidence: modeled
+      confidence: 0.33
+    geopolitical_origin:
+      value: 4.1
+      evidence: estimated
+      confidence: 0.64
+    vendor_concentration:
+      value: 2.6
+      evidence: estimated
+      confidence: 0.58
+- id: MDL-0089
+  name: Flint-Extract-Large
+  tier: 1
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Juniper Logic
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.53
+    data_privacy:
+      value: 4.3
+      evidence: modeled
+      confidence: 0.55
+    operational:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.76
+    geopolitical_origin:
+      value: 3.0
+      evidence: estimated
+      confidence: 0.77
+    vendor_concentration:
+      value: 1.5
+      evidence: modeled
+      confidence: 0.49
+- id: MDL-0090
+  name: Cinder-Forecast-Small
+  tier: 1
+  value_stream: finance
+  approval_state: proposed
+  review_cadence_days: 180
+  provenance:
+    vendor: Larkspur Dynamics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 1.3
+      evidence: modeled
+      confidence: 0.57
+    data_privacy:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.6
+    operational:
+      value: 2.7
+      evidence: modeled
+      confidence: 0.46
+    geopolitical_origin:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.68
+    vendor_concentration:
+      value: 3.1
+      evidence: modeled
+      confidence: 0.39
+- id: MDL-0091
+  name: Ember-Summarize-Large
+  tier: 2
+  value_stream: finance
+  approval_state: proposed
+  review_cadence_days: 90
+  provenance:
+    vendor: Juniper Logic
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.77
+    data_privacy:
+      value: 4.3
+      evidence: estimated
+      confidence: 0.77
+    operational:
+      value: 1.4
+      evidence: documented
+      confidence: 0.81
+    geopolitical_origin:
+      value: 4.3
+      evidence: modeled
+      confidence: 0.43
+    vendor_concentration:
+      value: 1.8
+      evidence: documented
+      confidence: 0.85
+- id: MDL-0092
+  name: Mesa-Vision-Base
+  tier: 3
+  value_stream: supply_chain
+  approval_state: conditional
+  review_cadence_days: 30
+  provenance:
+    vendor: Kestrel Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 4.5
+      evidence: modeled
+      confidence: 0.35
+    data_privacy:
+      value: 2.4
+      evidence: documented
+      confidence: 0.76
+    operational:
+      value: 4.7
+      evidence: documented
+      confidence: 0.83
+    geopolitical_origin:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.65
+    vendor_concentration:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.6
+- id: MDL-0093
+  name: Ember-Chat-Large
+  tier: 1
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Pinegate Cognition
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.9
+      evidence: documented
+      confidence: 0.9
+    data_privacy:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.54
+    operational:
+      value: 3.8
+      evidence: documented
+      confidence: 0.89
+    geopolitical_origin:
+      value: 1.9
+      evidence: documented
+      confidence: 0.96
+    vendor_concentration:
+      value: 1.0
+      evidence: documented
+      confidence: 0.87
+- id: MDL-0094
+  name: Isle-Voice-Ultra
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: proposed
+  review_cadence_days: 30
+  provenance:
+    vendor: Opaline Labs
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.2
+      evidence: modeled
+      confidence: 0.57
+    data_privacy:
+      value: 4.2
+      evidence: documented
+      confidence: 0.93
+    operational:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.7
+    geopolitical_origin:
+      value: 1.1
+      evidence: modeled
+      confidence: 0.42
+    vendor_concentration:
+      value: 1.9
+      evidence: estimated
+      confidence: 0.56
+- id: MDL-0095
+  name: Krait-Reason-Ultra
+  tier: 2
+  value_stream: field_operations
+  approval_state: conditional
+  review_cadence_days: 365
+  provenance:
+    vendor: Marrowbay Minds
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.67
+    data_privacy:
+      value: 4.5
+      evidence: modeled
+      confidence: 0.37
+    operational:
+      value: 2.9
+      evidence: estimated
+      confidence: 0.61
+    geopolitical_origin:
+      value: 3.5
+      evidence: documented
+      confidence: 0.76
+    vendor_concentration:
+      value: 3.1
+      evidence: estimated
+      confidence: 0.54
+- id: MDL-0096
+  name: Nimbus-Extract-Small
+  tier: 4
+  value_stream: engineering
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Kestrel Analytics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.5
+      evidence: documented
+      confidence: 0.91
+    data_privacy:
+      value: 4.0
+      evidence: documented
+      confidence: 0.9
+    operational:
+      value: 1.4
+      evidence: documented
+      confidence: 0.93
+    geopolitical_origin:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.62
+    vendor_concentration:
+      value: 2.3
+      evidence: documented
+      confidence: 0.8
+- id: MDL-0097
+  name: Aster-Chat-Small
+  tier: 1
+  value_stream: engineering
+  approval_state: in_review
+  review_cadence_days: 30
+  provenance:
+    vendor: Marrowbay Foundry
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.1
+      evidence: documented
+      confidence: 0.76
+    data_privacy:
+      value: 5.0
+      evidence: estimated
+      confidence: 0.71
+    operational:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.55
+    geopolitical_origin:
+      value: 1.1
+      evidence: documented
+      confidence: 0.8
+    vendor_concentration:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.71
+- id: MDL-0098
+  name: Mesa-Vision-Ultra
+  tier: 1
+  value_stream: customer_operations
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Opaline Intelligence
+    origin_risk_flag: true
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.8
+      evidence: estimated
+      confidence: 0.64
+    data_privacy:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.7
+    operational:
+      value: 3.9
+      evidence: estimated
+      confidence: 0.75
+    geopolitical_origin:
+      value: 1.8
+      evidence: documented
+      confidence: 0.78
+    vendor_concentration:
+      value: 2.2
+      evidence: documented
+      confidence: 0.87
+- id: MDL-0099
+  name: Harbor-Forecast-Large
+  tier: 2
+  value_stream: customer_operations
+  approval_state: proposed
+  review_cadence_days: 30
+  provenance:
+    vendor: Bluewater Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.9
+      evidence: estimated
+      confidence: 0.73
+    data_privacy:
+      value: 2.1
+      evidence: modeled
+      confidence: 0.59
+    operational:
+      value: 2.4
+      evidence: documented
+      confidence: 0.94
+    geopolitical_origin:
+      value: 4.6
+      evidence: estimated
+      confidence: 0.53
+    vendor_concentration:
+      value: 4.6
+      evidence: documented
+      confidence: 0.78
+- id: MDL-0100
+  name: Lumen-Classify-Base
+  tier: 3
+  value_stream: field_operations
+  approval_state: proposed
+  review_cadence_days: 180
+  provenance:
+    vendor: Nightfall Intelligence
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.7
+      evidence: estimated
+      confidence: 0.63
+    data_privacy:
+      value: 1.4
+      evidence: documented
+      confidence: 0.92
+    operational:
+      value: 3.4
+      evidence: modeled
+      confidence: 0.43
+    geopolitical_origin:
+      value: 3.9
+      evidence: modeled
+      confidence: 0.56
+    vendor_concentration:
+      value: 2.8
+      evidence: modeled
+      confidence: 0.57
+- id: MDL-0101
+  name: Krait-Reason-Nano
+  tier: 3
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Quartzline Intelligence
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.7
+      evidence: modeled
+      confidence: 0.49
+    data_privacy:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.7
+    operational:
+      value: 4.7
+      evidence: modeled
+      confidence: 0.3
+    geopolitical_origin:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.65
+    vendor_concentration:
+      value: 3.2
+      evidence: documented
+      confidence: 0.83
+- id: MDL-0102
+  name: Nimbus-Forecast-Nano
+  tier: 2
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Kestrel Logic
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 1.1
+      evidence: modeled
+      confidence: 0.42
+    data_privacy:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.74
+    operational:
+      value: 2.4
+      evidence: modeled
+      confidence: 0.44
+    geopolitical_origin:
+      value: 4.1
+      evidence: modeled
+      confidence: 0.4
+    vendor_concentration:
+      value: 1.4
+      evidence: estimated
+      confidence: 0.61
+- id: MDL-0103
+  name: Aster-Reason-Base
+  tier: 3
+  value_stream: safety_compliance
+  approval_state: in_review
+  review_cadence_days: 365
+  provenance:
+    vendor: Opaline Foundry
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.72
+    data_privacy:
+      value: 4.3
+      evidence: documented
+      confidence: 0.78
+    operational:
+      value: 3.5
+      evidence: documented
+      confidence: 0.83
+    geopolitical_origin:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.77
+    vendor_concentration:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.5
+- id: MDL-0104
+  name: Harbor-Vision-Small
+  tier: 2
+  value_stream: field_operations
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Kestrel Systems
+    origin_risk_flag: true
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.7
+      evidence: modeled
+      confidence: 0.59
+    data_privacy:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.79
+    operational:
+      value: 2.2
+      evidence: documented
+      confidence: 0.84
+    geopolitical_origin:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.71
+    vendor_concentration:
+      value: 3.7
+      evidence: documented
+      confidence: 0.89
+- id: MDL-0105
+  name: Isle-Vision-Base
+  tier: 3
+  value_stream: safety_compliance
+  approval_state: in_review
+  review_cadence_days: 180
+  provenance:
+    vendor: Pinegate Dynamics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.4
+      evidence: estimated
+      confidence: 0.75
+    data_privacy:
+      value: 3.7
+      evidence: modeled
+      confidence: 0.34
+    operational:
+      value: 2.0
+      evidence: documented
+      confidence: 0.92
+    geopolitical_origin:
+      value: 1.1
+      evidence: modeled
+      confidence: 0.53
+    vendor_concentration:
+      value: 4.5
+      evidence: modeled
+      confidence: 0.52
+- id: MDL-0106
+  name: Garnet-Forecast-Ultra
+  tier: 3
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Pinegate Networks
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.5
+      evidence: documented
+      confidence: 0.88
+    data_privacy:
+      value: 3.8
+      evidence: modeled
+      confidence: 0.57
+    operational:
+      value: 4.1
+      evidence: estimated
+      confidence: 0.66
+    geopolitical_origin:
+      value: 1.7
+      evidence: modeled
+      confidence: 0.5
+    vendor_concentration:
+      value: 3.2
+      evidence: documented
+      confidence: 0.87
+- id: MDL-0107
+  name: Juno-Rank-Nano
+  tier: 2
+  value_stream: workforce_enablement
+  approval_state: rejected
+  review_cadence_days: 30
+  provenance:
+    vendor: Fernwood Dynamics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.75
+    data_privacy:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.71
+    operational:
+      value: 2.6
+      evidence: estimated
+      confidence: 0.55
+    geopolitical_origin:
+      value: 2.2
+      evidence: estimated
+      confidence: 0.7
+    vendor_concentration:
+      value: 4.0
+      evidence: modeled
+      confidence: 0.47
+- id: MDL-0108
+  name: Basalt-Reason-Large
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Opaline Analytics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.9
+      evidence: estimated
+      confidence: 0.53
+    data_privacy:
+      value: 3.0
+      evidence: documented
+      confidence: 0.87
+    operational:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.7
+    geopolitical_origin:
+      value: 3.5
+      evidence: documented
+      confidence: 0.97
+    vendor_concentration:
+      value: 4.3
+      evidence: documented
+      confidence: 0.89
+- id: MDL-0109
+  name: Nimbus-Summarize-Nano
+  tier: 3
+  value_stream: field_operations
+  approval_state: proposed
+  review_cadence_days: 90
+  provenance:
+    vendor: Halcyon Networks
+    origin_risk_flag: true
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 2.0
+      evidence: modeled
+      confidence: 0.37
+    data_privacy:
+      value: 3.7
+      evidence: estimated
+      confidence: 0.63
+    operational:
+      value: 3.3
+      evidence: estimated
+      confidence: 0.69
+    geopolitical_origin:
+      value: 4.1
+      evidence: estimated
+      confidence: 0.78
+    vendor_concentration:
+      value: 2.6
+      evidence: documented
+      confidence: 0.77
+- id: MDL-0110
+  name: Harbor-Extract-Ultra
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Opaline Analytics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.74
+    data_privacy:
+      value: 1.0
+      evidence: modeled
+      confidence: 0.34
+    operational:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.78
+    geopolitical_origin:
+      value: 3.1
+      evidence: modeled
+      confidence: 0.49
+    vendor_concentration:
+      value: 1.7
+      evidence: documented
+      confidence: 0.8
+- id: MDL-0111
+  name: Nimbus-Vision-Large
+  tier: 2
+  value_stream: customer_operations
+  approval_state: in_review
+  review_cadence_days: 30
+  provenance:
+    vendor: Nightfall Analytics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.4
+      evidence: estimated
+      confidence: 0.54
+    data_privacy:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.6
+    operational:
+      value: 2.3
+      evidence: documented
+      confidence: 0.88
+    geopolitical_origin:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.57
+    vendor_concentration:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.54
+- id: MDL-0112
+  name: Flint-Rank-Large
+  tier: 2
+  value_stream: field_operations
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Larkspur Minds
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.9
+      evidence: modeled
+      confidence: 0.49
+    data_privacy:
+      value: 3.3
+      evidence: modeled
+      confidence: 0.54
+    operational:
+      value: 4.6
+      evidence: estimated
+      confidence: 0.51
+    geopolitical_origin:
+      value: 4.6
+      evidence: estimated
+      confidence: 0.54
+    vendor_concentration:
+      value: 1.4
+      evidence: estimated
+      confidence: 0.54
+- id: MDL-0113
+  name: Aster-Forecast-Ultra
+  tier: 2
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Juniper Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.72
+    data_privacy:
+      value: 1.2
+      evidence: documented
+      confidence: 0.86
+    operational:
+      value: 2.8
+      evidence: documented
+      confidence: 0.96
+    geopolitical_origin:
+      value: 3.1
+      evidence: documented
+      confidence: 0.98
+    vendor_concentration:
+      value: 1.7
+      evidence: modeled
+      confidence: 0.46
+- id: MDL-0114
+  name: Flint-Voice-Nano
+  tier: 2
+  value_stream: finance
+  approval_state: retired
+  review_cadence_days: 60
+  provenance:
+    vendor: Opaline Logic
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.68
+    data_privacy:
+      value: 1.7
+      evidence: documented
+      confidence: 0.77
+    operational:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.54
+    geopolitical_origin:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.64
+    vendor_concentration:
+      value: 1.6
+      evidence: modeled
+      confidence: 0.47
+- id: MDL-0115
+  name: Aster-Voice-Small
+  tier: 1
+  value_stream: engineering
+  approval_state: rejected
+  review_cadence_days: 365
+  provenance:
+    vendor: Opaline Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.72
+    data_privacy:
+      value: 1.9
+      evidence: documented
+      confidence: 0.89
+    operational:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.67
+    geopolitical_origin:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.71
+    vendor_concentration:
+      value: 3.1
+      evidence: documented
+      confidence: 0.84
+- id: MDL-0116
+  name: Nimbus-Extract-Ultra
+  tier: 1
+  value_stream: finance
+  approval_state: rejected
+  review_cadence_days: 365
+  provenance:
+    vendor: Marrowbay Logic
+    origin_risk_flag: true
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.7
+    data_privacy:
+      value: 2.7
+      evidence: documented
+      confidence: 0.97
+    operational:
+      value: 2.9
+      evidence: modeled
+      confidence: 0.58
+    geopolitical_origin:
+      value: 4.3
+      evidence: estimated
+      confidence: 0.74
+    vendor_concentration:
+      value: 4.6
+      evidence: estimated
+      confidence: 0.58
+- id: MDL-0117
+  name: Juno-Vision-Large
+  tier: 1
+  value_stream: customer_operations
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Quartzline Intelligence
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 1.4
+      evidence: estimated
+      confidence: 0.74
+    data_privacy:
+      value: 3.3
+      evidence: estimated
+      confidence: 0.58
+    operational:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.62
+    geopolitical_origin:
+      value: 5.0
+      evidence: estimated
+      confidence: 0.67
+    vendor_concentration:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.62
+- id: MDL-0118
+  name: Harbor-Extract-Nano
+  tier: 1
+  value_stream: finance
+  approval_state: conditional
+  review_cadence_days: 365
+  provenance:
+    vendor: Quartzline Foundry
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 1.6
+      evidence: documented
+      confidence: 0.97
+    data_privacy:
+      value: 1.3
+      evidence: modeled
+      confidence: 0.37
+    operational:
+      value: 3.1
+      evidence: documented
+      confidence: 0.84
+    geopolitical_origin:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.78
+    vendor_concentration:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.7
+- id: MDL-0119
+  name: Isle-Vision-Small
+  tier: 2
+  value_stream: workforce_enablement
+  approval_state: proposed
+  review_cadence_days: 60
+  provenance:
+    vendor: Bluewater Systems
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.3
+      evidence: modeled
+      confidence: 0.42
+    data_privacy:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.52
+    operational:
+      value: 2.1
+      evidence: modeled
+      confidence: 0.59
+    geopolitical_origin:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.78
+    vendor_concentration:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.52
+- id: MDL-0120
+  name: Isle-Voice-Base
+  tier: 2
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Marrowbay Intelligence
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.76
+    data_privacy:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.57
+    operational:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.66
+    geopolitical_origin:
+      value: 3.2
+      evidence: documented
+      confidence: 0.84
+    vendor_concentration:
+      value: 1.7
+      evidence: documented
+      confidence: 0.82
+- id: MDL-0121
+  name: Harbor-Forecast-Small
+  tier: 3
+  value_stream: safety_compliance
+  approval_state: in_review
+  review_cadence_days: 60
+  provenance:
+    vendor: Pinegate Foundry
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.54
+    data_privacy:
+      value: 4.4
+      evidence: estimated
+      confidence: 0.76
+    operational:
+      value: 3.3
+      evidence: estimated
+      confidence: 0.77
+    geopolitical_origin:
+      value: 2.6
+      evidence: documented
+      confidence: 0.79
+    vendor_concentration:
+      value: 4.8
+      evidence: estimated
+      confidence: 0.66
+- id: MDL-0122
+  name: Flint-Summarize-Small
+  tier: 2
+  value_stream: customer_operations
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Bluewater Networks
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 2.0
+      evidence: documented
+      confidence: 0.88
+    data_privacy:
+      value: 2.5
+      evidence: estimated
+      confidence: 0.64
+    operational:
+      value: 4.4
+      evidence: estimated
+      confidence: 0.71
+    geopolitical_origin:
+      value: 1.9
+      evidence: documented
+      confidence: 0.79
+    vendor_concentration:
+      value: 2.5
+      evidence: documented
+      confidence: 0.81
+- id: MDL-0123
+  name: Harbor-Chat-Small
+  tier: 2
+  value_stream: field_operations
+  approval_state: retired
+  review_cadence_days: 365
+  provenance:
+    vendor: Fernwood Dynamics
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.8
+      evidence: documented
+      confidence: 0.88
+    data_privacy:
+      value: 2.8
+      evidence: documented
+      confidence: 0.94
+    operational:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.67
+    geopolitical_origin:
+      value: 1.8
+      evidence: documented
+      confidence: 0.78
+    vendor_concentration:
+      value: 2.4
+      evidence: estimated
+      confidence: 0.55
+- id: MDL-0124
+  name: Harbor-Translate-Nano
+  tier: 2
+  value_stream: engineering
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Opaline Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.62
+    data_privacy:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.7
+    operational:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.73
+    geopolitical_origin:
+      value: 1.5
+      evidence: estimated
+      confidence: 0.55
+    vendor_concentration:
+      value: 1.8
+      evidence: documented
+      confidence: 0.81
+- id: MDL-0125
+  name: Basalt-Classify-Large
+  tier: 2
+  value_stream: customer_operations
+  approval_state: conditional
+  review_cadence_days: 365
+  provenance:
+    vendor: Kestrel Cognition
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.9
+      evidence: estimated
+      confidence: 0.78
+    data_privacy:
+      value: 1.7
+      evidence: estimated
+      confidence: 0.54
+    operational:
+      value: 2.9
+      evidence: documented
+      confidence: 0.83
+    geopolitical_origin:
+      value: 4.8
+      evidence: modeled
+      confidence: 0.34
+    vendor_concentration:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.64
+- id: MDL-0126
+  name: Krait-Vision-Base
+  tier: 4
+  value_stream: finance
+  approval_state: approved
+  review_cadence_days: 30
+  provenance:
+    vendor: Kestrel Networks
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.5
+      evidence: documented
+      confidence: 0.75
+    data_privacy:
+      value: 4.0
+      evidence: documented
+      confidence: 0.87
+    operational:
+      value: 4.2
+      evidence: documented
+      confidence: 0.93
+    geopolitical_origin:
+      value: 2.0
+      evidence: estimated
+      confidence: 0.76
+    vendor_concentration:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.75
+- id: MDL-0127
+  name: Isle-Voice-Base
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 90
+  provenance:
+    vendor: Opaline Foundry
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 3.8
+      evidence: documented
+      confidence: 0.78
+    data_privacy:
+      value: 1.1
+      evidence: estimated
+      confidence: 0.55
+    operational:
+      value: 1.0
+      evidence: modeled
+      confidence: 0.43
+    geopolitical_origin:
+      value: 4.1
+      evidence: documented
+      confidence: 0.75
+    vendor_concentration:
+      value: 1.3
+      evidence: estimated
+      confidence: 0.71
+- id: MDL-0128
+  name: Ember-Summarize-Nano
+  tier: 2
+  value_stream: field_operations
+  approval_state: in_review
+  review_cadence_days: 90
+  provenance:
+    vendor: Fernwood Analytics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 2.0
+      evidence: modeled
+      confidence: 0.59
+    data_privacy:
+      value: 3.7
+      evidence: modeled
+      confidence: 0.33
+    operational:
+      value: 1.6
+      evidence: documented
+      confidence: 0.84
+    geopolitical_origin:
+      value: 2.9
+      evidence: estimated
+      confidence: 0.66
+    vendor_concentration:
+      value: 4.9
+      evidence: documented
+      confidence: 0.83
+- id: MDL-0129
+  name: Flint-Chat-Small
+  tier: 3
+  value_stream: supply_chain
+  approval_state: proposed
+  review_cadence_days: 60
+  provenance:
+    vendor: Halcyon Logic
+    origin_risk_flag: true
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.61
+    data_privacy:
+      value: 3.5
+      evidence: documented
+      confidence: 0.89
+    operational:
+      value: 1.5
+      evidence: documented
+      confidence: 0.9
+    geopolitical_origin:
+      value: 4.2
+      evidence: documented
+      confidence: 0.98
+    vendor_concentration:
+      value: 1.5
+      evidence: estimated
+      confidence: 0.71
+- id: MDL-0130
+  name: Lumen-Translate-Ultra
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: approved
+  review_cadence_days: 365
+  provenance:
+    vendor: Bluewater Minds
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.68
+    data_privacy:
+      value: 2.8
+      evidence: estimated
+      confidence: 0.75
+    operational:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.72
+    geopolitical_origin:
+      value: 4.9
+      evidence: estimated
+      confidence: 0.6
+    vendor_concentration:
+      value: 1.6
+      evidence: modeled
+      confidence: 0.53
+- id: MDL-0131
+  name: Garnet-Reason-Nano
+  tier: 1
+  value_stream: workforce_enablement
+  approval_state: proposed
+  review_cadence_days: 60
+  provenance:
+    vendor: Ironvale Labs
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 3.6
+      evidence: estimated
+      confidence: 0.67
+    data_privacy:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.58
+    operational:
+      value: 4.6
+      evidence: documented
+      confidence: 0.96
+    geopolitical_origin:
+      value: 4.8
+      evidence: documented
+      confidence: 0.93
+    vendor_concentration:
+      value: 2.1
+      evidence: estimated
+      confidence: 0.71
+- id: MDL-0132
+  name: Nimbus-Rank-Nano
+  tier: 4
+  value_stream: supply_chain
+  approval_state: proposed
+  review_cadence_days: 60
+  provenance:
+    vendor: Bluewater Cognition
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 3.2
+      evidence: estimated
+      confidence: 0.78
+    data_privacy:
+      value: 3.8
+      evidence: estimated
+      confidence: 0.67
+    operational:
+      value: 3.0
+      evidence: estimated
+      confidence: 0.74
+    geopolitical_origin:
+      value: 4.6
+      evidence: estimated
+      confidence: 0.68
+    vendor_concentration:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.75
+- id: MDL-0133
+  name: Juno-Forecast-Ultra
+  tier: 2
+  value_stream: finance
+  approval_state: conditional
+  review_cadence_days: 90
+  provenance:
+    vendor: Pinegate Labs
+    origin_risk_flag: false
+    open_weights: false
+    hosting: self_hosted
+  risk:
+    security:
+      value: 1.5
+      evidence: documented
+      confidence: 0.76
+    data_privacy:
+      value: 2.3
+      evidence: modeled
+      confidence: 0.36
+    operational:
+      value: 3.0
+      evidence: estimated
+      confidence: 0.75
+    geopolitical_origin:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.53
+    vendor_concentration:
+      value: 2.2
+      evidence: documented
+      confidence: 0.95
+- id: MDL-0134
+  name: Juno-Forecast-Nano
+  tier: 3
+  value_stream: safety_compliance
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Nightfall Logic
+    origin_risk_flag: false
+    open_weights: false
+    hosting: on_prem
+  risk:
+    security:
+      value: 4.2
+      evidence: modeled
+      confidence: 0.31
+    data_privacy:
+      value: 4.5
+      evidence: estimated
+      confidence: 0.78
+    operational:
+      value: 4.0
+      evidence: estimated
+      confidence: 0.54
+    geopolitical_origin:
+      value: 1.2
+      evidence: modeled
+      confidence: 0.49
+    vendor_concentration:
+      value: 3.8
+      evidence: estimated
+      confidence: 0.67
+- id: MDL-0135
+  name: Krait-Summarize-Large
+  tier: 3
+  value_stream: supply_chain
+  approval_state: approved
+  review_cadence_days: 60
+  provenance:
+    vendor: Fernwood Analytics
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 2.6
+      evidence: documented
+      confidence: 0.77
+    data_privacy:
+      value: 1.5
+      evidence: documented
+      confidence: 0.87
+    operational:
+      value: 3.5
+      evidence: estimated
+      confidence: 0.7
+    geopolitical_origin:
+      value: 2.3
+      evidence: estimated
+      confidence: 0.52
+    vendor_concentration:
+      value: 2.4
+      evidence: modeled
+      confidence: 0.43
+- id: MDL-0136
+  name: Juno-Chat-Base
+  tier: 1
+  value_stream: engineering
+  approval_state: approved
+  review_cadence_days: 180
+  provenance:
+    vendor: Juniper Labs
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 1.4
+      evidence: documented
+      confidence: 0.84
+    data_privacy:
+      value: 4.3
+      evidence: documented
+      confidence: 0.97
+    operational:
+      value: 1.1
+      evidence: documented
+      confidence: 0.91
+    geopolitical_origin:
+      value: 2.0
+      evidence: documented
+      confidence: 0.87
+    vendor_concentration:
+      value: 1.1
+      evidence: estimated
+      confidence: 0.54
+- id: MDL-0137
+  name: Aster-Rank-Small
+  tier: 1
+  value_stream: field_operations
+  approval_state: conditional
+  review_cadence_days: 365
+  provenance:
+    vendor: Nightfall Networks
+    origin_risk_flag: false
+    open_weights: false
+    hosting: saas
+  risk:
+    security:
+      value: 2.4
+      evidence: documented
+      confidence: 0.9
+    data_privacy:
+      value: 4.9
+      evidence: documented
+      confidence: 0.82
+    operational:
+      value: 3.4
+      evidence: estimated
+      confidence: 0.77
+    geopolitical_origin:
+      value: 3.8
+      evidence: documented
+      confidence: 0.8
+    vendor_concentration:
+      value: 4.0
+      evidence: documented
+      confidence: 0.96
+- id: MDL-0138
+  name: Krait-Reason-Base
+  tier: 2
+  value_stream: field_operations
+  approval_state: retired
+  review_cadence_days: 365
+  provenance:
+    vendor: Bluewater Labs
+    origin_risk_flag: false
+    open_weights: true
+    hosting: self_hosted
+  risk:
+    security:
+      value: 3.2
+      evidence: modeled
+      confidence: 0.31
+    data_privacy:
+      value: 1.4
+      evidence: documented
+      confidence: 0.78
+    operational:
+      value: 1.9
+      evidence: estimated
+      confidence: 0.68
+    geopolitical_origin:
+      value: 2.3
+      evidence: documented
+      confidence: 0.79
+    vendor_concentration:
+      value: 4.2
+      evidence: estimated
+      confidence: 0.54
+- id: MDL-0139
+  name: Lumen-Vision-Small
+  tier: 2
+  value_stream: safety_compliance
+  approval_state: proposed
+  review_cadence_days: 365
+  provenance:
+    vendor: Fernwood Intelligence
+    origin_risk_flag: false
+    open_weights: true
+    hosting: on_prem
+  risk:
+    security:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.56
+    data_privacy:
+      value: 2.2
+      evidence: documented
+      confidence: 0.82
+    operational:
+      value: 1.6
+      evidence: estimated
+      confidence: 0.69
+    geopolitical_origin:
+      value: 3.5
+      evidence: documented
+      confidence: 0.78
+    vendor_concentration:
+      value: 1.1
+      evidence: estimated
+      confidence: 0.68
+- id: MDL-0140
+  name: Cinder-Vision-Ultra
+  tier: 2
+  value_stream: workforce_enablement
+  approval_state: in_review
+  review_cadence_days: 180
+  provenance:
+    vendor: Quartzline Minds
+    origin_risk_flag: false
+    open_weights: true
+    hosting: saas
+  risk:
+    security:
+      value: 4.8
+      evidence: documented
+      confidence: 0.84
+    data_privacy:
+      value: 1.7
+      evidence: documented
+      confidence: 0.9
+    operational:
+      value: 4.5
+      evidence: modeled
+      confidence: 0.51
+    geopolitical_origin:
+      value: 4.3
+      evidence: modeled
+      confidence: 0.48
+    vendor_concentration:
+      value: 3.1
+      evidence: estimated
+      confidence: 0.78
