@@ -1,8 +1,8 @@
 # Matthan Bird, JD – AI Portfolio
 
-Experimental AI Specialist and Emerging Technology Innovation Lab Lead with 20+ years of leadership experience spanning production AI systems, computer vision, robotics integration, NLP, and enterprise AI governance. Currently architecting and deploying AI solutions for critical infrastructure at Duke Energy's ETO Innovation Lab — from battery anomaly detection and autonomous robotics to multi-modal computer vision and cybersecurity frameworks.
+AI strategy and solutions leader with end-to-end ownership of enterprise AI transformation — opportunity discovery, business-case development, technical architecture, production delivery, governance, and value realization. Currently PMC Lead Data Scientist, Enterprise Solution Architect & Decision Intelligence Consultant at Duke Energy, designing governed decision-intelligence and multi-agent AI capabilities for enterprise portfolio management. Previously Lead Experimental AI Scientist in Duke Energy's Emerging Technologies R&D lab — multi-agent automation frameworks, battery anomaly detection, autonomous robotics, computer vision, and enterprise GenAI enablement.
 
-Previously led Conversational AI at Spectrum (Charter Communications), scaling platforms to 18M+ monthly interactions with $3.53B+ in documented business value.
+Before that, led Conversational AI at Spectrum (Charter Communications), scaling platforms to 18M+ monthly interactions in a regulated, high-volume service environment. J.D. in business and environmental law; U.S. Navy submarine electronics & intelligence veteran.
 
 This repository showcases selected projects across AI/ML engineering, prompt design, NLP tooling, governance strategy, and automation.
 

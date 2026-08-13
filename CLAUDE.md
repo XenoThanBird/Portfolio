@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is Matthan Bird's AI/ML Portfolio — a collection of 10 production-grade projects spanning conversational AI, computer vision, robotics, cybersecurity, agentic architectures, and more. Each numbered directory is a self-contained module with its own documentation, configuration, and example scripts.
+This is Matthan Bird's AI/ML Portfolio — a collection of 12 production-grade projects spanning conversational AI, speech recognition, computer vision, robotics, cybersecurity, agentic architectures, and full-stack AI lifecycle management. Each numbered directory is a self-contained module with its own documentation, configuration, and example scripts.
 
 **Language**: Python 3.9+
 **License**: All Rights Reserved (portfolio/demo purposes only)
@@ -25,12 +25,18 @@ Portfolio/
 │   └── multi_agent/
 ├── 09_digital_twin/           # Encrypted vector search, knowledge graphs, lineage
 │   └── storage/
-├── 10_ai_sentinel_cybersecurity/  # FIM, network mapper, honeypot, vault, TLS
-│   ├── sentinel/
+├── 10_ai_sentinel_cybersecurity/  # FIM (sentinel.py), network mapper, honeypot, vault, TLS
 │   ├── network_mapper/
 │   ├── honeypot/
 │   ├── file_vault/
 │   └── tls_analyzer/
+├── 11_asr_lab/                # ASR config testing & sensitivity optimization
+│   └── configs/
+├── 12_ai_solution_lifecycle/  # Full-stack AI lifecycle platform (FastAPI + Vue 3)
+│   ├── backend/
+│   │   └── app/               # models/, routers/, schemas/, services/
+│   └── frontend/
+│       └── src/               # api/, components/, router/, stores/, views/
 ├── requirements.txt           # Master dependency list for all modules
 ├── toolkit_starter_notebook.py # Starter notebook / onboarding script
 ├── LICENSE
@@ -49,6 +55,8 @@ Portfolio/
 | **Visualization** | Streamlit, Plotly, Seaborn, Matplotlib |
 | **Security** | cryptography (Fernet/AES-256-GCM), Watchdog, python-nmap, scapy |
 | **Robotics** | Boston Dynamics Spot SDK (bosdyn-client, bosdyn-mission) |
+| **Speech/ASR** | Azure Speech, Deepgram, Speechmatics, Kore.ai integration (module 11) |
+| **Web/API** | FastAPI, SQLAlchemy + Alembic, Vue 3, Pinia, Tailwind CSS, Vite (module 12) |
 | **Config** | YAML (pyyaml), python-dotenv, Pydantic BaseSettings |
 
 ## Development Setup
@@ -69,9 +77,10 @@ pip install -r requirements.txt
 
 Modules that need API keys or credentials use `.env` files (gitignored). Look for `.env.template` files in subdirectories for required variables:
 
-- `OPENAI_API_KEY` — modules 02, 08
-- `ANTHROPIC_API_KEY` — module 08
+- `OPENAI_API_KEY` — modules 02, 08, 12
+- `ANTHROPIC_API_KEY` — modules 08, 12
 - `SPOT_HOSTNAME`, `SPOT_USERNAME`, `SPOT_PASSWORD` — module 07
+- `DATABASE_URL`, `SECRET_KEY`, `LLM_PROVIDER` — module 12
 
 ## Code Conventions
 
@@ -132,12 +141,18 @@ Two Streamlit apps: `streamlit_cosine_tool.py` (similarity scoring) and `llm_ana
 ### 09 — Digital Twin
 Multi-database architecture: `vector_db.py` (ChromaDB with Fernet encryption), `knowledge_graph.py` (NetworkX with centrality/community analysis), `metadata_db.py` (SQLAlchemy ORM for data lineage). `encryptor.py` classifies sensitivity (HIGH/MEDIUM/LOW/PUBLIC) and encrypts accordingly.
 
-### 10 — Cybersecurity Suite (5 submodules)
-- **sentinel/**: File integrity monitoring via SHA-256 + Watchdog filesystem events.
+### 10 — Cybersecurity Suite (5 components)
+- **sentinel.py** (module root, with `baseline_manager.py` and `alert_handler.py`): File integrity monitoring via SHA-256 + Watchdog filesystem events.
 - **network_mapper/**: Nmap-based discovery, MAC/OS fingerprinting, topology visualization.
 - **honeypot/**: Async TCP listener simulating SSH/HTTP/Telnet with attack analysis dashboard.
 - **file_vault/**: AES-256-GCM envelope encryption with PBKDF2 master key derivation and HMAC integrity.
 - **tls_analyzer/**: TLS handshake inspection, X.509 parsing, compliance checking against security baselines.
+
+### 11 — ASR Lab
+ASR configuration testing and optimization for IVR systems (Kore.ai, Azure Speech, Deepgram, Speechmatics). `batch_asr_tester.py` — batch-tests configs against background-noise scenarios. `sensitivity_optimizer.py` — RMS-based sensitivity threshold calculation. `asr_config_tester_app.py` — Streamlit testing dashboard. `cosine_config_comparison.py` — config similarity comparison. YAML/JSON config converters and sample engine configs in `configs/`. Has its own `requirements.txt` and `Dockerfile`.
+
+### 12 — AI Solution Lifecycle Platform
+Full-stack platform for evaluating and managing AI solution deployments. **Backend** (`backend/app/`): FastAPI + SQLAlchemy + Alembic — routers, models, schemas, and services for projects, milestones, RACI, SLAs, alerts, risks, change requests, prompt library, model catalog, value scoring (weighted 6-dimension engine with ROI/NPV), and LLM-backed document generation (OpenAI/Anthropic/mock providers). **Frontend** (`frontend/src/`): Vue 3 + Pinia + Tailwind SPA with views/components per domain. `seed_demo.py` seeds synthetic demo data. Dockerized (per-service Dockerfiles).
 
 ## Testing Approach
 
