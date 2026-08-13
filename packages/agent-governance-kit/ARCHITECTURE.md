@@ -101,10 +101,35 @@ evidence or a bad premise. The kit forces the diagnosis:
 
 Startover is human-only because deciding "the premise is wrong" is a
 scope decision, not a quality decision — precisely the class of calls
-that must not be made autonomously. Enforcement is structural, not
-advisory: the transition requires `initiated_by=HUMAN` **and** a
-`HumanWarrant` (which cannot be constructed without a named approver
-and reason). An agent holding a warrant is still refused.
+that must not be made autonomously.
+
+### Startover trust boundary
+
+A `HumanWarrant` is a *claim*, not proof — any code can construct one.
+The invariant is therefore enforced against the HITL gate's persisted
+approval records, not caller assertion:
+
+1. The machine must be constructed with a `warrant_verifier` (normally
+   `HITLGate.startover_verifier()`). **Without one, startover is
+   disabled entirely — secure by default.**
+2. The verifier accepts a warrant only if its `approval_id` names an
+   approval in the gate's store that is **startover-scoped** (created
+   via `request_startover()`; an unrelated approved request cannot be
+   replayed), **APPROVED** (not pending/rejected), and whose recorded
+   `decided_by` matches the warrant's approver.
+3. Warrants are **single-use** per machine: a consumed `approval_id`
+   is refused on replay.
+4. An agent holding a *genuine* warrant is still refused
+   (`initiated_by` must be `HUMAN`), and every denied attempt is an
+   auditable event that provably never mutates state.
+
+Honest limits: in-process Python has no capability security — code
+running in the same interpreter can forge objects, and code with write
+access to the approval store can forge approvals. The real boundary is
+the store: in deployment, give the reviewer surface write access and
+the agent process none (OS-level permissions). The kit's contribution
+is making the legitimate path *verifiable* and every illegitimate path
+a loud, audited refusal rather than a silent success.
 
 ## HITL gate: pause across processes
 

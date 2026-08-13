@@ -8,11 +8,22 @@ outcomes:
 - ``STARTOVER`` — the premise is wrong; **human-only**, never
   agent-initiated.
 
-The human-only rule for ``STARTOVER`` is enforced structurally: the
-transition requires a :class:`HumanWarrant`, and constructing a warrant
-requires a named human approver. An agent passing
-``initiated_by=Initiator.AGENT`` — or omitting the warrant — raises
-:class:`StartoverNotPermittedError` regardless of any other argument.
+The human-only rule for ``STARTOVER`` is enforced against a trusted
+approval boundary, not caller assertion: the machine must be
+constructed with a ``warrant_verifier`` (normally
+:meth:`agent_governance_kit.hitl.HITLGate.startover_verifier`, which
+validates the warrant against a persisted, human-decided approval
+record). Without a verifier, startover is denied entirely — secure by
+default. A warrant that the verifier rejects, an agent initiator, a
+missing warrant, or a replayed warrant all raise
+:class:`StartoverNotPermittedError` and leave the state untouched.
+
+In-process Python cannot provide true capability security — a caller
+with arbitrary code execution can forge any object. The trust boundary
+is therefore the approval *store* (protect it with OS-level
+permissions so agents cannot write it); the kit's job is to make the
+legitimate path verifiable and every illegitimate path a loud,
+auditable refusal. See ARCHITECTURE.md for the full trust model.
 """
 
 from __future__ import annotations
@@ -47,20 +58,24 @@ class RunState(Enum):
 
 @dataclass(frozen=True)
 class HumanWarrant:
-    """Proof that a named human authorized a startover.
+    """A claim that a named human authorized a startover.
 
-    The warrant is the *only* path to a ``STARTOVER`` transition. It is
-    deliberately impossible to construct without naming an approver.
+    A warrant is *not* proof by itself — it must reference an approval
+    (``approval_id``) that the machine's ``warrant_verifier`` can check
+    against a trusted approval boundary such as the HITL gate's store.
     """
 
     approver: str
     reason: str
+    approval_id: str
 
     def __post_init__(self) -> None:
         if not self.approver.strip():
             raise ValueError("a HumanWarrant requires a named approver")
         if not self.reason.strip():
             raise ValueError("a HumanWarrant requires a reason")
+        if not self.approval_id.strip():
+            raise ValueError("a HumanWarrant requires the approval id it is based on")
 
 
 class StartoverNotPermittedError(PermissionError):
@@ -102,6 +117,10 @@ _FAILURE_TARGET: Dict[Outcome, RunState] = {
 
 AuditHook = Callable[[str, Dict[str, str]], None]
 
+# Returns None when the warrant is genuine, or a human-readable reason
+# for rejection. Normally HITLGate.startover_verifier().
+WarrantVerifier = Callable[[HumanWarrant], Optional[str]]
+
 
 def _utcnow() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -119,10 +138,13 @@ class GovernanceStateMachine:
         self,
         initial: RunState = RunState.RETRIEVING,
         audit_hook: Optional[AuditHook] = None,
+        warrant_verifier: Optional[WarrantVerifier] = None,
     ) -> None:
         self._state = initial
         self._history: List[Transition] = []
         self._audit_hook = audit_hook
+        self._warrant_verifier = warrant_verifier
+        self._used_warrants: set[str] = set()
 
     @property
     def state(self) -> RunState:
@@ -179,10 +201,12 @@ class GovernanceStateMachine:
     ) -> Transition:
         """Apply a failure outcome from the CHECKING state.
 
-        ``STARTOVER`` requires ``initiated_by=Initiator.HUMAN`` **and** a
-        :class:`HumanWarrant`; every other combination raises
-        :class:`StartoverNotPermittedError`. ``REVISE`` and ``REPAIR``
-        are agent-decidable.
+        ``REVISE`` and ``REPAIR`` are agent-decidable. ``STARTOVER``
+        requires ``initiated_by=Initiator.HUMAN``, a
+        :class:`HumanWarrant`, **and** a configured ``warrant_verifier``
+        that accepts the warrant against the trusted approval boundary.
+        A warrant is single-use. Every other combination raises
+        :class:`StartoverNotPermittedError` without touching the state.
         """
         if self._state is not RunState.CHECKING:
             raise InvalidTransitionError(
@@ -198,5 +222,23 @@ class GovernanceStateMachine:
                 raise StartoverNotPermittedError(
                     "startover requires a HumanWarrant naming the approver"
                 )
-            reason = f"{reason} [warrant: {warrant.approver}: {warrant.reason}]"
+            if self._warrant_verifier is None:
+                raise StartoverNotPermittedError(
+                    "startover is disabled: no trusted approval boundary "
+                    "(warrant_verifier) is configured on this machine"
+                )
+            if warrant.approval_id in self._used_warrants:
+                raise StartoverNotPermittedError(
+                    f"warrant for approval {warrant.approval_id} was already used"
+                )
+            rejection = self._warrant_verifier(warrant)
+            if rejection is not None:
+                raise StartoverNotPermittedError(
+                    f"warrant rejected by approval boundary: {rejection}"
+                )
+            self._used_warrants.add(warrant.approval_id)
+            reason = (
+                f"{reason} [warrant: {warrant.approver}: {warrant.reason} "
+                f"(approval {warrant.approval_id})]"
+            )
         return self._record(_FAILURE_TARGET[outcome], outcome, initiated_by, reason)
