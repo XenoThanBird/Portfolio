@@ -174,7 +174,12 @@ def inspect_tls(host: str, port: int = 443, timeout: int = 10) -> HandshakeResul
     )
 
     try:
-        # Create SSL context — we want to inspect, not enforce
+        # Create SSL context — we want to inspect, not enforce.
+        # Deliberately no minimum_version pin: this is a diagnostic
+        # inspector whose job is to OBSERVE what a server negotiates
+        # (including legacy protocols) so compliance_checker can flag
+        # it. Pinning TLS 1.2+ here would blind the tool to the very
+        # misconfigurations it exists to detect. (CodeQL: intentional)
         context = ssl.create_default_context()
 
         # For analysis purposes, we still validate but capture errors
@@ -236,7 +241,14 @@ def inspect_tls(host: str, port: int = 443, timeout: int = 10) -> HandshakeResul
 def _inspect_without_verify(
     host: str, port: int, timeout: int, result: HandshakeResult
 ) -> None:
-    """Re-attempt connection without cert verification to capture details."""
+    """Re-attempt connection without cert verification to capture details.
+
+    Verification is disabled ON PURPOSE and only on this read-only
+    fallback path: when a server's certificate fails validation, the
+    inspector still needs to capture the certificate and negotiated
+    parameters so the failure can be analyzed and reported. No data is
+    trusted or transmitted over this connection. (CodeQL: intentional)
+    """
     try:
         context = ssl.create_default_context()
         context.check_hostname = False
