@@ -75,9 +75,12 @@ def main(argv: Optional[List[str]] = None) -> int:
         return 0
 
     if args.command == "registry-report":
-        records = load_catalog(args.catalog)
-        assessments = assess_catalog(records)
-        _write_or_print(render_registry_report(assessments), args.out)
+        catalog = load_catalog(args.catalog)
+        assessments = assess_catalog(catalog.models)
+        _write_or_print(
+            render_registry_report(assessments, disclaimer=catalog.disclaimer),
+            args.out,
+        )
         return 0
 
     return 2  # pragma: no cover — argparse enforces the subcommands

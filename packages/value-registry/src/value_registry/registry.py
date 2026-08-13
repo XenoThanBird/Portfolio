@@ -78,6 +78,21 @@ class RiskAssessment:
     dimensions: Dict[str, Figure] = field(default_factory=dict)
 
 
+@dataclass(frozen=True)
+class Catalog:
+    """A loaded catalog: records plus the file's own metadata.
+
+    The report renders only claims the file itself makes — a
+    ``disclaimer`` is shown when present, never invented. This is what
+    keeps a user-authored catalog from being mislabeled as synthetic.
+    """
+
+    models: List[ModelRecord]
+    name: Optional[str] = None
+    disclaimer: Optional[str] = None
+    seed: Optional[int] = None
+
+
 def _parse_record(raw: Mapping[str, Any], idx: int) -> ModelRecord:
     ctx = f"models[{idx}]"
     for key in ("id", "name", "tier", "value_stream", "approval_state",
@@ -115,10 +130,22 @@ def _parse_record(raw: Mapping[str, Any], idx: int) -> ModelRecord:
         raise RegistryError(
             f"{ctx} ({model_id}): unknown hosting (valid: {valid})"
         ) from exc
+
+    def _strict_bool(key: str) -> bool:
+        # bool("false") is True — truthiness coercion would silently
+        # reverse provenance data, so only actual booleans are accepted.
+        value = prov_raw[key]
+        if not isinstance(value, bool):
+            raise RegistryError(
+                f"{ctx} ({model_id}): provenance.{key} must be a boolean, "
+                f"got {type(value).__name__} {value!r}"
+            )
+        return value
+
     provenance = Provenance(
         vendor=str(prov_raw["vendor"]),
-        origin_risk_flag=bool(prov_raw["origin_risk_flag"]),
-        open_weights=bool(prov_raw["open_weights"]),
+        origin_risk_flag=_strict_bool("origin_risk_flag"),
+        open_weights=_strict_bool("open_weights"),
         hosting=hosting,
     )
 
@@ -153,8 +180,9 @@ def _parse_record(raw: Mapping[str, Any], idx: int) -> ModelRecord:
     )
 
 
-def load_catalog(path: Union[str, Path]) -> List[ModelRecord]:
-    """Load and validate a model catalog YAML file."""
+def load_catalog(path: Union[str, Path]) -> Catalog:
+    """Load and validate a model catalog YAML file, preserving the
+    file's own metadata (name, disclaimer, seed) when present."""
     raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
     if not isinstance(raw, Mapping) or "models" not in raw:
         raise RegistryError(f"{path}: catalog file must contain 'models'")
@@ -165,7 +193,12 @@ def load_catalog(path: Union[str, Path]) -> List[ModelRecord]:
     ids = [r.id for r in records]
     if len(set(ids)) != len(ids):
         raise RegistryError(f"{path}: duplicate model ids")
-    return records
+    return Catalog(
+        models=records,
+        name=str(raw["catalog"]) if "catalog" in raw else None,
+        disclaimer=str(raw["disclaimer"]) if "disclaimer" in raw else None,
+        seed=int(raw["seed"]) if "seed" in raw else None,
+    )
 
 
 def assess_risk(

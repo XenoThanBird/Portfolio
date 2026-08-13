@@ -188,3 +188,74 @@ class TestPortfolioValidation:
         bad.write_text(yaml.safe_dump(raw), encoding="utf-8")
         with pytest.raises(RubricError, match="unknown lifecycle stage"):
             load_portfolio(bad, rubric)
+
+    def test_bare_horizon_refused(self, tmp_path: Path, rubric_path: Path) -> None:
+        """Review finding: horizon shapes NPV as much as the money —
+        it cannot bypass the evidence system."""
+        rubric = load_rubric(rubric_path)
+        raw = yaml.safe_load((EXAMPLES / "portfolio.yaml").read_text(encoding="utf-8"))
+        raw["opportunities"][0]["financials"]["horizon_years"] = 3
+        bad = tmp_path / "bad.yaml"
+        bad.write_text(yaml.safe_dump(raw), encoding="utf-8")
+        with pytest.raises(UnclassifiedFigureError, match="financials.horizon_years"):
+            load_portfolio(bad, rubric)
+
+    def test_bare_discount_rate_refused(self, tmp_path: Path, rubric_path: Path) -> None:
+        rubric = load_rubric(rubric_path)
+        raw = yaml.safe_load((EXAMPLES / "portfolio.yaml").read_text(encoding="utf-8"))
+        raw["opportunities"][0]["financials"]["discount_rate"] = 0.08
+        bad = tmp_path / "bad.yaml"
+        bad.write_text(yaml.safe_dump(raw), encoding="utf-8")
+        with pytest.raises(UnclassifiedFigureError, match="financials.discount_rate"):
+            load_portfolio(bad, rubric)
+
+    def test_fractional_horizon_rejected(self, tmp_path: Path, rubric_path: Path) -> None:
+        rubric = load_rubric(rubric_path)
+        raw = yaml.safe_load((EXAMPLES / "portfolio.yaml").read_text(encoding="utf-8"))
+        raw["opportunities"][0]["financials"]["horizon_years"] = {
+            "value": 2.5, "evidence": "estimated", "confidence": 0.7,
+        }
+        bad = tmp_path / "bad.yaml"
+        bad.write_text(yaml.safe_dump(raw), encoding="utf-8")
+        with pytest.raises(PortfolioError, match="whole number"):
+            load_portfolio(bad, rubric)
+
+
+class TestHorizonAndRateProvenance:
+    """A modeled horizon or rate must taint NPV — the review's exact
+    scenario: all-documented money with a modeled assumption underneath."""
+
+    def _with_modeled_rate(self, tmp_path: Path, rubric_path: Path):  # type: ignore[no-untyped-def]
+        rubric = load_rubric(rubric_path)
+        raw = yaml.safe_load((EXAMPLES / "portfolio.yaml").read_text(encoding="utf-8"))
+        opp3 = next(o for o in raw["opportunities"] if o["id"] == "OPP-003")
+        opp3["financials"]["discount_rate"] = {
+            "value": 0.11, "evidence": "modeled", "confidence": 0.4,
+        }
+        path = tmp_path / "portfolio.yaml"
+        path.write_text(yaml.safe_dump(raw), encoding="utf-8")
+        return rubric, load_portfolio(path, rubric)
+
+    def test_modeled_rate_taints_npv(self, tmp_path: Path, rubric_path: Path) -> None:
+        rubric, opps = self._with_modeled_rate(tmp_path, rubric_path)
+        opp3 = next(o for o in opps if o.id == "OPP-003")
+        scored = score_portfolio([opp3], rubric)[0]
+        assert scored.npv.evidence is EvidenceClass.MODELED
+        assert scored.npv.confidence == pytest.approx(0.4)
+
+    def test_modeled_rate_blocks_scale_gate(self, tmp_path: Path, rubric_path: Path) -> None:
+        rubric, opps = self._with_modeled_rate(tmp_path, rubric_path)
+        opp3 = next(o for o in opps if o.id == "OPP-003")
+        scored = score_portfolio([opp3], rubric)[0]
+        assert not scored.gate.passed
+        assert any("discount_rate" in r for r in scored.gate.reasons)
+
+    def test_roi_excludes_rate_but_includes_horizon(
+        self, tmp_path: Path, rubric_path: Path
+    ) -> None:
+        """ROI is undiscounted: a modeled rate must NOT taint it, but a
+        modeled horizon must — inheritance tracks true dependencies."""
+        rubric, opps = self._with_modeled_rate(tmp_path, rubric_path)
+        opp3 = next(o for o in opps if o.id == "OPP-003")
+        scored = score_portfolio([opp3], rubric)[0]
+        assert scored.roi.evidence is not EvidenceClass.MODELED

@@ -18,8 +18,8 @@ opportunities:
       annual_benefit: { value: 240000, evidence: modeled, confidence: 0.5, unit: USD }
       annual_run_cost: { value: 55000, evidence: estimated, confidence: 0.7, unit: USD }
       implementation_cost: { value: 130000, evidence: documented, confidence: 0.9, unit: USD }
-      horizon_years: 3
-      discount_rate: 0.08
+      horizon_years: { value: 3, evidence: estimated, confidence: 0.8 }
+      discount_rate: { value: 0.08, evidence: documented, confidence: 0.9, source: corporate hurdle rate }
 
   - id: OPP-002
     name: Fictional Document Triage Assistant
@@ -37,8 +37,8 @@ opportunities:
       annual_benefit: { value: 120000, evidence: modeled, confidence: 0.45, unit: USD }
       annual_run_cost: { value: 30000, evidence: estimated, confidence: 0.75, unit: USD }
       implementation_cost: { value: 60000, evidence: estimated, confidence: 0.8, unit: USD }
-      horizon_years: 3
-      discount_rate: 0.08
+      horizon_years: { value: 3, evidence: estimated, confidence: 0.7 }
+      discount_rate: { value: 0.08, evidence: documented, confidence: 0.9, source: corporate hurdle rate }
 
   - id: OPP-003
     name: Imaginary Inspection Scheduling Optimizer
@@ -56,8 +56,8 @@ opportunities:
       annual_benefit: { value: 400000, evidence: documented, confidence: 0.85, unit: USD }
       annual_run_cost: { value: 90000, evidence: documented, confidence: 0.85, unit: USD }
       implementation_cost: { value: 220000, evidence: documented, confidence: 0.95, unit: USD }
-      horizon_years: 4
-      discount_rate: 0.08
+      horizon_years: { value: 4, evidence: documented, confidence: 0.9, source: approved program plan }
+      discount_rate: { value: 0.08, evidence: documented, confidence: 0.9, source: corporate hurdle rate }
 
   - id: OPP-004
     name: Hypothetical Meeting Summarizer
@@ -75,5 +75,5 @@ opportunities:
       annual_benefit: { value: 45000, evidence: modeled, confidence: 0.35, unit: USD }
       annual_run_cost: { value: 20000, evidence: estimated, confidence: 0.6, unit: USD }
       implementation_cost: { value: 40000, evidence: estimated, confidence: 0.7, unit: USD }
-      horizon_years: 2
-      discount_rate: 0.08
+      horizon_years: { value: 2, evidence: modeled, confidence: 0.5 }
+      discount_rate: { value: 0.08, evidence: documented, confidence: 0.9, source: corporate hurdle rate }

@@ -57,8 +57,9 @@ class TestPortfolioReport:
 class TestRegistryReport:
     def test_report_publishes_dimension_confidences(self, tmp_path: Path) -> None:
         path = write_catalog(tmp_path / "catalog.yaml", seed=7, count=25)
-        assessments = assess_catalog(load_catalog(path))
-        report = render_registry_report(assessments)
+        catalog = load_catalog(path)
+        assessments = assess_catalog(catalog.models)
+        report = render_registry_report(assessments, disclaimer=catalog.disclaimer)
         assert "geopolitical-origin risk flag" in report
         # top-15 table rows: overall + 5 dimensions all marked
         rows = [line for line in report.splitlines() if line.startswith("| ") and "MDL-" in line]
@@ -68,8 +69,31 @@ class TestRegistryReport:
 
     def test_no_countries_in_report(self, tmp_path: Path) -> None:
         path = write_catalog(tmp_path / "catalog.yaml", seed=7, count=25)
-        report = render_registry_report(assess_catalog(load_catalog(path)))
+        catalog = load_catalog(path)
+        report = render_registry_report(assess_catalog(catalog.models), disclaimer=catalog.disclaimer)
         assert "country" not in report.lower()
+
+    def test_generated_catalog_disclaimer_shown_verbatim(self, tmp_path: Path) -> None:
+        path = write_catalog(tmp_path / "catalog.yaml", seed=7, count=10)
+        catalog = load_catalog(path)
+        report = render_registry_report(assess_catalog(catalog.models), disclaimer=catalog.disclaimer)
+        assert "Catalog disclaimer:" in report and "fictional" in report
+
+    def test_user_catalog_not_labeled_synthetic(self, tmp_path: Path) -> None:
+        """A catalog with no disclaimer must not be described as
+        synthetic by the renderer — the report only repeats claims the
+        file itself makes."""
+        import yaml
+
+        source = write_catalog(tmp_path / "generated.yaml", seed=7, count=5)
+        raw = yaml.safe_load(source.read_text(encoding="utf-8"))
+        user_path = tmp_path / "user_catalog.yaml"
+        user_path.write_text(yaml.safe_dump({"models": raw["models"]}), encoding="utf-8")
+
+        catalog = load_catalog(user_path)
+        report = render_registry_report(assess_catalog(catalog.models), disclaimer=catalog.disclaimer)
+        assert "synthetic" not in report.lower()
+        assert "fictional" not in report.lower()
 
 
 class TestCLI:

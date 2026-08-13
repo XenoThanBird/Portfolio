@@ -21,6 +21,7 @@ from .evidence import (
 from .registry import (
     RISK_DIMENSIONS,
     ApprovalState,
+    Catalog,
     Hosting,
     ModelRecord,
     Provenance,
@@ -50,6 +51,7 @@ __all__ = [
     "DEFAULT_SEED",
     "RISK_DIMENSIONS",
     "ApprovalState",
+    "Catalog",
     "Dimension",
     "EvidenceClass",
     "Figure",
