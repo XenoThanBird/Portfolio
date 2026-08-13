@@ -11,18 +11,14 @@ This repository showcases selected projects across AI/ML engineering, prompt des
 ## Table of Contents
 
 - [Featured Projects](#featured-projects)
-  - [1. Conversational IVR & NLP Optimization](#1-conversational-ivr--nlp-optimization)
-  - [2. Prompt Engineering & GPT Fine-Tuning](#2-prompt-engineering--gpt-fine-tuning)
-  - [3. AI Governance & Enterprise Strategy](#3-ai-governance--enterprise-strategy)
-  - [4. NLP Tools & Dashboards](#4-nlp-tools--dashboards)
-  - [5. Wealth Building through AI Automation](#5-wealth-building-through-ai-automation)
-  - [6. Computer Vision & Anomaly Detection](#6-computer-vision--anomaly-detection)
-  - [7. Robotics & Autonomous Systems](#7-robotics--autonomous-systems)
-  - [8. Agentic AI & Enterprise Tooling](#8-agentic-ai--enterprise-tooling)
-  - [9. Digital Twin Architecture](#9-digital-twin-architecture)
-  - [10. AI Sentinel — Cybersecurity](#10-ai-sentinel--cybersecurity)
-  - [11. ASR Lab — Speech Recognition Optimization](#11-asr-lab--speech-recognition-optimization)
-  - [12. AI Solution Lifecycle Platform](#12-ai-solution-lifecycle-platform)
+  - [Conversational AI](#conversational-ai)
+  - [AI Governance & Enterprise Strategy](#ai-governance--enterprise-strategy)
+  - [Computer Vision & Anomaly Detection](#computer-vision--anomaly-detection)
+  - [Robotics & Autonomous Systems](#robotics--autonomous-systems)
+  - [Agentic AI & Enterprise Tooling](#agentic-ai--enterprise-tooling)
+  - [Digital Twin Architecture](#digital-twin-architecture)
+  - [AI Sentinel — Infrastructure Defense](#ai-sentinel--infrastructure-defense)
+  - [AI Solution Lifecycle Platform](#ai-solution-lifecycle-platform)
 - [Technical Skills](#technical-skills)
 - [Certifications](#certifications)
 - [Getting Started](#getting-started)
@@ -32,127 +28,85 @@ This repository showcases selected projects across AI/ML engineering, prompt des
 
 ## Featured Projects
 
-### 1. Conversational IVR & NLP Optimization
+### Conversational AI
 
-*Redesigning legacy IVR systems using Kore.ai with integrated LLM routing, Few-Shot intent mapping, and AI-first NLU analytics.*
+*End-to-end conversational AI engineering — IVR intent routing, prompt design, NLP analytics, and speech-recognition optimization. See the [section README](conversational-ai/README.md) for the full picture.*
 
-- [`top_of_ivr_llm_router_readme.md`](01_conversational_ivr/top_of_ivr_llm_router_readme.md) – Top-of-IVR LLM router design
-- [`router_logic.py`](01_conversational_ivr/router_logic.py) – Confidence-based routing with fallback logic
-- [`batch_evaluator.py`](01_conversational_ivr/batch_evaluator.py) – Batch evaluation of router accuracy
-- [`cosine_similarity.md`](01_conversational_ivr/cosine_similarity.md) – Utterance clustering using cosine similarity
-- [`example_utterance_clustering_cosine_similarity.py`](01_conversational_ivr/example_utterance_clustering_cosine_similarity.py) – Clustering example script
+- [`ivr-routing/`](conversational-ai/ivr-routing/) – Confidence-based IVR routing with LLM fallback, batch accuracy evaluation, and utterance clustering
+- [`prompt-engineering/`](conversational-ai/prompt-engineering/) – Enterprise GPT-4o prompt sets, OpenAI function calling schema, few-shot examples, and a Jupyter test runner
+- [`nlp-tools/`](conversational-ai/nlp-tools/) – Streamlit cosine-similarity scorer, LLM performance analytics dashboard, and libpostal address pipeline
+- [`asr-lab/`](conversational-ai/asr-lab/) – ASR configuration batch testing, sensitivity optimization, and cross-engine comparison (Azure Speech, Deepgram, Speechmatics)
 
-### 2. Prompt Engineering & GPT Fine-Tuning
-
-*Custom GPT-4o prompt sets for enterprise bots, billing routers, and zero-shot model training in Kore.ai.*
-
-- [`prompt_engineering_readme.md`](02_prompt_engineering/prompt_engineering_readme.md) – Module overview
-- [`billing_router_prompt_1.md`](02_prompt_engineering/billing_router_prompt_1.md) – Cable/Mobile billing router prompt
-- [`cable_billing_router_prompt_2.md`](02_prompt_engineering/cable_billing_router_prompt_2.md) – Specialized cable billing prompt
-- [`few_shot_prompt_examples.md`](02_prompt_engineering/few_shot_prompt_examples.md) – Few-shot examples for function calling
-- [`function_calling_schema.json`](02_prompt_engineering/function_calling_schema.json) – OpenAI function calling schema
-- [`prompt_test_runner.ipynb`](02_prompt_engineering/prompt_test_runner.ipynb) – Jupyter notebook for prompt validation
-
-### 3. AI Governance & Enterprise Strategy
+### AI Governance & Enterprise Strategy
 
 *Responsible AI documentation and implementation strategies tailored to enterprise environments, including NERC CIP, FERC, and NIST AI RMF compliance.*
 
-- [`ai_governance_policy_template.md`](03_ai_governance/ai_governance_policy_template.md) – Enterprise governance policy
-- [`ai_raci_matrix_template.xlsx`](03_ai_governance/ai_raci_matrix_template.xlsx) – RACI matrix for AI governance
-- [`responsible_llm_guidelines_readme.md`](03_ai_governance/responsible_llm_guidelines_readme.md) – Safety and compliance guidelines
-- [`llm_deployment_best_practices_readme.md`](03_ai_governance/llm_deployment_best_practices_readme.md) – Operational best practices
-- [`llm_deployment_business_strategy_readme.md`](03_ai_governance/llm_deployment_business_strategy_readme.md) – Business alignment strategy
-- [`llm_training_plan.md`](03_ai_governance/llm_training_plan.md) – Detailed LLM training plan
+- [`ai_governance_policy_template.md`](ai-governance/ai_governance_policy_template.md) – Enterprise governance policy
+- [`ai_raci_matrix_template.xlsx`](ai-governance/ai_raci_matrix_template.xlsx) – RACI matrix for AI governance
+- [`responsible_llm_guidelines_readme.md`](ai-governance/responsible_llm_guidelines_readme.md) – Safety and compliance guidelines
+- [`llm_deployment_best_practices_readme.md`](ai-governance/llm_deployment_best_practices_readme.md) – Operational best practices
+- [`llm_deployment_business_strategy_readme.md`](ai-governance/llm_deployment_business_strategy_readme.md) – Business alignment strategy
+- [`llm_training_plan.md`](ai-governance/llm_training_plan.md) – Detailed LLM training plan
 
-### 4. NLP Tools & Dashboards
-
-*Python & Streamlit apps for sentence similarity scoring, semantic clustering, and LLM performance analytics.*
-
-- [`nlp_tools_readme.md`](04_nlp_tools/nlp_tools_readme.md) – Module overview
-- [`streamlit_cosine_tool.py`](04_nlp_tools/streamlit_cosine_tool.py) – Cosine similarity UI tool
-- [`llm_analytics_dashboard.py`](04_nlp_tools/llm_analytics_dashboard.py) – LLM performance analytics dashboard
-- [`address_training_pipeline.py`](04_nlp_tools/address_training_pipeline.py) – Address recognition pipeline for IVRs
-
-### 5. Wealth Building through AI Automation
-
-*Personal experiments in building recession-resistant, passive-income systems powered by AI.*
-
-- [`wealth_building_ai_readme.md`](05_wealth_building/wealth_building_ai_readme.md) – Module overview
-- [`24_month_wealth_building_strategy.md`](05_wealth_building/24_month_wealth_building_strategy.md) – 24-month financial freedom roadmap
-- [`automation_model_framework.md`](05_wealth_building/automation_model_framework.md) – Project scoring framework
-- [`passive_income_dashboard.py`](05_wealth_building/passive_income_dashboard.py) – Income tracking dashboard
-
-### 6. Computer Vision & Anomaly Detection
+### Computer Vision & Anomaly Detection
 
 *Multi-modal computer vision, time-series anomaly detection, and GPU-accelerated monitoring systems for critical infrastructure.*
 
-- [`06_computer_vision/README.md`](06_computer_vision/README.md) – Module overview
-- [`vision_monitor.py`](06_computer_vision/vision_monitor.py) – YOLOv8 + BLIP-2 monitoring pipeline
-- [`alert_pipeline.py`](06_computer_vision/alert_pipeline.py) – Multi-level alert system with cooldowns
-- [`anomaly_detector.py`](06_computer_vision/anomaly_detector.py) – Time-series anomaly detection (threshold, z-score, isolation forest)
-- [`data_generator.py`](06_computer_vision/data_generator.py) – Synthetic sensor data generator
-- [`metrics_exporter.py`](06_computer_vision/metrics_exporter.py) – Prometheus-format exporter for Grafana
+- [`computer-vision/README.md`](computer-vision/README.md) – Module overview
+- [`vision_monitor.py`](computer-vision/vision_monitor.py) – YOLOv8 + BLIP-2 monitoring pipeline
+- [`alert_pipeline.py`](computer-vision/alert_pipeline.py) – Multi-level alert system with cooldowns
+- [`anomaly_detector.py`](computer-vision/anomaly_detector.py) – Time-series anomaly detection (threshold, z-score, isolation forest)
+- [`data_generator.py`](computer-vision/data_generator.py) – Synthetic sensor data generator
+- [`metrics_exporter.py`](computer-vision/metrics_exporter.py) – Prometheus-format exporter for Grafana
 
-### 7. Robotics & Autonomous Systems
+### Robotics & Autonomous Systems
 
 *AI/ML integration for autonomous inspection robots in industrial environments using the public Boston Dynamics Spot SDK.*
 
-- [`07_robotics/README.md`](07_robotics/README.md) – Module overview
-- [`mission_orchestrator.py`](07_robotics/mission_orchestrator.py) – Mission scheduling and execution loop
-- [`spot_client.py`](07_robotics/spot_client.py) – Lightweight Spot SDK wrapper
-- [`report_generator.py`](07_robotics/report_generator.py) – Post-mission Markdown + JSON reports
-- [`inspection_config.yaml`](07_robotics/inspection_config.yaml) – Configurable checkpoint definitions
+- [`robotics/README.md`](robotics/README.md) – Module overview
+- [`mission_orchestrator.py`](robotics/mission_orchestrator.py) – Mission scheduling and execution loop
+- [`spot_client.py`](robotics/spot_client.py) – Lightweight Spot SDK wrapper
+- [`report_generator.py`](robotics/report_generator.py) – Post-mission Markdown + JSON reports
+- [`inspection_config.yaml`](robotics/inspection_config.yaml) – Configurable checkpoint definitions
 
-### 8. Agentic AI & Enterprise Tooling
+### Agentic AI & Enterprise Tooling
 
 *End-to-end agentic architectures for RAG, MCP servers, and multi-agent orchestration.*
 
-- [`08_agentic_ai/README.md`](08_agentic_ai/README.md) – Module overview
-- [`rag_agent/`](08_agentic_ai/rag_agent/) – LangGraph RAG agent with FAISS, tool integration, and structured output
-- [`mcp_server/`](08_agentic_ai/mcp_server/) – MCP server template with tool registration and async client
-- [`multi_agent/`](08_agentic_ai/multi_agent/) – Multi-agent orchestrator with audit logging and API key management
+- [`agentic-ai/README.md`](agentic-ai/README.md) – Module overview
+- [`rag_agent/`](agentic-ai/rag_agent/) – LangGraph RAG agent with FAISS, tool integration, and structured output
+- [`mcp_server/`](agentic-ai/mcp_server/) – MCP server template with tool registration and async client
+- [`multi_agent/`](agentic-ai/multi_agent/) – Multi-agent orchestrator with audit logging and API key management
 
-### 9. Digital Twin Architecture
+### Digital Twin Architecture
 
 *Privacy-first multi-database digital twin framework with encrypted vector search, knowledge graph analysis, and metadata lineage tracking.*
 
-- [`09_digital_twin/README.md`](09_digital_twin/README.md) – Module overview
-- [`storage/vector_db.py`](09_digital_twin/storage/vector_db.py) – ChromaDB wrapper with encryption-aware add/query
-- [`storage/knowledge_graph.py`](09_digital_twin/storage/knowledge_graph.py) – NetworkX graph with centrality analysis and community detection
-- [`storage/metadata_db.py`](09_digital_twin/storage/metadata_db.py) – SQLAlchemy ORM for data lineage and sync tracking
-- [`storage/encryptor.py`](09_digital_twin/storage/encryptor.py) – Fernet (AES-256) encryption with sensitivity classifier
-- [`config.py`](09_digital_twin/config.py) – Pydantic BaseSettings configuration management
-- [`example.py`](09_digital_twin/example.py) – Five runnable examples demonstrating the full stack
-- [`architecture.md`](09_digital_twin/architecture.md) – Detailed architecture documentation
+- [`digital-twin/README.md`](digital-twin/README.md) – Module overview
+- [`storage/vector_db.py`](digital-twin/storage/vector_db.py) – ChromaDB wrapper with encryption-aware add/query
+- [`storage/knowledge_graph.py`](digital-twin/storage/knowledge_graph.py) – NetworkX graph with centrality analysis and community detection
+- [`storage/metadata_db.py`](digital-twin/storage/metadata_db.py) – SQLAlchemy ORM for data lineage and sync tracking
+- [`storage/encryptor.py`](digital-twin/storage/encryptor.py) – Fernet (AES-256) encryption with sensitivity classifier
+- [`config.py`](digital-twin/config.py) – Pydantic BaseSettings configuration management
+- [`example.py`](digital-twin/example.py) – Five runnable examples demonstrating the full stack
+- [`architecture.md`](digital-twin/architecture.md) – Detailed architecture documentation
 
-### 10. AI Sentinel — Cybersecurity Suite
+### AI Sentinel — Infrastructure Defense
 
-*Defensive cybersecurity tools for critical infrastructure — file integrity monitoring, network auditing, threat intelligence, encryption, and TLS compliance.*
+*Defensive tooling for critical-infrastructure environments — file integrity monitoring, network visibility, deception-based early warning, envelope encryption, and TLS compliance verification.*
 
-- [`10_ai_sentinel_cybersecurity/README.md`](10_ai_sentinel_cybersecurity/README.md) – Module overview
-- **The Sentinel Script** — File integrity monitor with SHA-256 hashing, baseline comparison, and real-time watch modes
+- [`infrastructure-defense/README.md`](infrastructure-defense/README.md) – Module overview
+- **Sentinel FIM** — File integrity monitor with SHA-256 hashing, baseline comparison, and real-time watch modes
 - **Network Inventory & Audit** — Device discovery, port scanning, OS fingerprinting, and topology visualization
 - **Threat Intelligence Honeypot** — Async service listeners with JSONL logging, threat analysis, and Streamlit dashboard
 - **Envelope Encryption File Vault** — AES-256-GCM envelope encryption with key rotation and HMAC integrity
 - **TLS Handshake Analyzer** — Certificate inspection, cipher validation, and compliance reporting
 
-### 11. ASR Lab — Speech Recognition Optimization
-
-*Automated testing and tuning of ASR configurations for IVR systems — solving Azure Speech hypersensitivity to background noise with batch testing, sensitivity optimization, and config comparison across Deepgram, Azure Speech, and Speechmatics engines.*
-
-- [`11_asr_lab/README.md`](11_asr_lab/README.md) – Module overview
-- [`batch_asr_tester.py`](11_asr_lab/batch_asr_tester.py) – Batch test ASR configs against background noise scenarios
-- [`sensitivity_optimizer.py`](11_asr_lab/sensitivity_optimizer.py) – Automatic sensitivity threshold calculation via RMS analysis
-- [`asr_config_tester_app.py`](11_asr_lab/asr_config_tester_app.py) – Streamlit drag-and-drop testing dashboard
-- [`cosine_config_comparison.py`](11_asr_lab/cosine_config_comparison.py) – Cosine similarity comparison of config vectors
-- [`simulated_audio_tester.py`](11_asr_lab/simulated_audio_tester.py) – Synthetic noise + utterance signal generator
-- [`convert_yaml_json.py`](11_asr_lab/convert_yaml_json.py) – YAML/JSON config converter
-
-### 12. AI Solution Lifecycle Platform
+### AI Solution Lifecycle Platform
 
 *Full-stack platform for evaluating, planning, and managing AI solution deployments — from value assessment through production monitoring. FastAPI + Vue 3 + PostgreSQL.*
 
-- [`12_ai_solution_lifecycle/README.md`](12_ai_solution_lifecycle/README.md) – Module overview
+- [`ai-solution-lifecycle/README.md`](ai-solution-lifecycle/README.md) – Module overview
 - **AI Document Generation** — Auto-generate BRDs, TRDs, functional specs from natural language via pluggable LLM providers (OpenAI, Anthropic, Mock)
 - **Prompt Library & Playground** — Versioned prompt templates with variable extraction, execution metrics, and interactive testing
 - **Milestone Tracking** — Kanban-style project milestones with dependency graph
@@ -207,7 +161,7 @@ pip install -r requirements.txt
 To run any Streamlit dashboard:
 
 ```bash
-streamlit run 04_nlp_tools/streamlit_cosine_tool.py
+streamlit run conversational-ai/nlp-tools/streamlit_cosine_tool.py
 ```
 
 ---
