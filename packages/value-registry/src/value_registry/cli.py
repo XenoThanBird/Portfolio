@@ -25,7 +25,10 @@ from .scoring import load_portfolio, score_portfolio
 def _write_or_print(text: str, out: Optional[str]) -> None:
     if out:
         Path(out).parent.mkdir(parents=True, exist_ok=True)
-        Path(out).write_text(text, encoding="utf-8", newline="\n")
+        # open() instead of Path.write_text: the newline kwarg only
+        # exists on write_text from Python 3.10, and the floor is 3.9.
+        with open(out, "w", encoding="utf-8", newline="\n") as f:
+            f.write(text)
         print(f"wrote {out}")
     else:
         print(text)
