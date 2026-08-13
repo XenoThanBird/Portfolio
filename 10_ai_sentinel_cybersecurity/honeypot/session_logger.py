@@ -46,13 +46,15 @@ class SessionLogger:
         max_payload_bytes: int = 4096,
         max_entries_per_file: int = 10000,
     ):
-        self.log_dir = log_dir
+        # Resolve to a real path once so all later containment checks
+        # compare against a canonical base.
+        self.log_dir = os.path.realpath(log_dir)
         self.max_payload_bytes = max_payload_bytes
         self.max_entries_per_file = max_entries_per_file
         self._current_count = 0
         self._current_file = None
 
-        os.makedirs(log_dir, exist_ok=True)
+        os.makedirs(self.log_dir, exist_ok=True)
 
     def log_session(self, record: SessionRecord) -> None:
         """Append a session record to the current log file."""
@@ -74,9 +76,26 @@ class SessionLogger:
     def read_sessions(
         self, log_file: str = None, limit: int = None
     ) -> list:
-        """Read session records from a log file."""
+        """Read session records from a log file.
+
+        An explicit ``log_file`` must be a ``.jsonl`` file inside this
+        logger's log directory; anything else raises ``ValueError``.
+        """
         if log_file is None:
             log_file = self._get_log_path()
+        else:
+            log_file = os.path.realpath(log_file)
+            try:
+                contained = (
+                    os.path.commonpath([log_file, self.log_dir])
+                    == self.log_dir
+                )
+            except ValueError:  # different drives on Windows
+                contained = False
+            if not contained or not log_file.endswith(".jsonl"):
+                raise ValueError(
+                    "log_file must be a .jsonl file inside the log directory"
+                )
 
         if not os.path.exists(log_file):
             return []

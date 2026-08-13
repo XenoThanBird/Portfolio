@@ -28,8 +28,25 @@ except ImportError as e:
 
 
 def load_sessions(log_dir: str = "honeypot_logs") -> list:
-    """Load all sessions from the log directory."""
-    logger = SessionLogger(log_dir=log_dir)
+    """Load all sessions from the log directory.
+
+    The directory is user-supplied via the dashboard sidebar, so it is
+    constrained to a path inside the current working directory to keep
+    the dashboard from reading arbitrary filesystem locations.
+    """
+    base = os.path.realpath(os.getcwd())
+    resolved = os.path.realpath(os.path.join(base, log_dir))
+    try:
+        contained = os.path.commonpath([resolved, base]) == base
+    except ValueError:  # different drives on Windows
+        contained = False
+    if not contained:
+        st.error(
+            "Log directory must be a relative path inside the "
+            "working directory."
+        )
+        return []
+    logger = SessionLogger(log_dir=resolved)
     return logger.read_all_sessions()
 
 
