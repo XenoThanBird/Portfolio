@@ -79,3 +79,6 @@ package-lock.json
 
 # Frontend build output
 dist/
+
+# Local task tracking (session working files)
+tasks/
