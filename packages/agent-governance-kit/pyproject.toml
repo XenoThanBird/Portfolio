@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Governance primitives for agentic AI systems: hash-chained audit logging, redaction, policy-as-code checks, failure-semantics state machine, and human-in-the-loop gates."
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "All Rights Reserved" }
+license = { text = "Apache-2.0" }
 authors = [{ name = "Matthan Bird", email = "bird.matthan@gmail.com" }]
 keywords = ["ai-governance", "audit-log", "human-in-the-loop", "policy-as-code", "agentic-ai"]
 classifiers = [

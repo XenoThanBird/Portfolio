@@ -5,7 +5,7 @@
 This is Matthan Bird's AI/ML Portfolio — production-grade projects spanning conversational AI, speech recognition, computer vision, robotics, infrastructure defense, agentic architectures, and full-stack AI lifecycle management, organized into eight capability sections. Each top-level directory is a self-contained section with its own documentation, configuration, and example scripts. (A former wealth-building module was extracted to its own repository.)
 
 **Language**: Python 3.9+
-**License**: All Rights Reserved (portfolio/demo purposes only)
+**License**: Apache-2.0
 **Contact**: bird.matthan@gmail.com
 
 ## Repository Structure
@@ -182,7 +182,7 @@ There is no formal test suite or test runner. Testing is done through:
 3. **No secrets in code** — Use `.env` files and `python-dotenv`. Never commit API keys, passwords, or credentials.
 4. **Match existing style** — Use dataclasses for data records, Pydantic for validated models, YAML for config. Follow the module's existing patterns.
 5. **Keep modules independent** — Cross-module imports should not be introduced. Each section directory is standalone.
-6. **Respect the license** — This is a proprietary portfolio. Do not redistribute code or create derivative works without permission.
+6. **Respect the license** — Apache-2.0: redistribution and derivative works are permitted with attribution; retain the LICENSE and NOTICE files and the copyright notice.
 7. **Documentation matters** — Each module has its own README/markdown docs. Update them when making structural changes.
 8. **No unnecessary abstractions** — Code is intentionally straightforward and readable. Don't over-engineer.
 9. **Security-first in digital-twin and infrastructure-defense** — These modules handle encryption, integrity, and network security. Be extra careful with changes that could weaken security guarantees.

@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "AI opportunity value model and model registry with mandatory evidence-class labeling: every figure carries documented/estimated/modeled provenance and a confidence value."
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "All Rights Reserved" }
+license = { text = "Apache-2.0" }
 authors = [{ name = "Matthan Bird", email = "bird.matthan@gmail.com" }]
 keywords = ["ai-governance", "value-model", "roi", "model-registry", "tprm", "evidence"]
 classifiers = [
