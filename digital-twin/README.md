@@ -33,7 +33,7 @@ All three layers integrate with a **Fernet (AES-256) encryption layer** that aut
 pip install chromadb networkx sqlalchemy cryptography pydantic-settings sentence-transformers
 
 # Run the examples
-cd 09_digital_twin
+cd digital-twin
 python example.py
 ```
 

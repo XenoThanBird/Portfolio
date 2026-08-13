@@ -11,7 +11,7 @@ synthetic; the code is not connected to any production system.
 
 If you find a security issue in this repository — a leaked credential, a
 dependency vulnerability, or a flaw in one of the security-focused modules
-(sections 09–10) — please report it privately:
+(the digital-twin and infrastructure-defense sections) — please report it privately:
 
 - **Email**: [bird.matthan@gmail.com](mailto:bird.matthan@gmail.com)
 

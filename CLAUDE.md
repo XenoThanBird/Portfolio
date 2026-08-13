@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is Matthan Bird's AI/ML Portfolio — a collection of 12 production-grade projects spanning conversational AI, speech recognition, computer vision, robotics, cybersecurity, agentic architectures, and full-stack AI lifecycle management. Each numbered directory is a self-contained module with its own documentation, configuration, and example scripts.
+This is Matthan Bird's AI/ML Portfolio — production-grade projects spanning conversational AI, speech recognition, computer vision, robotics, infrastructure defense, agentic architectures, and full-stack AI lifecycle management, organized into eight capability sections. Each top-level directory is a self-contained section with its own documentation, configuration, and example scripts. (A former wealth-building module was extracted to its own repository.)
 
 **Language**: Python 3.9+
 **License**: All Rights Reserved (portfolio/demo purposes only)
@@ -12,33 +12,34 @@ This is Matthan Bird's AI/ML Portfolio — a collection of 12 production-grade p
 
 ```
 Portfolio/
-├── 01_conversational_ivr/    # IVR routing with NLU + LLM confidence scoring
-├── 02_prompt_engineering/     # GPT-4o prompt sets, function calling schemas
-├── 03_ai_governance/          # Responsible AI policies, NERC CIP/NIST compliance
-├── 04_nlp_tools/              # Streamlit dashboards for similarity & analytics
-├── 05_wealth_building/        # AI-driven financial tracking & automation
-├── 06_computer_vision/        # YOLOv8 + BLIP-2 monitoring, anomaly detection
-├── 07_robotics/               # Boston Dynamics Spot mission orchestration
-├── 08_agentic_ai/             # RAG agent, MCP server, multi-agent orchestrator
+├── conversational-ai/         # Conversational AI section (unified README)
+│   ├── ivr-routing/           # IVR routing with NLU + LLM confidence scoring
+│   ├── prompt-engineering/    # GPT-4o prompt sets, function calling schemas
+│   ├── nlp-tools/             # Streamlit dashboards for similarity & analytics
+│   └── asr-lab/               # ASR config testing & sensitivity optimization
+│       └── configs/
+├── ai-governance/             # Responsible AI policies, NERC CIP/NIST compliance
+├── computer-vision/           # YOLOv8 + BLIP-2 monitoring, anomaly detection
+├── robotics/                  # Boston Dynamics Spot mission orchestration
+├── agentic-ai/                # RAG agent, MCP server, multi-agent orchestrator
 │   ├── rag_agent/
 │   ├── mcp_server/
 │   └── multi_agent/
-├── 09_digital_twin/           # Encrypted vector search, knowledge graphs, lineage
+├── digital-twin/              # Encrypted vector search, knowledge graphs, lineage
 │   └── storage/
-├── 10_ai_sentinel_cybersecurity/  # FIM (sentinel.py), network mapper, honeypot, vault, TLS
+├── infrastructure-defense/    # FIM (sentinel.py), network mapper, honeypot, vault, TLS
 │   ├── network_mapper/
 │   ├── honeypot/
 │   ├── file_vault/
 │   └── tls_analyzer/
-├── 11_asr_lab/                # ASR config testing & sensitivity optimization
-│   └── configs/
-├── 12_ai_solution_lifecycle/  # Full-stack AI lifecycle platform (FastAPI + Vue 3)
+├── ai-solution-lifecycle/     # Full-stack AI lifecycle platform (FastAPI + Vue 3)
 │   ├── backend/
 │   │   └── app/               # models/, routers/, schemas/, services/
 │   └── frontend/
 │       └── src/               # api/, components/, router/, stores/, views/
 ├── requirements.txt           # Master dependency list for all modules
 ├── toolkit_starter_notebook.py # Starter notebook / onboarding script
+├── SECURITY.md
 ├── LICENSE
 └── README.md
 ```
@@ -55,8 +56,8 @@ Portfolio/
 | **Visualization** | Streamlit, Plotly, Seaborn, Matplotlib |
 | **Security** | cryptography (Fernet/AES-256-GCM), Watchdog, python-nmap, scapy |
 | **Robotics** | Boston Dynamics Spot SDK (bosdyn-client, bosdyn-mission) |
-| **Speech/ASR** | Azure Speech, Deepgram, Speechmatics, Kore.ai integration (module 11) |
-| **Web/API** | FastAPI, SQLAlchemy + Alembic, Vue 3, Pinia, Tailwind CSS, Vite (module 12) |
+| **Speech/ASR** | Azure Speech, Deepgram, Speechmatics, Kore.ai integration (asr-lab) |
+| **Web/API** | FastAPI, SQLAlchemy + Alembic, Vue 3, Pinia, Tailwind CSS, Vite (ai-solution-lifecycle) |
 | **Config** | YAML (pyyaml), python-dotenv, Pydantic BaseSettings |
 
 ## Development Setup
@@ -77,16 +78,16 @@ pip install -r requirements.txt
 
 Modules that need API keys or credentials use `.env` files (gitignored). Look for `.env.template` files in subdirectories for required variables:
 
-- `OPENAI_API_KEY` — modules 02, 08, 12
-- `ANTHROPIC_API_KEY` — modules 08, 12
-- `SPOT_HOSTNAME`, `SPOT_USERNAME`, `SPOT_PASSWORD` — module 07
-- `DATABASE_URL`, `SECRET_KEY`, `LLM_PROVIDER` — module 12
+- `OPENAI_API_KEY` — prompt-engineering, agentic-ai, ai-solution-lifecycle
+- `ANTHROPIC_API_KEY` — agentic-ai, ai-solution-lifecycle
+- `SPOT_HOSTNAME`, `SPOT_USERNAME`, `SPOT_PASSWORD` — robotics
+- `DATABASE_URL`, `SECRET_KEY`, `LLM_PROVIDER` — ai-solution-lifecycle
 
 ## Code Conventions
 
 ### Configuration Pattern
 - **YAML files** (`config.yaml`) for static configuration (thresholds, paths, feature toggles)
-- **Pydantic BaseSettings** for typed, validated runtime config (modules 08, 09)
+- **Pydantic BaseSettings** for typed, validated runtime config (agentic-ai, digital-twin)
 - **Environment variables** via `python-dotenv` for secrets — never hardcode credentials
 
 ### Data Structures
@@ -112,55 +113,46 @@ Modules that need API keys or credentials use `.env` files (gitignored). Look fo
 
 ## Module-by-Module Summary
 
-### 01 — Conversational IVR
-Confidence-based intent routing with LLM fallback. Key files: `router_logic.py` (routing engine), `batch_evaluator.py` (accuracy testing), `example_utterance_clustering_cosine_similarity.py` (NLP clustering). Config: `router_taskmap.json`. Test data: `router_test_set.csv`.
+### conversational-ai/ (4 submodules, unified README)
+- **ivr-routing/**: Confidence-based intent routing with LLM fallback. Key files: `router_logic.py` (routing engine), `batch_evaluator.py` (accuracy testing), `example_utterance_clustering_cosine_similarity.py` (NLP clustering). Config: `router_taskmap.json`. Test data: `router_test_set.csv`.
+- **prompt-engineering/**: Enterprise GPT-4o prompts for billing and support bots. `function_calling_schema.json` defines 6 OpenAI function tools. `prompt_test_runner.ipynb` for validation. `prompt_test_set.csv` for test cases.
+- **nlp-tools/**: Two Streamlit apps: `streamlit_cosine_tool.py` (similarity scoring) and `llm_analytics_dashboard.py` (LLM performance metrics). Plus `address_training_pipeline.py` using libpostal.
+- **asr-lab/**: ASR configuration testing and optimization for IVR systems (Kore.ai, Azure Speech, Deepgram, Speechmatics). `batch_asr_tester.py` — batch-tests configs against background-noise scenarios. `sensitivity_optimizer.py` — RMS-based sensitivity threshold calculation. `asr_config_tester_app.py` — Streamlit testing dashboard. YAML/JSON config converters and sample engine configs in `configs/`. Has its own `requirements.txt` and `Dockerfile`.
 
-### 02 — Prompt Engineering
-Enterprise GPT-4o prompts for billing and support bots. `function_calling_schema.json` defines 6 OpenAI function tools. `prompt_test_runner.ipynb` for validation. `prompt_test_set.csv` for test cases.
-
-### 03 — AI Governance
+### ai-governance/
 Documentation-only module. Policy templates, deployment best practices, training plans, RACI matrix (`.xlsx`). No executable code.
 
-### 04 — NLP Tools
-Two Streamlit apps: `streamlit_cosine_tool.py` (similarity scoring) and `llm_analytics_dashboard.py` (LLM performance metrics). Plus `address_training_pipeline.py` using libpostal.
-
-### 05 — Wealth Building
-`passive_income_dashboard.py` — Streamlit income/expense tracker. Strategy documents and sample CSV data.
-
-### 06 — Computer Vision
+### computer-vision/
 `vision_monitor.py` — Real-time YOLOv8 + BLIP-2 pipeline with CSV/JSON logging and Grafana export. `anomaly_detector.py` — Time-series anomaly detection (threshold, Z-score, Isolation Forest) with SQLite storage. `alert_pipeline.py` — Multi-level alerting with cooldowns. Configured via `config.yaml`.
 
-### 07 — Robotics
+### robotics/
 `spot_client.py` — Spot SDK wrapper with connect/power/capture/status methods. `mission_orchestrator.py` — Checkpoint-based mission scheduling. `report_generator.py` — Post-mission Markdown/JSON reports. Configured via `inspection_config.yaml`.
 
-### 08 — Agentic AI (3 submodules)
+### agentic-ai/ (3 submodules)
 - **rag_agent/**: LangGraph StateGraph workflow (analyze → retrieve → augment_tools → synthesize). FAISS vector store with persistence. Wikipedia & ArXiv tool integrations.
 - **mcp_server/**: MCP protocol server with tool registration + async HTTP client with retries.
 - **multi_agent/**: Agent orchestrator/dispatcher with JSONL audit logging and API key rotation.
 
-### 09 — Digital Twin
+### digital-twin/
 Multi-database architecture: `vector_db.py` (ChromaDB with Fernet encryption), `knowledge_graph.py` (NetworkX with centrality/community analysis), `metadata_db.py` (SQLAlchemy ORM for data lineage). `encryptor.py` classifies sensitivity (HIGH/MEDIUM/LOW/PUBLIC) and encrypts accordingly.
 
-### 10 — Cybersecurity Suite (5 components)
+### infrastructure-defense/ (5 components)
 - **sentinel.py** (module root, with `baseline_manager.py` and `alert_handler.py`): File integrity monitoring via SHA-256 + Watchdog filesystem events.
 - **network_mapper/**: Nmap-based discovery, MAC/OS fingerprinting, topology visualization.
 - **honeypot/**: Async TCP listener simulating SSH/HTTP/Telnet with attack analysis dashboard.
 - **file_vault/**: AES-256-GCM envelope encryption with PBKDF2 master key derivation and HMAC integrity.
 - **tls_analyzer/**: TLS handshake inspection, X.509 parsing, compliance checking against security baselines.
 
-### 11 — ASR Lab
-ASR configuration testing and optimization for IVR systems (Kore.ai, Azure Speech, Deepgram, Speechmatics). `batch_asr_tester.py` — batch-tests configs against background-noise scenarios. `sensitivity_optimizer.py` — RMS-based sensitivity threshold calculation. `asr_config_tester_app.py` — Streamlit testing dashboard. `cosine_config_comparison.py` — config similarity comparison. YAML/JSON config converters and sample engine configs in `configs/`. Has its own `requirements.txt` and `Dockerfile`.
-
-### 12 — AI Solution Lifecycle Platform
+### ai-solution-lifecycle/
 Full-stack platform for evaluating and managing AI solution deployments. **Backend** (`backend/app/`): FastAPI + SQLAlchemy + Alembic — routers, models, schemas, and services for projects, milestones, RACI, SLAs, alerts, risks, change requests, prompt library, model catalog, value scoring (weighted 6-dimension engine with ROI/NPV), and LLM-backed document generation (OpenAI/Anthropic/mock providers). **Frontend** (`frontend/src/`): Vue 3 + Pinia + Tailwind SPA with views/components per domain. `seed_demo.py` seeds synthetic demo data. Dockerized (per-service Dockerfiles).
 
 ## Testing Approach
 
 There is no formal test suite or test runner. Testing is done through:
-- **Batch evaluation scripts** — `01_conversational_ivr/batch_evaluator.py` validates router accuracy against CSV test sets
+- **Batch evaluation scripts** — `conversational-ai/ivr-routing/batch_evaluator.py` validates router accuracy against CSV test sets
 - **Example scripts** — Most modules include `example.py` for self-contained demos
-- **Jupyter notebooks** — `02_prompt_engineering/prompt_test_runner.ipynb` for interactive prompt validation
-- **Synthetic data generators** — `06_computer_vision/data_generator.py` creates test sensor data
+- **Jupyter notebooks** — `conversational-ai/prompt-engineering/prompt_test_runner.ipynb` for interactive prompt validation
+- **Synthetic data generators** — `computer-vision/data_generator.py` creates test sensor data
 
 ## Key Files to Know
 
@@ -169,9 +161,9 @@ There is no formal test suite or test runner. Testing is done through:
 | `requirements.txt` | Master dependency list — grouped by module |
 | `.gitignore` | Excludes .env, *.db, *.pt, *.bin, logs/, vault_data/, baselines/ |
 | `toolkit_starter_notebook.py` | Onboarding entry point |
-| `06_computer_vision/config.yaml` | Representative YAML config pattern used across modules |
-| `08_agentic_ai/rag_agent/agent.py` | Most complex code — LangGraph workflow with 4 nodes |
-| `10_ai_sentinel_cybersecurity/file_vault/vault.py` | Envelope encryption reference implementation |
+| `computer-vision/config.yaml` | Representative YAML config pattern used across modules |
+| `agentic-ai/rag_agent/agent.py` | Most complex code — LangGraph workflow with 4 nodes |
+| `infrastructure-defense/file_vault/vault.py` | Envelope encryption reference implementation |
 
 ## Guidelines for AI Assistants
 
@@ -179,9 +171,9 @@ There is no formal test suite or test runner. Testing is done through:
 2. **Preserve config-driven design** — Changes to behavior should go through YAML configs or Pydantic settings, not hardcoded values.
 3. **No secrets in code** — Use `.env` files and `python-dotenv`. Never commit API keys, passwords, or credentials.
 4. **Match existing style** — Use dataclasses for data records, Pydantic for validated models, YAML for config. Follow the module's existing patterns.
-5. **Keep modules independent** — Cross-module imports should not be introduced. Each numbered directory is standalone.
+5. **Keep modules independent** — Cross-module imports should not be introduced. Each section directory is standalone.
 6. **Respect the license** — This is a proprietary portfolio. Do not redistribute code or create derivative works without permission.
 7. **Documentation matters** — Each module has its own README/markdown docs. Update them when making structural changes.
 8. **No unnecessary abstractions** — Code is intentionally straightforward and readable. Don't over-engineer.
-9. **Security-first in modules 09–10** — These modules handle encryption, integrity, and network security. Be extra careful with changes that could weaken security guarantees.
+9. **Security-first in digital-twin and infrastructure-defense** — These modules handle encryption, integrity, and network security. Be extra careful with changes that could weaken security guarantees.
 10. **Sensitive data patterns** — The `.gitignore` is carefully configured. Never commit database files (*.db), model weights (*.pt, *.bin), encrypted data (*.encrypted), vault keys, or log directories.
