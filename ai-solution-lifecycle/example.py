@@ -10,7 +10,7 @@ Demonstrates backend capabilities without running the full server:
   6. Prioritizes use cases
 
 Usage:
-    cd 12_ai_solution_lifecycle
+    cd ai-solution-lifecycle
     python example.py
 """
 
