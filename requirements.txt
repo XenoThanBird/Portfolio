@@ -45,7 +45,7 @@ pydantic-settings>=2.0.0
 
 # Cybersecurity Suite (10)
 watchdog>=3.0.0
-python-nmap>=1.6.0
+python-nmap>=0.7.1  # latest PyPI release line; >=1.6.0 never existed
 scapy>=2.5.0
 
 # ASR Lab (11)
