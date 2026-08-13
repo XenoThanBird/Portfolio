@@ -34,9 +34,9 @@ def load_sessions(log_dir: str = "honeypot_logs") -> list:
     constrained to a path inside the current working directory to keep
     the dashboard from reading arbitrary filesystem locations.
     """
-    base = os.path.realpath(os.getcwd())
+    base = os.path.realpath(os.getcwd()) + os.sep
     resolved = os.path.realpath(os.path.join(base, log_dir))
-    if resolved != base and not resolved.startswith(base + os.sep):
+    if not resolved.startswith(base):
         st.error(
             "Log directory must be a relative path inside the "
             "working directory."
