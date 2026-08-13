@@ -1,0 +1,74 @@
+# Example AI opportunity rubric — dimensions are DECLARED here, never
+# hardcoded in the engine. Weights must sum to 1.0.
+name: example-ai-opportunity-rubric
+
+dimensions:
+  - name: strategic_alignment
+    weight: 0.20
+    description: Fit with stated business strategy and priorities
+  - name: financial_impact
+    weight: 0.25
+    description: Scale of benefit relative to cost
+  - name: technical_feasibility
+    weight: 0.20
+    description: Maturity of the required technology and integration surface
+  - name: data_readiness
+    weight: 0.15
+    description: Availability, quality, and permissibility of required data
+  - name: adoption_readiness
+    weight: 0.10
+    description: Willingness and capacity of the receiving team
+  - name: risk_profile
+    weight: 0.10
+    description: Inverse of regulatory, safety, and reputational exposure
+
+readiness_multipliers:
+  concept: 0.6
+  pilot_ready: 0.8
+  pilot_proven: 1.0
+  production_ready: 1.1
+
+lifecycle:
+  - stage: intake
+    entry:
+      - Opportunity registered with a named sponsor
+    exit:
+      - Initial scores recorded for all dimensions
+    gate:
+      min_score: 0.0
+      min_confidence: 0.0
+  - stage: assess
+    entry:
+      - All dimensions scored with declared evidence classes
+    exit:
+      - Financial case drafted with evidence-classed figures
+    gate:
+      min_score: 3.0
+      min_confidence: 0.5
+  - stage: pilot
+    entry:
+      - Assessment gate passed
+      - Pilot success criteria agreed
+    exit:
+      - Pilot results measured against success criteria
+    gate:
+      min_score: 3.5
+      min_confidence: 0.6
+  - stage: scale
+    entry:
+      - Pilot gate passed with measured results
+    exit:
+      - Production operation with value tracking in place
+    gate:
+      min_score: 4.0
+      min_confidence: 0.7
+      forbid_modeled_financials: true
+  - stage: operate
+    entry:
+      - Scale gate passed
+    exit:
+      - Retirement or renewal decision
+    gate:
+      min_score: 3.5
+      min_confidence: 0.7
+      forbid_modeled_financials: true

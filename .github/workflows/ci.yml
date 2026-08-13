@@ -70,6 +70,45 @@ jobs:
         working-directory: packages/agent-governance-kit
         run: python examples/demo.py
 
+  value-registry:
+    name: Value registry (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.11"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install package with dev extras
+        run: pip install -e "./packages/value-registry[dev]"
+
+      - name: Tests with coverage floor
+        working-directory: packages/value-registry
+        run: python -m pytest --cov=value_registry --cov-fail-under=80 -q
+
+      - name: Type check (mypy strict)
+        working-directory: packages/value-registry
+        run: python -m mypy src/value_registry
+
+      - name: Catalog determinism (fixed seed reproduces committed file)
+        working-directory: packages/value-registry
+        run: |
+          python -m value_registry.cli generate-catalog --out /tmp/catalog.yaml
+          diff -u data/catalog.yaml /tmp/catalog.yaml
+
+      - name: End-to-end demo (CLI)
+        working-directory: packages/value-registry
+        run: |
+          python -m value_registry.cli score --rubric examples/rubric.yaml --portfolio examples/portfolio.yaml --out /tmp/portfolio_report.md
+          python -m value_registry.cli registry-report --catalog data/catalog.yaml --out /tmp/registry_report.md
+
   secret-scan:
     name: Secret scan (gitleaks)
     runs-on: ubuntu-latest

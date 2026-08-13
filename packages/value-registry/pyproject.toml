@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "value-registry"
+version = "0.1.0"
+description = "AI opportunity value model and model registry with mandatory evidence-class labeling: every figure carries documented/estimated/modeled provenance and a confidence value."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "All Rights Reserved" }
+authors = [{ name = "Matthan Bird", email = "bird.matthan@gmail.com" }]
+keywords = ["ai-governance", "value-model", "roi", "model-registry", "tprm", "evidence"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.11",
+    "Typing :: Typed",
+]
+dependencies = ["pyyaml>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "mypy>=1.8", "types-PyYAML"]
+
+[project.scripts]
+value-registry = "value_registry.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+value_registry = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+strict = true
+# Runtime floor is 3.9 (validated by the CI matrix); modern mypy can only
+# analyze as 3.10+.
+python_version = "3.10"
+
+[tool.coverage.run]
+branch = true
