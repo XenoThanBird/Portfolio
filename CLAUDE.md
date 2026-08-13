@@ -37,6 +37,11 @@ Portfolio/
 │   │   └── app/               # models/, routers/, schemas/, services/
 │   └── frontend/
 │       └── src/               # api/, components/, router/, stores/, views/
+├── packages/
+│   └── agent-governance-kit/  # Installable package: audit chain, scrubber,
+│       ├── src/agent_governance_kit/   # sentinel, failure state machine, HITL gate
+│       ├── tests/             # pytest suite (own CI job, ≥80% coverage floor)
+│       └── examples/          # end-to-end demo (make demo)
 ├── requirements.txt           # Master dependency list for all modules
 ├── toolkit_starter_notebook.py # Starter notebook / onboarding script
 ├── SECURITY.md
