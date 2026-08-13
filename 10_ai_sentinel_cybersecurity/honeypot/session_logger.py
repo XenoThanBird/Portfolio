@@ -85,14 +85,9 @@ class SessionLogger:
             log_file = self._get_log_path()
         else:
             log_file = os.path.realpath(log_file)
-            try:
-                contained = (
-                    os.path.commonpath([log_file, self.log_dir])
-                    == self.log_dir
-                )
-            except ValueError:  # different drives on Windows
-                contained = False
-            if not contained or not log_file.endswith(".jsonl"):
+            if not log_file.startswith(
+                self.log_dir + os.sep
+            ) or not log_file.endswith(".jsonl"):
                 raise ValueError(
                     "log_file must be a .jsonl file inside the log directory"
                 )

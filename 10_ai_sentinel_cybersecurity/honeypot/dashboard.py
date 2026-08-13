@@ -36,11 +36,7 @@ def load_sessions(log_dir: str = "honeypot_logs") -> list:
     """
     base = os.path.realpath(os.getcwd())
     resolved = os.path.realpath(os.path.join(base, log_dir))
-    try:
-        contained = os.path.commonpath([resolved, base]) == base
-    except ValueError:  # different drives on Windows
-        contained = False
-    if not contained:
+    if resolved != base and not resolved.startswith(base + os.sep):
         st.error(
             "Log directory must be a relative path inside the "
             "working directory."
