@@ -9,7 +9,9 @@ seaborn
 plotly
 fastapi
 python-dotenv
-postal
+# postal — requires the libpostal C library built from source; install manually.
+# See 04_nlp_tools/address_training_pipeline.py docstring for instructions.
+# postal
 
 # Computer Vision & Anomaly Detection (06)
 ultralytics
@@ -32,7 +34,7 @@ faiss-cpu>=1.7.4
 pydantic>=2.0.0
 requests
 httpx>=0.25.0
-mcp>=1.0.0
+mcp>=1.0.0; python_version >= "3.10"  # MCP SDK requires Python 3.10+
 
 # Digital Twin (09)
 chromadb>=0.4.0
@@ -43,7 +45,7 @@ pydantic-settings>=2.0.0
 
 # Cybersecurity Suite (10)
 watchdog>=3.0.0
-python-nmap>=1.6.0
+python-nmap>=0.7.1  # latest PyPI release line; >=1.6.0 never existed
 scapy>=2.5.0
 
 # ASR Lab (11)

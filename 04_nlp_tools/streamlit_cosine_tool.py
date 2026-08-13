@@ -1,7 +1,11 @@
-# This tool supports: semantic comparison of utterances; cosine similarity matrix display; and threshold-based similarity filtering.
-# To run it:
-```bash
-# streamlit run streamlit_cosine_tool.py
+"""Streamlit Cosine Similarity Tool.
+
+This tool supports: semantic comparison of utterances; cosine similarity
+matrix display; and threshold-based similarity filtering.
+
+To run it:
+    streamlit run streamlit_cosine_tool.py
+"""
 
 import streamlit as st
 import pandas as pd

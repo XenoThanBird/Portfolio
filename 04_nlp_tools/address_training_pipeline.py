@@ -1,12 +1,15 @@
-# This tool uses libpostal to normalize address inputs, and includes: 
-### Streamlit UI for address viewing and preprocessing; 
-### Machine learning pipeline with TfidfVectorizer + LogisticRegression;
-### Outputs classification report and accuracy
-### Be sure to install libpostal before using this tool:
-```bash
-# brew install libpostal   # macOS
-# sudo apt install libpostal-dev   # Debian/Ubuntu
-# pip install postal 
+"""Address Recognition & Training Pipeline (IVR + libpostal + ML).
+
+This tool uses libpostal to normalize address inputs, and includes:
+    - Streamlit UI for address viewing and preprocessing
+    - Machine learning pipeline with TfidfVectorizer + LogisticRegression
+    - Outputs classification report and accuracy
+
+Be sure to install libpostal before using this tool:
+    brew install libpostal              # macOS
+    sudo apt install libpostal-dev      # Debian/Ubuntu
+    pip install postal
+"""
 
 import pandas as pd
 import streamlit as st

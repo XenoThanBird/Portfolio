@@ -1,5 +1,15 @@
+"""Toolkit & Notebook Starter Templates.
+
+A compendium of 15 copy-paste starter templates for Python mini-projects:
+scripts, SQL queries, Jupyter notebooks, ML/NLP experiments, dashboards,
+CLI tools, FastAPI services, CI workflows, and secrets management.
+
+Non-Python content (SQL, YAML, markdown, notebook magics, shell commands)
+is kept as comments so this file remains valid, compilable Python.
+"""
+
 # 1. Toolkit & Notebook Starter Template
-# Purpose: Gives a clear structure for every Python mini-project or production script. Clean, readable, team-ready.
+# Purpose: Gives a clear structure for every Python mini-project or production script. Clean, readable, team-ready.
 #python
 
 # --------------------------------------
@@ -50,51 +60,51 @@ def main():
 if __name__ == "__main__":
     main()
 
-2. SQL Query Boilerplate Template
-Purpose: Keeps everyone's SQL organized and readable.
-sql
+# 2. SQL Query Boilerplate Template
+# Purpose: Keeps everyone's SQL organized and readable.
+# sql
 
--- --------------------------------------
--- Purpose: [Short description of what this query does]
--- Author: Matthan Bird
--- Date: [Insert Date]
--- --------------------------------------
+# -- --------------------------------------
+# -- Purpose: [Short description of what this query does]
+# -- Author: Matthan Bird
+# -- Date: [Insert Date]
+# -- --------------------------------------
 
--- Parameters
--- DECLARE @StartDate DATE = '2024-01-01';
--- DECLARE @EndDate DATE = '2024-12-31';
+# -- Parameters
+# -- DECLARE @StartDate DATE = '2024-01-01';
+# -- DECLARE @EndDate DATE = '2024-12-31';
 
-WITH BaseData AS (
-    SELECT
-        user_id,
-        transaction_date,
-        amount
-    FROM transactions
-    WHERE transaction_date BETWEEN '2024-01-01' AND '2024-12-31'
-)
+# WITH BaseData AS (
+#     SELECT
+#         user_id,
+#         transaction_date,
+#         amount
+#     FROM transactions
+#     WHERE transaction_date BETWEEN '2024-01-01' AND '2024-12-31'
+# )
 
-, AggregatedData AS (
-    SELECT
-        user_id,
-        SUM(amount) AS total_spent
-    FROM BaseData
-    GROUP BY user_id
-)
+# , AggregatedData AS (
+#     SELECT
+#         user_id,
+#         SUM(amount) AS total_spent
+#     FROM BaseData
+#     GROUP BY user_id
+# )
 
-SELECT *
-FROM AggregatedData
-ORDER BY total_spent DESC;
+# SELECT *
+# FROM AggregatedData
+# ORDER BY total_spent DESC;
 
 #3. Jupyter Notebook Boilerplate
-#Purpose: Keeps all team notebooks structured and easier to review/share.
-markdown
+#Purpose: Keeps all team notebooks structured and easier to review/share.
+# markdown
 
 # Project Title
 
 ## Purpose
-Brief overview of the project's goals.
+# Brief overview of the project's goals.
 
----
+# ---
 
 ## 1. Setup
 
@@ -105,7 +115,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Settings
-%matplotlib inline
+# %matplotlib inline
 pd.set_option('display.max_columns', None)
 
 #2. Data Load
@@ -115,7 +125,7 @@ pd.set_option('display.max_columns', None)
 df = pd.read_csv("path/to/data.csv")
 df.head()
 
-3. Exploratory Data Analysis (EDA)
+# 3. Exploratory Data Analysis (EDA)
 #python
 
 # Summary statistics
@@ -124,7 +134,7 @@ df.describe()
 # Missing values
 df.isnull().sum()
 
-4. Data Cleaning
+# 4. Data Cleaning
 #python
 
 # Cleaning steps (dropping missing values, fixing types, etc.)
@@ -132,7 +142,7 @@ df.dropna(inplace=True)
 
 
 #4. Cosine Similarity Starter Template (Python)
-#Purpose: Template for text similarity, semantic clustering, or search ranking tasks.
+#Purpose: Template for text similarity, semantic clustering, or search ranking tasks.
 #python
 
 # --------------------------------------
@@ -174,7 +184,7 @@ most_similar_index = find_most_similar(index, cosine_sim)
 print(f"Text most similar to '{texts[index]}' is '{texts[most_similar_index]}'")
 
 #5. LLM/NLP Experiment Boilerplate
-#Purpose: Sets up quick experiments using HuggingFace, OpenAI, or any GenAI model.
+#Purpose: Sets up quick experiments using HuggingFace, OpenAI, or any GenAI model.
 #python
 
 # --------------------------------------
@@ -200,7 +210,7 @@ for i, output in enumerate(outputs):
 #Switch "gpt2" to "openai-gpt" or "facebook/opt-1.3b" or whatever easily.
 
 #6. Data Cleaning Universal Script
-#Purpose: Standardizes a starting point for new datasets.
+#Purpose: Standardizes a starting point for new datasets.
 #python
 
 # --------------------------------------
@@ -242,7 +252,7 @@ if __name__ == "__main__":
 #Now you have one cleaning script to rule them all!
 
 #7. Folder Structure Auto-Generator (Python Script)
-Purpose: Quickly make clean project folders.
+# Purpose: Quickly make clean project folders.
 #python
 
 # --------------------------------------
@@ -273,7 +283,7 @@ if __name__ == "__main__":
     create_project_structure("my_new_project")
 
 #8. Matplotlib Quick Plot Template
-#Purpose: Gives your team a ready-to-go plotting script, so no one struggles setting up basic visualizations.
+#Purpose: Gives your team a ready-to-go plotting script, so no one struggles setting up basic visualizations.
 #python
 
 # --------------------------------------
@@ -304,7 +314,7 @@ plt.show()
 plt.savefig("outputs/figures/bar_plot.png")
 
 #9. Pandas EDA Fast Report Template
-#Purpose: Auto-generate quick statistical profiles of any dataset — no more wasting time doing it manually.
+#Purpose: Auto-generate quick statistical profiles of any dataset — no more wasting time doing it manually.
 #python
 
 # --------------------------------------
@@ -333,7 +343,7 @@ if __name__ == "__main__":
     generate_eda_report(df)
 
 #10. Task Automation Boilerplate (Command Line Tool Basics)
-#Purpose: Gives you the ability to automate repetitive tasks with CLI tools.
+#Purpose: Gives you the ability to automate repetitive tasks with CLI tools.
 #python
 
 # --------------------------------------
@@ -362,10 +372,10 @@ if __name__ == "__main__":
     
     main(args.input, args.output)
 
-python cli_tool.py --input data.txt --output copy_data.txt
+# python cli_tool.py --input data.txt --output copy_data.txt
 
 #11. Plotly Dashboard Boilerplate (Interactive Web Dashboards)
-#Purpose: Builds interactive dashboards right using Python.
+#Purpose: Builds interactive dashboards right using Python.
 #python
 
 # --------------------------------------
@@ -391,10 +401,10 @@ fig.show()
 
 # === Save as HTML file ===
 pio.write_html(fig, file="outputs/figures/sales_dashboard.html", auto_open=True)
-# === You can share the HTML dashboard with anyone — no server needed. # === Fully interactive (hover, zoom, filter, etc.,). === #
+# === You can share the HTML dashboard with anyone — no server needed. # === Fully interactive (hover, zoom, filter, etc.,). === #
 
 # 12. SQLite Local Database Template (No server needed)
-# Purpose: Gives a quick way to persist project data without needing real backend infrastructure.
+# Purpose: Gives a quick way to persist project data without needing real backend infrastructure.
 # python
 
 # --------------------------------------
@@ -435,7 +445,7 @@ conn.close()
 # === Instantly save data across script runs — without needing PostgreSQL, AWS, etc. # ===
 
 # 13. FastAPI Server Starter Template (Create Web APIs easily)
-# Purpose: Allows you to quickly turn any Python script into an API endpoint.
+# Purpose: Allows you to quickly turn any Python script into an API endpoint.
 # python
 
 # --------------------------------------
@@ -457,42 +467,42 @@ def echo_text(text: str):
 
 # Run this server by typing:
 # uvicorn filename:app --reload
-# === Launches a full web server in 30 seconds. # === Great for building microservices or internal tools.
+# === Launches a full web server in 30 seconds. # === Great for building microservices or internal tools.
 
 # 14. GitHub Actions Starter (Automated Workflow)
-# Purpose: Automatically run code checks, tests, or deploys when you push to GitHub — no human babysitting needed.
+# Purpose: Automatically run code checks, tests, or deploys when you push to GitHub — no human babysitting needed.
 # yaml
 
 # .github/workflows/python-app.yml
 
-name: Python application
+# name: Python application
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-    - name: Lint with flake8
-      run: |
-        pip install flake8
-        flake8 .
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Set up Python
+#       uses: actions/setup-python@v4
+#       with:
+#         python-version: '3.10'
+#     - name: Install dependencies
+#       run: |
+#         pip install -r requirements.txt
+#     - name: Lint with flake8
+#       run: |
+#         pip install flake8
+#         flake8 .
 # === Every time you push code Git will automatically run checks.
 
 # 15. Secrets Management Template (Environment Variables)
-# Purpose: Keep API keys, passwords, and sensitive info safe — not hardcoded in scripts.
+# Purpose: Keep API keys, passwords, and sensitive info safe — not hardcoded in scripts.
 # python
 
 # --------------------------------------
@@ -511,10 +521,10 @@ DB_PASSWORD = os.getenv('DB_PASSWORD')
 
 print(f"My API Key is: {API_KEY}")
 # === Create a .env file (NOT pushed to GitHub): # ===
-dotenv
+# dotenv
 
 # .env
-API_KEY="your-api-key-here"
-DB_PASSWORD="your-db-password-here"
+# API_KEY="your-api-key-here"
+# DB_PASSWORD="your-db-password-here"
 
 # do not post the script to any team Gits

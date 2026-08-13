@@ -1,7 +1,11 @@
-# This tool includes: confidence score distribution histogram; fallback trigger rate via pie chart; and top misclassified intent pairs.
-# To run it:
-```bash
-# streamlit run llm_analytics_dashboard.py
+"""LLM Performance Analytics Dashboard.
+
+This tool includes: confidence score distribution histogram; fallback trigger
+rate via pie chart; and top misclassified intent pairs.
+
+To run it:
+    streamlit run llm_analytics_dashboard.py
+"""
 
 import streamlit as st
 import pandas as pd
