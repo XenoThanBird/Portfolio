@@ -1,18 +1,45 @@
-# 10 — AI Sentinel: Cybersecurity Suite
+# AI Sentinel — Infrastructure Defense Suite
 
-Defensive cybersecurity tools for critical infrastructure — file integrity monitoring, network auditing, threat intelligence, encryption, and TLS compliance analysis.
+Defensive tooling for critical-infrastructure environments: integrity
+monitoring for the systems that must not drift, network visibility for
+the segments that must not surprise you, deception-based early warning,
+encryption for data at rest, and TLS compliance verification for
+everything in transit.
 
-## Overview
+## Why infrastructure defense is different
 
-The AI Sentinel Cybersecurity Suite is a collection of five production-pattern security tools demonstrating defensive cybersecurity capabilities. Each tool addresses a different domain of the security lifecycle: detection, discovery, deception, protection, and compliance.
+Critical-infrastructure environments — energy, water, industrial
+control, and the enterprise networks that support them — invert the
+usual security priorities. Availability and integrity outrank
+confidentiality; an undetected configuration change can matter more
+than a stolen document. Monitoring must be passive-first and
+non-disruptive, tooling must run without cloud dependencies inside
+segmented networks, and every action needs an audit trail because
+regulated operators must be able to show *what* changed, *when*, and
+*what was done about it*.
 
-Designed for critical infrastructure environments where security monitoring, encryption, and compliance are mission-critical requirements.
+The five tools in this suite are built around those constraints. Each
+addresses one layer of a defense-in-depth posture, runs entirely
+locally, and produces structured, auditable output (JSONL, Markdown,
+JSON).
+
+| Defense layer | Tool | Question it answers |
+| ---- | ---- | ---- |
+| Integrity | Sentinel FIM | Has anything changed on systems that should be static? |
+| Visibility | Network Inventory & Audit | What is on this network segment, and what is it exposing? |
+| Early warning | Threat Intelligence Honeypot | Who is probing us, and how? |
+| Data protection | Envelope Encryption Vault | Is sensitive data unreadable and tamper-evident at rest? |
+| Transport compliance | TLS Analyzer | Do our endpoints meet the security baseline we claim? |
 
 ## Tools
 
-### 1. The Sentinel Script — File Integrity Monitor
+### 1. Sentinel — File Integrity Monitor
 
-Automated file integrity monitoring with real-time detection of unauthorized system changes.
+Automated file integrity monitoring with real-time detection of
+unauthorized changes. In infrastructure environments, FIM is a
+front-line control: HMIs, jump hosts, and configuration stores should
+not change outside maintenance windows, and when they do, someone
+should know within seconds.
 
 | File | Description |
 | ---- | ----------- |
@@ -31,7 +58,10 @@ python sentinel.py --mode watch             # Continuous monitoring
 
 ### 2. Network Inventory & Audit
 
-Network discovery and port scanning tool — identify devices and exposed services on authorized networks.
+Network discovery and exposure auditing for authorized segments. You
+cannot defend assets you have not enumerated; in segmented industrial
+networks, the inventory *is* the security boundary, and an unexpected
+device or open service is a finding by definition.
 
 | File | Description |
 | ---- | ----------- |
@@ -49,7 +79,10 @@ python example.py                           # Scan localhost + simulated devices
 
 ### 3. Threat Intelligence Honeypot
 
-Simulated service listeners that log and analyze connection attempts for threat intelligence.
+Deception-based early warning: simulated SSH/HTTP/Telnet listeners that
+log and profile connection attempts. On a properly segmented network,
+*any* connection to a honeypot is signal — a tripwire that fires before
+an intruder reaches real assets.
 
 | File | Description |
 | ---- | ----------- |
@@ -63,12 +96,15 @@ Simulated service listeners that log and analyze connection attempts for threat 
 ```bash
 cd honeypot
 python example.py                           # Generate and analyze simulated attacks
-streamlit run dashboard.py                   # Interactive threat dashboard
+streamlit run dashboard.py                  # Interactive threat dashboard
 ```
 
 ### 4. Envelope Encryption File Vault
 
-AES-256 envelope encryption with per-file data keys, master key rotation, and HMAC integrity verification.
+AES-256-GCM envelope encryption with per-file data keys, master key
+rotation, and HMAC integrity verification — the data-at-rest pattern
+for configuration archives, incident evidence, and operational records
+that must be both confidential and provably untampered.
 
 | File | Description |
 | ---- | ----------- |
@@ -89,7 +125,11 @@ python vault_cli.py rotate-keys             # Rotate master key
 
 ### 5. TLS Handshake Analyzer
 
-TLS/SSL certificate and compliance analyzer — inspect certificate chains, cipher suites, and protocol versions.
+TLS/SSL inspection and baseline compliance checking. Regulated
+operators do not just need secure transport — they need to *demonstrate*
+it. The inspector deliberately observes whatever a server negotiates
+(including legacy protocols and invalid certificates, read-only) so the
+compliance checker can flag exactly the misconfigurations that matter.
 
 | File | Description |
 | ---- | ----------- |
@@ -106,14 +146,16 @@ python example.py                           # Analyze public host TLS configs
 python tls_inspector.py github.com          # Quick single-host inspection
 ```
 
-## Features
+## Design principles
 
-- **File Integrity Monitoring** — SHA-256 hashing, baseline comparison, four change types, severity classification
-- **Network Discovery** — Device fingerprinting, port scanning, risk assessment, topology visualization
-- **Threat Intelligence** — Honeypot logging, attacker profiling, time-pattern analysis, Streamlit dashboard
-- **Envelope Encryption** — Per-file data keys, master key rotation, HMAC integrity, CLI tooling
-- **TLS Compliance** — Certificate inspection, cipher validation, protocol checking, compliance reports
-- **Zero External Services** — All tools run locally with no cloud dependencies
+- **Passive-first, non-disruptive** — observation over interaction;
+  nothing in this suite modifies a monitored system
+- **No cloud dependencies** — every tool runs locally, suitable for
+  air-gapped and segmented environments
+- **Auditable by default** — structured JSONL/Markdown/JSON output so
+  findings can be reconstructed and attributed
+- **Config-driven** — YAML configuration throughout; behavior changes
+  without code changes
 
 ## Tech Stack
 
@@ -121,9 +163,12 @@ python tls_inspector.py github.com          # Quick single-host inspection
 
 ## Responsible Use
 
-These tools are designed for **defensive security** — protecting systems you own and have authorization to monitor. Always:
+These tools are built for **defense of systems you own or are
+authorized to protect**. Always:
 
 - Only scan networks you own or have explicit written permission to scan
-- Use honeypots on your own infrastructure, not to deceive real users
-- Encrypt data you are authorized to handle
-- Follow your organization's security policies and applicable regulations
+- Deploy honeypots on your own infrastructure, never to deceive real users
+- Encrypt only data you are authorized to handle
+- Follow your organization's security policies and applicable
+  regulations, including sector-specific requirements for critical
+  infrastructure

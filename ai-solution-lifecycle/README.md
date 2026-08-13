@@ -64,7 +64,7 @@ Set `LLM_PROVIDER=mock` (default) for demo mode, or `openai`/`anthropic` with a 
 
 ```bash
 # Clone and navigate
-cd 12_ai_solution_lifecycle
+cd ai-solution-lifecycle
 
 # Copy environment config
 cp .env.template .env
@@ -149,7 +149,7 @@ Each project includes team members, documents, milestones with dependencies, RAC
 ## Project Structure
 
 ```
-12_ai_solution_lifecycle/
+ai-solution-lifecycle/
 ├── README.md
 ├── config.yaml                 # Scoring weights, risk matrix, SLA defaults
 ├── .env.template
