@@ -131,6 +131,46 @@ class TestVerification:
         assert result.valid and result.records_checked == 3
 
 
+class TestConcurrentWriters:
+    def test_two_instances_on_one_file_share_a_single_chain(self, tmp_path: Path) -> None:
+        """Two AuditLog instances opened before either writes must not
+        both claim index 0 — append re-reads the tail under a lock."""
+        path = tmp_path / "audit.jsonl"
+        a = AuditLog(path)
+        b = AuditLog(path)  # both start with genesis tail cached
+        a.append("a", "first", {})
+        b.append("b", "second", {})
+        a.append("a", "third", {})
+
+        records = a.records()
+        assert [r.index for r in records] == [0, 1, 2]
+        result = AuditLog.verify_file(path)
+        assert result.valid and result.records_checked == 3
+
+    def test_threaded_appends_produce_one_valid_chain(self, tmp_path: Path) -> None:
+        import threading
+
+        path = tmp_path / "audit.jsonl"
+        logs = [AuditLog(path) for _ in range(4)]
+
+        def worker(log: AuditLog, tag: int) -> None:
+            for i in range(5):
+                log.append(f"writer{tag}", f"event_{i}", {"tag": tag})
+
+        threads = [
+            threading.Thread(target=worker, args=(log, t)) for t, log in enumerate(logs)
+        ]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+
+        result = AuditLog.verify_file(path)
+        assert result.valid
+        assert result.records_checked == 20
+        assert [r.index for r in logs[0].records()] == list(range(20))
+
+
 class TestResume:
     def test_reopen_resumes_chain(self, tmp_path: Path) -> None:
         path = tmp_path / "audit.jsonl"

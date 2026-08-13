@@ -216,11 +216,32 @@ class TestAuditHook:
         assert all(action == "state_transition" for action, _ in events)
         assert events[-1][1]["outcome"] == "revise"
 
-    def test_denied_startover_never_reaches_the_hook(self) -> None:
+    def test_denied_startover_is_audited_before_raising(self) -> None:
+        """A denied attempt must leave evidence through the hook — the
+        application should see what the machine refused to do."""
         events: List[Tuple[str, Dict[str, str]]] = []
         m = GovernanceStateMachine(audit_hook=lambda a, d: events.append((a, d)))
         m.advance(RunState.DRAFTING)
         m.advance(RunState.CHECKING)
         with pytest.raises(StartoverNotPermittedError):
             m.fail(Outcome.STARTOVER, reason="agent", initiated_by=Initiator.AGENT)
-        assert len(events) == 2  # only the two legal advances
+        denials = [(a, d) for a, d in events if a == "startover_denied"]
+        assert len(denials) == 1
+        assert "human-only" in denials[0][1]["detail"]
+        # ...but no state transition was recorded for the denial
+        transitions = [e for e in events if e[0] == "state_transition"]
+        assert len(transitions) == 2
+        assert m.state is RunState.CHECKING
+
+    def test_hook_failure_prevents_state_commit(self) -> None:
+        """If the audit hook cannot record the transition, the run must
+        not advance: no divergence between state and evidence."""
+
+        def failing_hook(action: str, detail: Dict[str, str]) -> None:
+            raise OSError("disk full")
+
+        m = GovernanceStateMachine(audit_hook=failing_hook)
+        with pytest.raises(OSError, match="disk full"):
+            m.advance(RunState.DRAFTING)
+        assert m.state is RunState.RETRIEVING  # unchanged
+        assert m.history == ()  # no transition recorded
