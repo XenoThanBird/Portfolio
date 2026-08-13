@@ -82,3 +82,9 @@ dist/
 
 # Local task tracking (session working files)
 tasks/
+
+# Python build/test artifacts
+.coverage
+*.egg-info/
+.mypy_cache/
+.pytest_cache/

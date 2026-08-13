@@ -39,6 +39,37 @@ jobs:
           pip install ruff
           ruff check . --exit-zero
 
+  governance-kit:
+    name: Governance kit (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.11"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install package with dev extras
+        run: pip install -e "./packages/agent-governance-kit[dev]"
+
+      - name: Tests with coverage floor
+        working-directory: packages/agent-governance-kit
+        run: python -m pytest --cov=agent_governance_kit --cov-fail-under=80 -q
+
+      - name: Type check (mypy strict)
+        working-directory: packages/agent-governance-kit
+        run: python -m mypy src/agent_governance_kit
+
+      - name: End-to-end demo
+        working-directory: packages/agent-governance-kit
+        run: python examples/demo.py
+
   secret-scan:
     name: Secret scan (gitleaks)
     runs-on: ubuntu-latest
