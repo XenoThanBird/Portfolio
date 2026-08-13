@@ -4,9 +4,10 @@
 #Includes a test runner with sample intent inputs
 
 import json
+from pathlib import Path
 
-# Load router task map
-with open('router_taskmap.json', 'r') as f:
+# Load router task map (relative to this file, so it works from any CWD)
+with open(Path(__file__).resolve().parent / 'router_taskmap.json', 'r') as f:
     task_map = json.load(f)
 
 def route_intent(intent_label, confidence_score):
