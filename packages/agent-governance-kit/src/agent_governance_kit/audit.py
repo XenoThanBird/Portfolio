@@ -18,7 +18,9 @@ import os
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterator, List, Optional, Union
+from typing import Any, Dict, Iterator, List, Optional, Tuple, Union
+
+from ._locking import interprocess_lock
 
 GENESIS_HASH = "0" * 64
 
@@ -109,22 +111,66 @@ class AuditLog:
         inspector.path = Path(path)
         return inspector.verify()
 
+    def _lock_path(self) -> Path:
+        return self.path.with_name(self.path.name + ".lock")
+
+    def _read_tail(self) -> Tuple[int, str]:
+        """Read (next_index, tail_hash) from the last line on disk.
+
+        Called under the append lock so concurrent writers always chain
+        onto the *current* tail, not a constructor-time snapshot.
+        """
+        if not self.path.exists() or self.path.stat().st_size == 0:
+            return 0, GENESIS_HASH
+        last: Optional[str] = None
+        with open(self.path, "rb") as f:
+            f.seek(0, os.SEEK_END)
+            size = f.tell()
+            data = b""
+            pos = size
+            while pos > 0:
+                step = min(4096, pos)
+                pos -= step
+                f.seek(pos)
+                data = f.read(step) + data
+                stripped = data.rstrip(b"\n")
+                if b"\n" in stripped:
+                    last = stripped[stripped.rfind(b"\n") + 1 :].decode("utf-8")
+                    break
+            if last is None:
+                last = data.rstrip(b"\n").decode("utf-8")
+        if not last:
+            return 0, GENESIS_HASH
+        try:
+            record = AuditRecord(**json.loads(last))
+        except (json.JSONDecodeError, TypeError) as exc:
+            raise AuditIntegrityError(f"tail record is malformed: {exc}") from exc
+        return record.index + 1, record.hash
+
     def append(self, actor: str, action: str, payload: Optional[Dict[str, Any]] = None) -> AuditRecord:
-        """Append a record and return it (with its hash sealed)."""
-        record = AuditRecord(
-            index=self._next_index,
-            timestamp=_utcnow(),
-            actor=actor,
-            action=action,
-            payload=payload or {},
-            prev_hash=self._tail_hash,
-        ).sealed()
-        with open(self.path, "a", encoding="utf-8", newline="\n") as f:
-            f.write(_canonical({**record.core(), "hash": record.hash}) + "\n")
-            f.flush()
-            os.fsync(f.fileno())
-        self._next_index = record.index + 1
-        self._tail_hash = record.hash
+        """Append a record and return it (with its hash sealed).
+
+        The read-current-tail → compose → write sequence runs under an
+        interprocess lock, so multiple ``AuditLog`` instances (including
+        in other processes) sharing one file always produce a single
+        consistent chain rather than duplicate indices.
+        """
+        with interprocess_lock(self._lock_path()):
+            next_index, tail_hash = self._read_tail()
+            record = AuditRecord(
+                index=next_index,
+                timestamp=_utcnow(),
+                actor=actor,
+                action=action,
+                payload=payload or {},
+                prev_hash=tail_hash,
+            ).sealed()
+            with open(self.path, "a", encoding="utf-8", newline="\n") as f:
+                f.write(_canonical({**record.core(), "hash": record.hash}) + "\n")
+                f.flush()
+                os.fsync(f.fileno())
+            self._next_index = record.index + 1
+            self._tail_hash = record.hash
         return record
 
     def iter_records(self) -> Iterator[AuditRecord]:

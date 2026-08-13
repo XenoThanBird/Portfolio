@@ -14,6 +14,7 @@ an already-decided request raises :class:`AlreadyDecidedError`.
 from __future__ import annotations
 
 import json
+import os
 import time
 import uuid
 from dataclasses import asdict, dataclass
@@ -22,6 +23,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Union
 
+from ._locking import interprocess_lock
 from .outcomes import HumanWarrant
 
 STARTOVER_SCOPE = "startover"
@@ -88,7 +90,19 @@ class HITLGate:
         return Approval.from_json(path.read_text(encoding="utf-8"))
 
     def _save(self, approval: Approval) -> None:
-        self._path(approval.id).write_text(approval.to_json(), encoding="utf-8")
+        """Publish state atomically: write a temp file, then os.replace.
+
+        Readers polling ``wait()``/``status()`` therefore always see a
+        complete JSON document — either the old state or the new one,
+        never an interleaved partial write.
+        """
+        final = self._path(approval.id)
+        tmp = final.with_name(f"{final.name}.tmp-{uuid.uuid4().hex}")
+        tmp.write_text(approval.to_json(), encoding="utf-8")
+        os.replace(tmp, final)
+
+    def _decide_lock_path(self, approval_id: str) -> Path:
+        return self.store / f"{approval_id}.lock"
 
     def request(
         self,
@@ -121,21 +135,29 @@ class HITLGate:
         return out
 
     def _decide(self, approval_id: str, status: ApprovalStatus, decided_by: str, note: str) -> Approval:
-        current = self._load(approval_id)
-        if current.status is not ApprovalStatus.PENDING:
-            raise AlreadyDecidedError(
-                f"approval {approval_id} is already {current.status.value}"
+        """One-way decision under an interprocess lock.
+
+        The read-check-write sequence is serialized per approval id, so
+        when two reviewer processes race, exactly one decision wins and
+        the loser gets :class:`AlreadyDecidedError` — never two
+        \"successful\" contradictory decisions or a corrupted file.
+        """
+        with interprocess_lock(self._decide_lock_path(approval_id)):
+            current = self._load(approval_id)
+            if current.status is not ApprovalStatus.PENDING:
+                raise AlreadyDecidedError(
+                    f"approval {approval_id} is already {current.status.value}"
+                )
+            decided = Approval(
+                **{
+                    **asdict(current),
+                    "status": status,
+                    "decided_at": datetime.now(timezone.utc).isoformat(),
+                    "decided_by": decided_by,
+                    "note": note,
+                }
             )
-        decided = Approval(
-            **{
-                **asdict(current),
-                "status": status,
-                "decided_at": datetime.now(timezone.utc).isoformat(),
-                "decided_by": decided_by,
-                "note": note,
-            }
-        )
-        self._save(decided)
+            self._save(decided)
         return decided
 
     def approve(self, approval_id: str, decided_by: str, note: str = "") -> Approval:

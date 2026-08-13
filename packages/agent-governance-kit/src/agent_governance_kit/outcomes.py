@@ -31,7 +31,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Callable, Dict, FrozenSet, List, Optional, Tuple
+from typing import Callable, Dict, FrozenSet, List, NoReturn, Optional, Tuple
 
 
 class Outcome(Enum):
@@ -169,8 +169,10 @@ class GovernanceStateMachine:
             initiated_by=initiated_by,
             reason=reason,
         )
-        self._state = to_state
-        self._history.append(transition)
+        # Audit BEFORE committing: if the hook cannot record the
+        # transition (e.g. its AuditLog cannot write), the run must not
+        # advance without evidence. The in-memory commit below cannot
+        # fail, so hook-then-commit leaves no divergent middle state.
         if self._audit_hook is not None:
             self._audit_hook(
                 "state_transition",
@@ -182,7 +184,23 @@ class GovernanceStateMachine:
                     "reason": reason,
                 },
             )
+        self._state = to_state
+        self._history.append(transition)
         return transition
+
+    def _deny_startover(self, detail: str) -> NoReturn:
+        """Audit a denied startover attempt through the hook, then raise.
+
+        Denials never mutate state, but they are evidence — an
+        application watching the audit trail must see what the machine
+        refused to do, not only what it did.
+        """
+        if self._audit_hook is not None:
+            self._audit_hook(
+                "startover_denied",
+                {"state": self._state.value, "detail": detail},
+            )
+        raise StartoverNotPermittedError(detail)
 
     def advance(self, to_state: RunState, reason: str = "") -> Transition:
         """Move forward along the normal (non-failure) path."""
@@ -215,25 +233,25 @@ class GovernanceStateMachine:
             )
         if outcome is Outcome.STARTOVER:
             if initiated_by is not Initiator.HUMAN:
-                raise StartoverNotPermittedError(
+                self._deny_startover(
                     "startover is human-only: an agent attempted to trigger it"
                 )
             if warrant is None:
-                raise StartoverNotPermittedError(
+                self._deny_startover(
                     "startover requires a HumanWarrant naming the approver"
                 )
             if self._warrant_verifier is None:
-                raise StartoverNotPermittedError(
+                self._deny_startover(
                     "startover is disabled: no trusted approval boundary "
                     "(warrant_verifier) is configured on this machine"
                 )
             if warrant.approval_id in self._used_warrants:
-                raise StartoverNotPermittedError(
+                self._deny_startover(
                     f"warrant for approval {warrant.approval_id} was already used"
                 )
             rejection = self._warrant_verifier(warrant)
             if rejection is not None:
-                raise StartoverNotPermittedError(
+                self._deny_startover(
                     f"warrant rejected by approval boundary: {rejection}"
                 )
             self._used_warrants.add(warrant.approval_id)

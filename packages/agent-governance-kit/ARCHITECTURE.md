@@ -141,6 +141,36 @@ same time — a run can block, die, and a resumed run can `wait()` on the
 same id. Decisions record decider, timestamp, and note; deciding twice
 raises.
 
+## Concurrency guarantees
+
+Both persistence layers are safe under concurrent writers, using a
+shared cross-platform interprocess file lock (`msvcrt` on Windows,
+`flock` elsewhere) on a dedicated `*.lock` file — never on the data
+file itself:
+
+- **AuditLog.append()** re-reads the current tail *under the lock*
+  before composing each record, so multiple instances (including in
+  other processes) sharing one file produce a single consistent chain —
+  never duplicate indices from stale constructor-time state.
+- **HITLGate decisions** serialize the read-check-write transition per
+  approval id: when racing reviewers decide the same request, exactly
+  one wins and every other racer gets `AlreadyDecidedError`. State is
+  published atomically (temp file + `os.replace`), so polling readers
+  always see complete JSON — old or new, never interleaved.
+
+## Audit-before-commit ordering
+
+The state machine invokes its audit hook **before** committing a
+transition. If the hook raises (its `AuditLog` cannot write — full
+disk, permissions), the run does not advance: state and history are
+untouched, so there is never a governed run that moved without
+transition evidence. The in-memory commit after a successful hook call
+cannot fail, so no divergent middle state exists.
+
+Denied startover attempts are also emitted through the hook (as
+`startover_denied` events) before the exception is raised — the audit
+trail records what the machine *refused* to do, not only what it did.
+
 ## Dependency policy
 
 The runtime is standard-library only. That is the framework-agnosticism

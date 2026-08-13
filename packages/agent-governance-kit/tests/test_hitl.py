@@ -93,3 +93,43 @@ class TestCrossProcessResume:
         approval = gate.request("forgotten")
         with pytest.raises(ApprovalTimeoutError):
             gate.wait(approval.id, timeout=0.3, poll_interval=0.05)
+
+
+class TestConcurrentDecisions:
+    def test_racing_reviewers_exactly_one_wins(self, tmp_path: Path) -> None:
+        """Two reviewer instances decide the same request concurrently:
+        exactly one decision succeeds, every other racer gets
+        AlreadyDecidedError, and the stored file is valid JSON with the
+        winner's decision."""
+        store = tmp_path / "approvals"
+        approval = HITLGate(store).request("contested decision")
+
+        results: list = []
+        barrier = threading.Barrier(8)
+
+        def racer(n: int) -> None:
+            gate = HITLGate(store)  # separate instance == separate process
+            barrier.wait()
+            try:
+                if n % 2 == 0:
+                    results.append(("approved", gate.approve(approval.id, decided_by=f"rev{n}")))
+                else:
+                    results.append(("rejected", gate.reject(approval.id, decided_by=f"rev{n}")))
+            except AlreadyDecidedError:
+                results.append(("lost", None))
+
+        threads = [threading.Thread(target=racer, args=(i,)) for i in range(8)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+
+        winners = [r for r in results if r[0] != "lost"]
+        assert len(winners) == 1
+        assert sum(1 for r in results if r[0] == "lost") == 7
+
+        # Stored state parses cleanly and matches the winner.
+        final = HITLGate(store).status(approval.id)
+        assert final.status is not ApprovalStatus.PENDING
+        assert final.status.value == winners[0][0]
+        assert final.decided_by == winners[0][1].decided_by

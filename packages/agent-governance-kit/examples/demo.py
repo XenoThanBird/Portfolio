@@ -89,8 +89,8 @@ def main() -> int:
     try:
         machine.fail(Outcome.STARTOVER, reason="agent gives up", initiated_by=Initiator.AGENT)
     except StartoverNotPermittedError as exc:
+        # The machine already audited the denial through its hook.
         print(f"[machine]  agent startover DENIED: {exc}")
-        audit.append("state_machine", "startover_denied", {"initiator": "agent"})
 
     # 3b. The agent escalates: it forges a warrant and *claims* to be
     #     human. The approval boundary finds no backing record.
@@ -104,7 +104,6 @@ def main() -> int:
         )
     except StartoverNotPermittedError as exc:
         print(f"[machine]  forged warrant DENIED: {exc}")
-        audit.append("state_machine", "startover_denied", {"initiator": "forged_warrant"})
 
     # 4. Revised draft: clean, compliant.
     draft["body"] = "Projected performance varies; see the attached risk disclosure."
