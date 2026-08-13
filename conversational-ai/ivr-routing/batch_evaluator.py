@@ -2,13 +2,17 @@
 
 import pandas as pd
 import json
+from pathlib import Path
 from router_logic import route_intent
 
+# Data files live next to this script, so it works from any CWD
+DATA_DIR = Path(__file__).resolve().parent
+
 # Load test set
-df = pd.read_csv('router_test_set.csv')
+df = pd.read_csv(DATA_DIR / 'router_test_set.csv')
 
 # Load task map separately in case router_logic.py is executed independently
-with open('router_taskmap.json', 'r') as f:
+with open(DATA_DIR / 'router_taskmap.json', 'r') as f:
     task_map = json.load(f)
 
 # Evaluate routing
@@ -25,8 +29,8 @@ for _, row in df.iterrows():
         "reason": result.get("reason", "")
     })
 
-# Convert results to DataFrame and save
+# Convert results to DataFrame and save next to the input data
 df_results = pd.DataFrame(results)
-df_results.to_csv("router_batch_results.csv", index=False)
+df_results.to_csv(DATA_DIR / "router_batch_results.csv", index=False)
 
 print(df_results)
