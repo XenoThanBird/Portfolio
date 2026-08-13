@@ -38,10 +38,15 @@ Portfolio/
 │   └── frontend/
 │       └── src/               # api/, components/, router/, stores/, views/
 ├── packages/
-│   └── agent-governance-kit/  # Installable package: audit chain, scrubber,
-│       ├── src/agent_governance_kit/   # sentinel, failure state machine, HITL gate
-│       ├── tests/             # pytest suite (own CI job, ≥80% coverage floor)
-│       └── examples/          # end-to-end demo (make demo)
+│   ├── agent-governance-kit/  # Installable package: audit chain, scrubber,
+│   │   ├── src/agent_governance_kit/   # sentinel, failure state machine, HITL gate
+│   │   ├── tests/             # pytest suite (own CI job, ≥80% coverage floor)
+│   │   └── examples/          # end-to-end demo (make demo)
+│   └── value-registry/        # Installable package: opportunity value model +
+│       ├── src/value_registry/  # model registry, evidence-classed figures
+│       ├── data/              # fixed-seed synthetic catalog (140 entries)
+│       ├── examples/          # rubric + portfolio YAML (synthetic)
+│       └── tests/             # pytest suite (own CI job, ≥80% coverage floor)
 ├── requirements.txt           # Master dependency list for all modules
 ├── toolkit_starter_notebook.py # Starter notebook / onboarding script
 ├── SECURITY.md
