@@ -74,5 +74,5 @@ make typecheck     # mypy --strict
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the design, the trust model,
 and what the hash chain does and does not protect against.
 
-All fixtures and examples are synthetic. License: All Rights Reserved
+All fixtures and examples are synthetic. License: Apache-2.0
 (see repository root).
