@@ -519,7 +519,10 @@ load_dotenv()
 API_KEY = os.getenv('API_KEY')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 
-print(f"My API Key is: {API_KEY}")
+if API_KEY:
+    print("API Key loaded from environment.")
+else:
+    print("API Key is not set.")
 # === Create a .env file (NOT pushed to GitHub): # ===
 # dotenv
 
