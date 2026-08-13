@@ -13,8 +13,9 @@ interactions. J.D.; U.S. Navy submarine electronics & intelligence veteran.
 
 The through-line of this portfolio is **governed AI**: systems that ship with
 their audit trail, their evidence standards, and their human-accountability
-structures built in — not bolted on. Every package here is CI-tested, every
-figure in every report carries its provenance, and every dataset is synthetic.
+structures built in — not bolted on. Both installable packages are CI-tested
+with enforced coverage floors, the value-registry engine refuses to report a
+figure without declared provenance, and every dataset here is synthetic.
 
 ---
 
@@ -91,8 +92,9 @@ pip install -e packages/value-registry && cd packages/value-registry && make dem
 ```
 
 Each section's README carries its own file guide, runnable examples, and
-module-specific requirements. Python 3.9+; CI runs the 3.9/3.11 matrix with
-compile checks, package test suites, lint, secret scanning, and CodeQL.
+module-specific requirements. Python 3.9+. The CI workflow runs a 3.9/3.11
+matrix with compile checks, package test suites, lint, and secret scanning;
+GitHub code scanning (CodeQL, repository default setup) runs alongside it.
 
 ## License & Contact
 
