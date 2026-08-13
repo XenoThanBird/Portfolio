@@ -1,0 +1,79 @@
+# Example opportunity portfolio — ALL DATA SYNTHETIC. Every figure must
+# declare value + evidence class + confidence; a bare number is refused
+# by the engine.
+opportunities:
+  - id: OPP-001
+    name: Synthetic Demand Forecasting
+    value_stream: supply_chain
+    stage: pilot
+    readiness: pilot_proven
+    scores:
+      strategic_alignment: { value: 4.0, evidence: estimated, confidence: 0.75 }
+      financial_impact: { value: 4.5, evidence: modeled, confidence: 0.55 }
+      technical_feasibility: { value: 4.0, evidence: documented, confidence: 0.9 }
+      data_readiness: { value: 3.5, evidence: estimated, confidence: 0.7 }
+      adoption_readiness: { value: 3.0, evidence: estimated, confidence: 0.65 }
+      risk_profile: { value: 4.0, evidence: estimated, confidence: 0.7 }
+    financials:
+      annual_benefit: { value: 240000, evidence: modeled, confidence: 0.5, unit: USD }
+      annual_run_cost: { value: 55000, evidence: estimated, confidence: 0.7, unit: USD }
+      implementation_cost: { value: 130000, evidence: documented, confidence: 0.9, unit: USD }
+      horizon_years: 3
+      discount_rate: 0.08
+
+  - id: OPP-002
+    name: Fictional Document Triage Assistant
+    value_stream: customer_operations
+    stage: assess
+    readiness: pilot_ready
+    scores:
+      strategic_alignment: { value: 3.5, evidence: estimated, confidence: 0.7 }
+      financial_impact: { value: 3.0, evidence: modeled, confidence: 0.45 }
+      technical_feasibility: { value: 4.5, evidence: documented, confidence: 0.85 }
+      data_readiness: { value: 4.0, evidence: documented, confidence: 0.85 }
+      adoption_readiness: { value: 3.5, evidence: estimated, confidence: 0.6 }
+      risk_profile: { value: 3.5, evidence: estimated, confidence: 0.65 }
+    financials:
+      annual_benefit: { value: 120000, evidence: modeled, confidence: 0.45, unit: USD }
+      annual_run_cost: { value: 30000, evidence: estimated, confidence: 0.75, unit: USD }
+      implementation_cost: { value: 60000, evidence: estimated, confidence: 0.8, unit: USD }
+      horizon_years: 3
+      discount_rate: 0.08
+
+  - id: OPP-003
+    name: Imaginary Inspection Scheduling Optimizer
+    value_stream: field_operations
+    stage: scale
+    readiness: production_ready
+    scores:
+      strategic_alignment: { value: 4.5, evidence: documented, confidence: 0.9 }
+      financial_impact: { value: 4.0, evidence: documented, confidence: 0.85 }
+      technical_feasibility: { value: 4.5, evidence: documented, confidence: 0.9 }
+      data_readiness: { value: 4.5, evidence: documented, confidence: 0.9 }
+      adoption_readiness: { value: 4.0, evidence: estimated, confidence: 0.75 }
+      risk_profile: { value: 4.0, evidence: estimated, confidence: 0.8 }
+    financials:
+      annual_benefit: { value: 400000, evidence: documented, confidence: 0.85, unit: USD }
+      annual_run_cost: { value: 90000, evidence: documented, confidence: 0.85, unit: USD }
+      implementation_cost: { value: 220000, evidence: documented, confidence: 0.95, unit: USD }
+      horizon_years: 4
+      discount_rate: 0.08
+
+  - id: OPP-004
+    name: Hypothetical Meeting Summarizer
+    value_stream: workforce_enablement
+    stage: intake
+    readiness: concept
+    scores:
+      strategic_alignment: { value: 2.5, evidence: estimated, confidence: 0.5 }
+      financial_impact: { value: 2.0, evidence: modeled, confidence: 0.35 }
+      technical_feasibility: { value: 4.0, evidence: estimated, confidence: 0.7 }
+      data_readiness: { value: 3.0, evidence: estimated, confidence: 0.55 }
+      adoption_readiness: { value: 2.5, evidence: modeled, confidence: 0.4 }
+      risk_profile: { value: 3.0, evidence: estimated, confidence: 0.6 }
+    financials:
+      annual_benefit: { value: 45000, evidence: modeled, confidence: 0.35, unit: USD }
+      annual_run_cost: { value: 20000, evidence: estimated, confidence: 0.6, unit: USD }
+      implementation_cost: { value: 40000, evidence: estimated, confidence: 0.7, unit: USD }
+      horizon_years: 2
+      discount_rate: 0.08
