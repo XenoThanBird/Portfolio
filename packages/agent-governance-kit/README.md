@@ -17,7 +17,7 @@ extras; the core never imports one.
 | `AuditLog` | Append-only JSONL, SHA-256 hash-chained. `verify()` detects any mutation, insertion, or deletion and names the first broken record. |
 | `Scrubber` | Pluggable redaction rules; reports *which* rules fired and how often, so redaction is auditable without logging the sensitive value. |
 | `Sentinel` | Policy-as-code: every policy returns pass/fail **with a reason**; all violations surface, not just the first. |
-| `GovernanceStateMachine` | Exactly three failure outcomes — `revise` (draft wrong), `repair` (evidence wrong), `startover` (premise wrong). Startover is **human-only**, enforced structurally: it requires a `HumanWarrant` naming an approver, and agent-initiated attempts raise. |
+| `GovernanceStateMachine` | Exactly three failure outcomes — `revise` (draft wrong), `repair` (evidence wrong), `startover` (premise wrong). Startover is **human-only**, verified against the HITL gate's persisted approval records (a `HumanWarrant` must reference a human-APPROVED, startover-scoped approval; warrants are single-use; no verifier configured → startover disabled). Agent-initiated and forged attempts raise, auditable. |
 | `HITLGate` | Blocking approval checkpoint. Pending state is one JSON file per request, so a different process can load the store, decide, and unblock the run. |
 
 ## Quickstart (< 60 seconds)

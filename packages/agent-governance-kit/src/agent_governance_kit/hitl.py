@@ -20,7 +20,11 @@ from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from enum import Enum
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Callable, Dict, List, Optional, Union
+
+from .outcomes import HumanWarrant
+
+STARTOVER_SCOPE = "startover"
 
 
 class ApprovalStatus(Enum):
@@ -139,6 +143,50 @@ class HITLGate:
 
     def reject(self, approval_id: str, decided_by: str, note: str = "") -> Approval:
         return self._decide(approval_id, ApprovalStatus.REJECTED, decided_by, note)
+
+    def request_startover(
+        self,
+        subject: str,
+        payload: Optional[Dict[str, Any]] = None,
+        requested_by: str = "agent",
+    ) -> Approval:
+        """Create a PENDING approval explicitly scoped to startover.
+
+        Only approvals created with this scope can back a
+        :class:`~agent_governance_kit.outcomes.HumanWarrant` — an
+        unrelated approved request cannot be replayed as a startover
+        authorization.
+        """
+        scoped = dict(payload or {})
+        scoped["scope"] = STARTOVER_SCOPE
+        return self.request(subject, scoped, requested_by)
+
+    def startover_verifier(self) -> Callable[[HumanWarrant], Optional[str]]:
+        """A warrant verifier bound to this gate's store.
+
+        Wire it into ``GovernanceStateMachine(warrant_verifier=...)``.
+        The warrant is genuine only if its ``approval_id`` names a
+        startover-scoped approval in this store that a human APPROVED,
+        and the warrant's approver matches the recorded decider.
+        """
+
+        def verify(warrant: HumanWarrant) -> Optional[str]:
+            try:
+                approval = self._load(warrant.approval_id)
+            except UnknownApprovalError:
+                return f"no approval {warrant.approval_id} exists in the store"
+            if approval.payload.get("scope") != STARTOVER_SCOPE:
+                return "approval is not scoped to startover"
+            if approval.status is not ApprovalStatus.APPROVED:
+                return f"approval is {approval.status.value}, not approved"
+            if approval.decided_by != warrant.approver:
+                return (
+                    f"warrant approver {warrant.approver!r} does not match "
+                    f"recorded decider {approval.decided_by!r}"
+                )
+            return None
+
+        return verify
 
     def wait(
         self,

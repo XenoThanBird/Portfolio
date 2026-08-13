@@ -1,27 +1,44 @@
-"""State machine tests: three outcomes, human-only startover."""
+"""State machine tests: three outcomes, human-only startover backed by
+a trusted approval boundary."""
 
 from __future__ import annotations
 
-from typing import Dict, List, Tuple
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
 import pytest
 
 from agent_governance_kit import (
     GovernanceStateMachine,
+    HITLGate,
     HumanWarrant,
     Initiator,
     InvalidTransitionError,
     Outcome,
     RunState,
     StartoverNotPermittedError,
+    WarrantVerifier,
 )
 
 
-def machine_at_checking() -> GovernanceStateMachine:
-    m = GovernanceStateMachine()
+def machine_at_checking(
+    verifier: Optional[WarrantVerifier] = None,
+) -> GovernanceStateMachine:
+    m = GovernanceStateMachine(warrant_verifier=verifier)
     m.advance(RunState.DRAFTING)
     m.advance(RunState.CHECKING)
     return m
+
+
+def approved_startover(
+    gate: HITLGate, approver: str = "jordan"
+) -> HumanWarrant:
+    """The legitimate path: a human approves a startover-scoped request."""
+    approval = gate.request_startover("premise invalid, restart run")
+    gate.approve(approval.id, decided_by=approver, note="scope changed")
+    return HumanWarrant(
+        approver=approver, reason="scope changed", approval_id=approval.id
+    )
 
 
 class TestForwardProgress:
@@ -77,16 +94,18 @@ class TestFailureOutcomes:
 
 
 class TestStartoverIsHumanOnly:
-    def test_agent_cannot_startover(self) -> None:
-        m = machine_at_checking()
+    def test_agent_cannot_startover(self, tmp_path: Path) -> None:
+        gate = HITLGate(tmp_path / "approvals")
+        m = machine_at_checking(gate.startover_verifier())
         with pytest.raises(StartoverNotPermittedError):
             m.fail(Outcome.STARTOVER, reason="agent tries", initiated_by=Initiator.AGENT)
         assert m.state is RunState.CHECKING  # nothing moved
 
-    def test_agent_cannot_startover_even_with_stolen_warrant(self) -> None:
-        """Possessing a warrant is not enough — the initiator must be human."""
-        m = machine_at_checking()
-        warrant = HumanWarrant(approver="jordan", reason="premise invalid")
+    def test_agent_cannot_startover_even_with_genuine_warrant(self, tmp_path: Path) -> None:
+        """Possessing a real warrant is not enough — the initiator must be human."""
+        gate = HITLGate(tmp_path / "approvals")
+        m = machine_at_checking(gate.startover_verifier())
+        warrant = approved_startover(gate)
         with pytest.raises(StartoverNotPermittedError):
             m.fail(
                 Outcome.STARTOVER,
@@ -95,30 +114,95 @@ class TestStartoverIsHumanOnly:
                 warrant=warrant,
             )
 
-    def test_human_without_warrant_rejected(self) -> None:
-        m = machine_at_checking()
+    def test_human_without_warrant_rejected(self, tmp_path: Path) -> None:
+        gate = HITLGate(tmp_path / "approvals")
+        m = machine_at_checking(gate.startover_verifier())
         with pytest.raises(StartoverNotPermittedError):
             m.fail(Outcome.STARTOVER, reason="no warrant", initiated_by=Initiator.HUMAN)
 
-    def test_warrant_requires_named_approver_and_reason(self) -> None:
+    def test_warrant_requires_named_approver_reason_and_approval(self) -> None:
         with pytest.raises(ValueError):
-            HumanWarrant(approver="   ", reason="x")
+            HumanWarrant(approver="   ", reason="x", approval_id="a")
         with pytest.raises(ValueError):
-            HumanWarrant(approver="jordan", reason="")
+            HumanWarrant(approver="jordan", reason="", approval_id="a")
+        with pytest.raises(ValueError):
+            HumanWarrant(approver="jordan", reason="x", approval_id="  ")
 
-    def test_warranted_human_startover_succeeds_and_can_restart(self) -> None:
-        m = machine_at_checking()
+    def test_no_verifier_means_startover_disabled(self) -> None:
+        """Secure by default: a machine without a trusted approval
+        boundary denies startover no matter what the caller asserts."""
+        m = machine_at_checking(verifier=None)
+        forged = HumanWarrant(approver="mallory", reason="trust me", approval_id="fake")
+        with pytest.raises(StartoverNotPermittedError, match="no trusted approval boundary"):
+            m.fail(
+                Outcome.STARTOVER,
+                reason="caller-asserted",
+                initiated_by=Initiator.HUMAN,
+                warrant=forged,
+            )
+
+    def test_forged_warrant_with_no_backing_approval_rejected(self, tmp_path: Path) -> None:
+        """The P1 attack: agent code constructs HumanWarrant directly and
+        claims Initiator.HUMAN. The verifier finds no approval record."""
+        gate = HITLGate(tmp_path / "approvals")
+        m = machine_at_checking(gate.startover_verifier())
+        forged = HumanWarrant(approver="mallory", reason="fabricated", approval_id="deadbeef")
+        with pytest.raises(StartoverNotPermittedError, match="no approval"):
+            m.fail(
+                Outcome.STARTOVER,
+                reason="forged",
+                initiated_by=Initiator.HUMAN,
+                warrant=forged,
+            )
+        assert m.state is RunState.CHECKING
+
+    def test_unrelated_approval_cannot_be_replayed_as_startover(self, tmp_path: Path) -> None:
+        gate = HITLGate(tmp_path / "approvals")
+        m = machine_at_checking(gate.startover_verifier())
+        unrelated = gate.request("publish report")  # not startover-scoped
+        gate.approve(unrelated.id, decided_by="jordan")
+        warrant = HumanWarrant(approver="jordan", reason="reuse", approval_id=unrelated.id)
+        with pytest.raises(StartoverNotPermittedError, match="not scoped to startover"):
+            m.fail(Outcome.STARTOVER, reason="replay", initiated_by=Initiator.HUMAN, warrant=warrant)
+
+    def test_pending_and_rejected_approvals_do_not_authorize(self, tmp_path: Path) -> None:
+        gate = HITLGate(tmp_path / "approvals")
+        m = machine_at_checking(gate.startover_verifier())
+        pending = gate.request_startover("still waiting")
+        warrant = HumanWarrant(approver="jordan", reason="early", approval_id=pending.id)
+        with pytest.raises(StartoverNotPermittedError, match="pending"):
+            m.fail(Outcome.STARTOVER, reason="early", initiated_by=Initiator.HUMAN, warrant=warrant)
+        gate.reject(pending.id, decided_by="jordan", note="no")
+        with pytest.raises(StartoverNotPermittedError, match="rejected"):
+            m.fail(Outcome.STARTOVER, reason="denied", initiated_by=Initiator.HUMAN, warrant=warrant)
+
+    def test_approver_must_match_recorded_decider(self, tmp_path: Path) -> None:
+        gate = HITLGate(tmp_path / "approvals")
+        m = machine_at_checking(gate.startover_verifier())
+        approval = gate.request_startover("restart")
+        gate.approve(approval.id, decided_by="jordan")
+        warrant = HumanWarrant(approver="mallory", reason="stolen id", approval_id=approval.id)
+        with pytest.raises(StartoverNotPermittedError, match="does not match"):
+            m.fail(Outcome.STARTOVER, reason="mismatch", initiated_by=Initiator.HUMAN, warrant=warrant)
+
+    def test_genuine_warrant_succeeds_and_is_single_use(self, tmp_path: Path) -> None:
+        gate = HITLGate(tmp_path / "approvals")
+        m = machine_at_checking(gate.startover_verifier())
+        warrant = approved_startover(gate)
         t = m.fail(
             Outcome.STARTOVER,
             reason="premise wrong",
             initiated_by=Initiator.HUMAN,
-            warrant=HumanWarrant(approver="jordan", reason="scope changed"),
+            warrant=warrant,
         )
         assert m.state is RunState.STARTED_OVER
         assert t.initiated_by is Initiator.HUMAN
-        assert "jordan" in t.reason
+        assert "jordan" in t.reason and warrant.approval_id in t.reason
         m.advance(RunState.RETRIEVING, reason="fresh premise")
-        assert m.state is RunState.RETRIEVING
+        m.advance(RunState.DRAFTING)
+        m.advance(RunState.CHECKING)
+        with pytest.raises(StartoverNotPermittedError, match="already used"):
+            m.fail(Outcome.STARTOVER, reason="replay", initiated_by=Initiator.HUMAN, warrant=warrant)
 
 
 class TestAuditHook:

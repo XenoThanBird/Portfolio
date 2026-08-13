@@ -22,6 +22,7 @@ from .audit import (
     VerificationResult,
 )
 from .hitl import (
+    STARTOVER_SCOPE,
     AlreadyDecidedError,
     Approval,
     ApprovalStatus,
@@ -38,6 +39,7 @@ from .outcomes import (
     RunState,
     StartoverNotPermittedError,
     Transition,
+    WarrantVerifier,
 )
 from .scrubber import RedactionRule, ScrubResult, Scrubber, default_rules
 from .sentinel import (
@@ -54,6 +56,7 @@ __version__ = "0.1.0"
 
 __all__ = [
     "GENESIS_HASH",
+    "STARTOVER_SCOPE",
     "AlreadyDecidedError",
     "Approval",
     "ApprovalStatus",
@@ -82,5 +85,6 @@ __all__ = [
     "Transition",
     "UnknownApprovalError",
     "VerificationResult",
+    "WarrantVerifier",
     "default_rules",
 ]

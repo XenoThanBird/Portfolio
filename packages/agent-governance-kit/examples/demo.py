@@ -28,6 +28,7 @@ from agent_governance_kit import (  # noqa: E402
     ForbiddenTermsPolicy,
     GovernanceStateMachine,
     HITLGate,
+    HumanWarrant,
     Initiator,
     MaxLengthPolicy,
     Outcome,
@@ -42,8 +43,11 @@ from agent_governance_kit import (  # noqa: E402
 def main() -> int:
     workdir = Path(tempfile.mkdtemp(prefix="agk_demo_"))
     audit = AuditLog(workdir / "audit.jsonl")
+    gate_store = workdir / "approvals"
+    requester = HITLGate(gate_store)
     machine = GovernanceStateMachine(
-        audit_hook=lambda action, detail: audit.append("state_machine", action, dict(detail))
+        audit_hook=lambda action, detail: audit.append("state_machine", action, dict(detail)),
+        warrant_verifier=requester.startover_verifier(),
     )
     scrubber = Scrubber()
     sentinel = Sentinel(
@@ -53,7 +57,6 @@ def main() -> int:
             ForbiddenTermsPolicy("body", ["guaranteed returns"]),
         ]
     )
-    gate_store = workdir / "approvals"
 
     print("=== Agent Governance Kit — end-to-end demo (synthetic data) ===\n")
 
@@ -89,6 +92,20 @@ def main() -> int:
         print(f"[machine]  agent startover DENIED: {exc}")
         audit.append("state_machine", "startover_denied", {"initiator": "agent"})
 
+    # 3b. The agent escalates: it forges a warrant and *claims* to be
+    #     human. The approval boundary finds no backing record.
+    forged = HumanWarrant(approver="mallory", reason="trust me", approval_id="deadbeef")
+    try:
+        machine.fail(
+            Outcome.STARTOVER,
+            reason="forged claim",
+            initiated_by=Initiator.HUMAN,
+            warrant=forged,
+        )
+    except StartoverNotPermittedError as exc:
+        print(f"[machine]  forged warrant DENIED: {exc}")
+        audit.append("state_machine", "startover_denied", {"initiator": "forged_warrant"})
+
     # 4. Revised draft: clean, compliant.
     draft["body"] = "Projected performance varies; see the attached risk disclosure."
     scrubbed = scrubber.scrub(draft["body"])
@@ -99,7 +116,6 @@ def main() -> int:
 
     # 5. HITL gate: requester blocks; a second instance (the reviewer
     #    "process") loads the same store and approves.
-    requester = HITLGate(gate_store)
     approval = requester.request("publish investment brief", {"title": draft["title"]})
     audit.append("hitl", "approval_requested", {"approval_id": approval.id})
     HITLGate(gate_store).approve(approval.id, decided_by="demo-reviewer", note="clean + compliant")
