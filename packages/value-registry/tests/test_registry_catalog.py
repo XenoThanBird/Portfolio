@@ -37,7 +37,7 @@ class TestCatalogGeneration:
         assert len(data["models"]) == 140
 
     def test_generated_catalog_validates_against_schema(self, catalog_path: Path) -> None:
-        records = load_catalog(catalog_path)
+        records = load_catalog(catalog_path).models
         assert len(records) == 25
         assert all(set(r.risk) == set(RISK_DIMENSIONS) for r in records)
 
@@ -100,40 +100,76 @@ class TestRegistryValidation:
         with pytest.raises(RegistryError, match="duplicate"):
             load_catalog(bad)
 
+    def test_quoted_boolean_strings_rejected(self, tmp_path: Path, catalog_path: Path) -> None:
+        """bool('false') is True — truthiness coercion would silently
+        reverse provenance, so string booleans must be refused."""
+        raw = yaml.safe_load(catalog_path.read_text(encoding="utf-8"))
+        raw["models"][0]["provenance"]["origin_risk_flag"] = "false"
+        bad = tmp_path / "bad.yaml"
+        bad.write_text(yaml.safe_dump(raw), encoding="utf-8")
+        with pytest.raises(RegistryError, match="origin_risk_flag must be a boolean"):
+            load_catalog(bad)
+
+    def test_integer_boolean_rejected(self, tmp_path: Path, catalog_path: Path) -> None:
+        raw = yaml.safe_load(catalog_path.read_text(encoding="utf-8"))
+        raw["models"][0]["provenance"]["open_weights"] = 1
+        bad = tmp_path / "bad.yaml"
+        bad.write_text(yaml.safe_dump(raw), encoding="utf-8")
+        with pytest.raises(RegistryError, match="open_weights must be a boolean"):
+            load_catalog(bad)
+
+    def test_catalog_metadata_preserved(self, catalog_path: Path) -> None:
+        catalog = load_catalog(catalog_path)
+        assert catalog.seed == 7
+        assert catalog.disclaimer is not None and "fictional" in catalog.disclaimer
+        assert catalog.name == "synthetic-model-inventory"
+
+    def test_catalog_without_metadata_loads_with_none(self, tmp_path: Path, catalog_path: Path) -> None:
+        """A user-authored catalog with only 'models' carries no
+        disclaimer — the loader must not invent one."""
+        raw = yaml.safe_load(catalog_path.read_text(encoding="utf-8"))
+        minimal = {"models": raw["models"][:3]}
+        path = tmp_path / "user_catalog.yaml"
+        path.write_text(yaml.safe_dump(minimal), encoding="utf-8")
+        catalog = load_catalog(path)
+        assert catalog.disclaimer is None
+        assert catalog.seed is None
+        assert len(catalog.models) == 3
+
 
 class TestRiskScoring:
     def test_per_dimension_confidence_is_published(self, catalog_path: Path) -> None:
-        records = load_catalog(catalog_path)
+        records = load_catalog(catalog_path).models
         assessment = assess_risk(records[0])
         assert set(assessment.dimensions) == set(RISK_DIMENSIONS)
         for fig in assessment.dimensions.values():
             assert 0.0 <= fig.confidence <= 1.0
 
     def test_equal_weight_overall_matches_mean(self, catalog_path: Path) -> None:
-        records = load_catalog(catalog_path)
+        records = load_catalog(catalog_path).models
         a = assess_risk(records[0])
         mean = sum(f.value for f in records[0].risk.values()) / len(RISK_DIMENSIONS)
         assert a.overall.value == pytest.approx(mean)
 
     def test_overall_inherits_weakest_class(self, catalog_path: Path) -> None:
-        records = load_catalog(catalog_path)
+        records = load_catalog(catalog_path).models
         a = assess_risk(records[0])
         weakest_strength = min(f.evidence.strength for f in records[0].risk.values())
         assert a.overall.evidence.strength == weakest_strength
 
     def test_custom_weights_change_overall(self, catalog_path: Path) -> None:
-        records = load_catalog(catalog_path)
+        records = load_catalog(catalog_path).models
         record = records[0]
         security_only = assess_risk(record, weights={"security": 1.0})
         assert security_only.overall.value == pytest.approx(record.risk["security"].value)
 
     def test_unknown_weight_dimension_rejected(self, catalog_path: Path) -> None:
-        records = load_catalog(catalog_path)
+        records = load_catalog(catalog_path).models
         with pytest.raises(RegistryError, match="unknown risk weight"):
             assess_risk(records[0], weights={"astrology": 1.0})
 
     def test_catalog_assessment_ranked_descending(self, catalog_path: Path) -> None:
-        records = load_catalog(catalog_path)
+        records = load_catalog(catalog_path).models
         assessments = assess_catalog(records)
         values = [a.overall.value for a in assessments]
         assert values == sorted(values, reverse=True)
@@ -141,6 +177,6 @@ class TestRiskScoring:
     def test_class_never_stronger_than_weakest_input(self, catalog_path: Path) -> None:
         """Property over the whole synthetic catalog: no overall risk
         figure claims stronger evidence than its weakest dimension."""
-        for a in assess_catalog(load_catalog(catalog_path)):
+        for a in assess_catalog(load_catalog(catalog_path).models):
             weakest_strength = min(f.evidence.strength for f in a.dimensions.values())
             assert a.overall.evidence.strength == weakest_strength

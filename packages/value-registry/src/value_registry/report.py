@@ -8,7 +8,7 @@ enforcement, by construction.
 
 from __future__ import annotations
 
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from .evidence import Figure
 from .registry import RISK_DIMENSIONS, RiskAssessment
@@ -79,8 +79,11 @@ def render_portfolio_report(
             f"- Adjusted score (readiness ×{s.readiness_multiplier:.2f}): "
             f"{_fig(s.adjusted_score)}"
         )
-        lines.append(f"- NPV over {o.financials.horizon_years}y "
-                     f"@ {o.financials.discount_rate:.0%}: {_fig(s.npv, ',.0f')}")
+        lines.append(
+            f"- Horizon: {_fig(o.financials.horizon_years, '.0f')} years · "
+            f"Discount rate: {_fig(o.financials.discount_rate, '.2f')}"
+        )
+        lines.append(f"- NPV: {_fig(s.npv, ',.0f')}")
         lines.append(f"- ROI: {_fig(s.roi, '.2f')}")
         if s.payback_years is not None:
             lines.append(f"- Payback: {_fig(s.payback_years, '.1f')}")
@@ -94,16 +97,27 @@ def render_portfolio_report(
     return "\n".join(lines)
 
 
-def render_registry_report(assessments: List[RiskAssessment]) -> str:
-    """Model registry risk report with per-dimension confidence published."""
+def render_registry_report(
+    assessments: List[RiskAssessment],
+    disclaimer: Optional[str] = None,
+) -> str:
+    """Model registry risk report with per-dimension confidence published.
+
+    ``disclaimer`` is the catalog file's own statement about its data
+    (shown verbatim when present). The report makes no claim about the
+    data's origin on its own — a user-authored catalog must not be
+    labeled synthetic by the renderer.
+    """
     lines: List[str] = []
     lines.append("# Model Registry — Risk Report")
     lines.append("")
     lines.append(
-        f"{len(assessments)} models assessed. All entries are synthetic. "
-        "Origin risk is rendered only as the generic "
-        "**geopolitical-origin risk flag**."
+        f"{len(assessments)} models assessed. Origin risk is rendered "
+        "only as the generic **geopolitical-origin risk flag**."
     )
+    if disclaimer:
+        lines.append("")
+        lines.append(f"> Catalog disclaimer: {disclaimer}")
     lines.append("")
     lines.append(_LEGEND)
 

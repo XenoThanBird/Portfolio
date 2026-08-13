@@ -27,11 +27,24 @@ from .rubric import Rubric, RubricError, Stage
 
 @dataclass(frozen=True)
 class Financials:
+    """All five NPV inputs are evidence-classed — including the horizon
+    and discount rate, which shape NPV as much as the monetary figures
+    and must not be able to hide behind them."""
+
     annual_benefit: Figure
     annual_run_cost: Figure
     implementation_cost: Figure
-    horizon_years: int
-    discount_rate: float
+    horizon_years: Figure
+    discount_rate: Figure
+
+    def horizon(self) -> int:
+        return int(self.horizon_years.value)
+
+    def monetary_figures(self) -> List[Figure]:
+        return [self.annual_benefit, self.annual_run_cost, self.implementation_cost]
+
+    def all_figures(self) -> List[Figure]:
+        return self.monetary_figures() + [self.horizon_years, self.discount_rate]
 
 
 @dataclass(frozen=True)
@@ -104,11 +117,16 @@ def _parse_opportunity(raw: Mapping[str, Any], rubric: Rubric, idx: int) -> Oppo
         annual_benefit=parse_figure(fin_raw["annual_benefit"], f"{opp_id}.financials.annual_benefit"),
         annual_run_cost=parse_figure(fin_raw["annual_run_cost"], f"{opp_id}.financials.annual_run_cost"),
         implementation_cost=parse_figure(fin_raw["implementation_cost"], f"{opp_id}.financials.implementation_cost"),
-        horizon_years=int(fin_raw["horizon_years"]),
-        discount_rate=float(fin_raw["discount_rate"]),
+        horizon_years=parse_figure(fin_raw["horizon_years"], f"{opp_id}.financials.horizon_years"),
+        discount_rate=parse_figure(fin_raw["discount_rate"], f"{opp_id}.financials.discount_rate"),
     )
-    if financials.horizon_years < 1:
-        raise PortfolioError(f"{ctx} ({opp_id}): horizon_years must be >= 1")
+    horizon = financials.horizon_years.value
+    if horizon < 1 or horizon != int(horizon):
+        raise PortfolioError(
+            f"{ctx} ({opp_id}): horizon_years value must be a whole number >= 1"
+        )
+    if financials.discount_rate.value < 0:
+        raise PortfolioError(f"{ctx} ({opp_id}): discount_rate must be >= 0")
 
     stage = str(raw["stage"])
     rubric.stage(stage)  # validates the stage exists
@@ -147,8 +165,8 @@ def _npv(fin: Financials) -> float:
     """NPV of (benefit - run cost) over the horizon, less implementation."""
     net_annual = fin.annual_benefit.value - fin.annual_run_cost.value
     discounted = sum(
-        net_annual / (1.0 + fin.discount_rate) ** year
-        for year in range(1, fin.horizon_years + 1)
+        net_annual / (1.0 + fin.discount_rate.value) ** year
+        for year in range(1, fin.horizon() + 1)
     )
     return discounted - fin.implementation_cost.value
 
@@ -159,7 +177,7 @@ def _payback_years(fin: Financials) -> Optional[float]:
     if net_annual <= 0:
         return None
     years = fin.implementation_cost.value / net_annual
-    return years if years <= fin.horizon_years else None
+    return years if years <= fin.horizon() else None
 
 
 def _evaluate_gate(
@@ -185,6 +203,8 @@ def _evaluate_gate(
                 ("annual_benefit", financials.annual_benefit),
                 ("annual_run_cost", financials.annual_run_cost),
                 ("implementation_cost", financials.implementation_cost),
+                ("horizon_years", financials.horizon_years),
+                ("discount_rate", financials.discount_rate),
             )
             if fig.evidence is EvidenceClass.MODELED
         ]
@@ -209,21 +229,24 @@ def score_opportunity(opp: Opportunity, rubric: Rubric) -> ScoredOpportunity:
     )
 
     fin = opp.financials
-    fin_inputs = [fin.annual_benefit, fin.annual_run_cost, fin.implementation_cost]
-    npv = derived(_npv(fin), fin_inputs, unit=fin.annual_benefit.unit)
+    # NPV depends on every financial input incl. horizon and rate; ROI
+    # and payback on the monetary figures plus the horizon. Provenance
+    # inheritance covers exactly the inputs each quantity depends on.
+    npv = derived(_npv(fin), fin.all_figures(), unit=fin.annual_benefit.unit)
 
-    total_benefit = fin.annual_benefit.value * fin.horizon_years
+    roi_inputs = fin.monetary_figures() + [fin.horizon_years]
+    total_benefit = fin.annual_benefit.value * fin.horizon()
     total_cost = (
-        fin.annual_run_cost.value * fin.horizon_years
+        fin.annual_run_cost.value * fin.horizon()
         + fin.implementation_cost.value
     )
     if total_cost <= 0:
         raise PortfolioError(f"{opp.id}: total cost must be positive to compute ROI")
-    roi = derived((total_benefit - total_cost) / total_cost, fin_inputs)
+    roi = derived((total_benefit - total_cost) / total_cost, roi_inputs)
 
     payback_raw = _payback_years(fin)
     payback = (
-        derived(payback_raw, fin_inputs, unit="years")
+        derived(payback_raw, roi_inputs, unit="years")
         if payback_raw is not None
         else None
     )
