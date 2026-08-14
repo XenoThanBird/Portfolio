@@ -98,9 +98,9 @@ GitHub code scanning (CodeQL, repository default setup) runs alongside it.
 
 ## License & Contact
 
-All Rights Reserved — portfolio and demonstration purposes only; no real
-operational data, credentials, or employer-internal content appears anywhere
-in this repository.
+Licensed under [Apache-2.0](LICENSE) — use it, learn from it, build on it.
+No real operational data, credentials, or employer-internal content appears
+anywhere in this repository; every dataset is synthetic.
 
 - **LinkedIn**: [linkedin.com/in/matthan-bird-jd-mdb28173](https://www.linkedin.com/in/matthan-bird-jd-mdb28173)
 - **Email**: [bird.matthan@gmail.com](mailto:bird.matthan@gmail.com)

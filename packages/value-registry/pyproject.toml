@@ -1,5 +1,6 @@
 [build-system]
-requires = ["setuptools>=68"]
+# >=77 for PEP 639 license expression + license-files support
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,7 +9,8 @@ version = "0.1.0"
 description = "AI opportunity value model and model registry with mandatory evidence-class labeling: every figure carries documented/estimated/modeled provenance and a confidence value."
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "All Rights Reserved" }
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
 authors = [{ name = "Matthan Bird", email = "bird.matthan@gmail.com" }]
 keywords = ["ai-governance", "value-model", "roi", "model-registry", "tprm", "evidence"]
 classifiers = [
