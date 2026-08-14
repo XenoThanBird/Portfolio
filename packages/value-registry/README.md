@@ -82,5 +82,5 @@ make test          # pytest with coverage (≥80% floor)
 make typecheck     # mypy --strict
 ```
 
-All example and catalog data is synthetic. License: All Rights
-Reserved (see repository root).
+All example and catalog data is synthetic. License: Apache-2.0
+(see repository root).
